@@ -136,12 +136,6 @@ npm run dev
 - 💬 **Discord Community**: [Join us](https://discord.gg/trust0)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/trust0-project/identus/issues)
 
-## 🏢 Enterprise Support
-
-Looking for enterprise-grade support, custom integrations, or consulting services?
-
-[📧 Contact our team](mailto:enterprise@trust0.id) for dedicated support and custom solutions.
-
 ## 📄 License
 
 This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
