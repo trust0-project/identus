@@ -13,29 +13,26 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const { db, state: dbState } = useRIDB<typeof schemas>();
     const [messages, setMessages] = useState<{ message: SDK.Domain.Message, read: boolean }[]>([]);
     useEffect(() => {
-        if (!hasDB(db) || dbState !== "loaded") {
-            throw new Error("Database not connected");
-        }
+        if (hasDB(db) && dbState === "loaded") {
             db.collections.messages.find({}).then((messages) => {
                 setMessages(messages.map((message) => ({
                     message: SDK.Domain.Message.fromJson(message.dataJson),
                     read: message.read ?? false
                 })));
             })
-        
-    }, [db]);
+        }
+    }, [db, dbState]);
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
-        if (!hasDB(db) || dbState !== "loaded") {
-            throw new Error("Database not connected");
+        if (hasDB(db) && dbState === "loaded") {
+            const [found] = await db.collections.messages.find({ $or: [{ read: true }, { id: message.id }] });
+            if (found) {
+                await db.collections.messages.update({
+                    ...found,
+                    read: true
+                } as any)
+            }
         }
-        const [found] = await db.collections.messages.find({ $or: [{ read: true }, { id: message.id }] });
-        if (found) {
-            await db.collections.messages.update({
-                ...found,
-                read: true
-            } as any)
-        }
-    }, [db]);
+    }, [db, dbState]);
     const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
         if (!hasDB(db) || dbState !== "loaded") {
             throw new Error("Database not connected");
@@ -45,7 +42,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         if (found) {
             await db.collections.messages.delete(found.uuid);
         }
-    }, [db]);
+    }, [db, dbState]);
     const onMessage = useCallback(async (messages: SDK.Domain.Message[]) => {
         setMessages((prev) => {
             const newMessages = messages.filter(
@@ -53,7 +50,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             );
             return [...prev, ...newMessages.map((message) => ({ message, read: false }))];
         });
-    }, [setMessages, agent]);
+    }, [setMessages]);
     useEffect(() => {
         if (agent) {
             agent.addListener(SDK.ListenerKey.MESSAGE, onMessage);

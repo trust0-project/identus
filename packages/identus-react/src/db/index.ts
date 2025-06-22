@@ -67,11 +67,74 @@ function extractMigrations<T extends Record<string, { schema: CollectionSchema, 
 
 export const schemas = {
     ...extractSchemas(collections),
+    credentials: migrateSchema(collections.credentials.schema, {
+        status: {
+            type: SchemaFieldType.string,
+        }
+    }),
+    dids: migrateSchema(collections.dids.schema, {
+        status: {
+            type: SchemaFieldType.string,
+        }
+    }),
     messages: migrateSchema(collections.messages.schema, {
-    read: {
-        type: SchemaFieldType.boolean,
-        default: false as const,
-        required: true as const
+        read: {
+            type: SchemaFieldType.boolean,
+            default: false as const,
+            required: true as const
+        },
+    }),
+}
+
+export const issuerSchemas = {
+    ...schemas,
+    issuance: {
+        version: 0 as const,
+        primaryKey: 'id',
+        type: SchemaFieldType.object,
+        encrypted: ['claims'],
+        properties: {
+            id: {
+                type: SchemaFieldType.string,
+                required: true as const
+            },
+            claims: {
+                type: SchemaFieldType.array,
+                items: {
+                    type: SchemaFieldType.object,
+                    properties: {
+                        name: {
+                            type: SchemaFieldType.string,
+                            required: true as const
+                        },
+                        value: {
+                            type: SchemaFieldType.string,
+                            required: true as const
+                        },
+                        type: {
+                            type: SchemaFieldType.string,
+                            required: true as const
+                        },
+                    }
+                }
+            },
+            credentialFormat: {
+                type: SchemaFieldType.string,
+                required: true as const
+            },
+            automaticIssuance: {
+                type: SchemaFieldType.boolean,
+            },
+            issuingDID: {
+                type: SchemaFieldType.string,
+                required: true as const
+            },
+            status: {
+                type: SchemaFieldType.string,
+                required: true as const
+            }
+        }
     },
-}),}
+}
+
 export const migrations = extractMigrations(collections)

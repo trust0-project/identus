@@ -1,7 +1,8 @@
 import SDK from "@hyperledger/identus-sdk";
 import { createContext } from "react";
-import { schemas } from "../db";
 import { StartOptions } from "@trust0/ridb";
+
+import { schemas } from "../db";
 
 export const PrismDIDContext = createContext<{
     did: SDK.Domain.DID | null;

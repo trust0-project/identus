@@ -1,6 +1,6 @@
 
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { RIDBDatabase } from '@trust0/ridb-react';
 import SDK from "@hyperledger/identus-sdk";
 import { v4 as uuidv4 } from 'uuid';
@@ -14,13 +14,16 @@ import { AgentContext, HolderContext, IssuerContext, VerifierContext } from "../
 import { ExtraResolver, useAgent, useApollo } from "../hooks";
 import { createResolver } from "../resolver";
 import { schemas, migrations } from "../db";
+import { MessagesProvider } from "./Messages";
 
 
 export function WithAgentProvider(options: { children: React.ReactNode, seed: SDK.Domain.Seed, resolverUrl: string, mediatorDID: SDK.Domain.DID, resolvers: ExtraResolver[] }) {
     const { children, seed, resolverUrl, mediatorDID, resolvers } = options;
     const Provider = createAgentProvider({ seed, resolverUrl, mediatorDID, resolvers });
     return <RIDBDatabase startOptions={{ dbName: "sample", storageType: StorageType.IndexDB }} schemas={schemas} migrations={migrations as any}>
-        <Provider>{children}</Provider>
+        <Provider>
+            <MessagesProvider>{children}</MessagesProvider>
+        </Provider>
     </RIDBDatabase>
 }
 
@@ -132,7 +135,9 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
                             },
                         },
                         "application/json",
-                        id
+                        id,
+                        undefined,
+                        type
                     )
                 ],
                 undefined,
@@ -177,7 +182,7 @@ export function createAgentProvider<T extends ExtraResolver>(options: { seed: SD
         const apollo = useApollo();
         const { db } = useRIDB<typeof schemas>();
         const store = createStore({ db, storageType: StorageType.IndexDB });
-        const pluto = new SDK.Pluto(store, apollo);
+        const pluto = useMemo(() => new SDK.Pluto(store, apollo), [store, apollo]);
         const [agent, setAgent] = useState<SDK.Agent | null>(null);
         const [state, setState] = useState<SDK.Domain.Startable.State>(SDK.Domain.Startable.State.STOPPED);
         const stop = useCallback(async () => {
