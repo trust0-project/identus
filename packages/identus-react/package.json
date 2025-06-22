@@ -1,0 +1,76 @@
+{
+  "name": "@trust0/identus-react",
+  "version": "0.0.0",
+  "description": "React components for Hyperledger Identus, easily build your Identity applications on Cardano",
+  "main": "build/index.js",
+  "module": "build/index.mjs",
+  "types": "build/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.js"
+    },
+    "./context": {
+      "types": "./build/context/index.d.ts",
+      "import": "./build/context/index.mjs",
+      "require": "./build/context/index.js"
+    },
+    "./hooks": {
+      "types": "./build/hooks/index.d.ts",
+      "import": "./build/hooks/index.mjs",
+      "require": "./build/hooks/index.js"
+    },
+    "./resolver": {
+      "types": "./build/resolver/index.d.ts",
+      "import": "./build/resolver/index.mjs",
+      "require": "./build/resolver/index.js"
+    },
+    "./db": {
+      "types": "./build/db/index.d.ts",
+      "import": "./build/db/index.mjs",
+      "require": "./build/db/index.js"
+    }
+  },
+  "scripts": {
+    "build": "sh build.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trust0-project/identus-react.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trust0-project/identus-react/issues"
+  },
+  "homepage": "https://github.com/trust0-project/identus-react#readme",
+  "devDependencies": {
+    "@esbuild-plugins/node-resolve": "^0.2.2",
+    "@trust0/ridb-build": "^0.0.13",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "nx": "20.8.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.2",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "dependencies": {
+    "@trust0/identus-store": "^1.0.2",
+    "@trust0/ridb": "^1.5.28",
+    "@trust0/ridb-core": "^1.7.23",
+    "@trust0/ridb-react": "^1.4.3",
+    "uuid": "^11.1.0",
+    "multiformats": "^9.9.0",
+    "react": "^18",
+    "react-dom": "^18"
+  },
+  "peerDependencies": {
+    "@hyperledger/identus-sdk": "file:TBD",
+    "react": "^18",
+    "react-dom": "^18"
+  }
+}
