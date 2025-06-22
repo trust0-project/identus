@@ -1,0 +1,47 @@
+{
+  "name": "identus",
+  "version": "0.0.0",
+  "description": "Trust0 contributions to Hyperledger Identus ecosystem",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "clean": "npx nx run-many --target=clean && rm -rf node_modules",
+    "docs": "npx nx run-many --target=docs",
+    "build": "npx nx run-many --target=build",
+    "test": "npx nx run-many --target=test",
+    "lint": "npx nx run-many --target=lint"
+  },
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trust0-project/identus.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trust0-project/identus/issues"
+  },
+  "homepage": "https://github.com/trust0-project/identus#readme",
+  "packageManager": "yarn@4.9.1+sha512.f95ce356460e05be48d66401c1ae64ef84d163dd689964962c6888a9810865e39097a5e9de748876c2e0bf89b232d583c33982773e9903ae7a76257270986538",
+  "devDependencies": {
+    "@trust0/ridb-build": "^0.0.13",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vitejs/plugin-react-swc": "^3.8.0",
+    "@vitest/browser": "^3.0.8",
+    "@vitest/coverage-istanbul": "^3.0.8",
+    "@vitest/ui": "^3.0.8",
+    "eslint": "^9.26.0",
+    "eslint-config-next": "15.3.1",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "tsup": "^8.4.0",
+    "typedoc": "^0.28.4",
+    "typedoc-plugin-markdown": "^4.6.3",
+    "typedoc-plugin-rename-defaults": "^0.7.3",
+    "typedoc-theme-hierarchy": "^6.0.0",
+    "typescript": "^5.8.3"
+  }
+}
