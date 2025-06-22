@@ -102,25 +102,6 @@ const agent = new Agent({
 });
 ```
 
-## 🔄 Migration Guide
-
-### From pluto-encrypted
-The legacy `pluto-encrypted` package has been superseded by our RIDB-powered solution:
-
-```typescript
-// Before (pluto-encrypted)
-import PlutoEncrypted from 'pluto-encrypted';
-
-// After (RIDB + Identus Store)
-import { IdentusStore } from '@trust0/identus-store';
-```
-
-**Benefits of migration:**
-- 🔥 **10x Performance Improvement**
-- 🔒 **Enhanced Security Model**
-- 📦 **Smaller Bundle Size**
-- 🛠️ **Better Developer Tools**
-
 ## 🤝 Contributing
 
 We welcome contributions from the community! Here's how to get started:
