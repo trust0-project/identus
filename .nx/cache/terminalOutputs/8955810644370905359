@@ -1,0 +1,50 @@
+
+> @trust0/identus-react@0.0.0 build
+> sh build.sh
+
+[34mCLI[39m Building entry: src/index.tsx, src/components/index.ts, src/context/index.ts, src/db/index.ts, src/hooks/index.ts, src/resolver/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Using tsup config: /Users/ribo/Projects/personal/identus/packages/identus-react/tsup.esm.ts
+[34mCLI[39m Target: esnext
+[34mESM[39m Build start
+[32mESM[39m [1mbuild/context/index.mjs    [22m[32m353.00 B[39m
+[32mESM[39m [1mbuild/chunk-Y4FVLD66.mjs   [22m[32m2.85 KB[39m
+[32mESM[39m [1mbuild/index.mjs            [22m[32m12.46 KB[39m
+[32mESM[39m [1mbuild/chunk-RLWLUO6Q.mjs   [22m[32m585.00 B[39m
+[32mESM[39m [1mbuild/chunk-IFEJ6KWH.mjs   [22m[32m1.73 KB[39m
+[32mESM[39m [1mbuild/components/index.mjs [22m[32m33.78 KB[39m
+[32mESM[39m [1mbuild/chunk-5OAC2PPU.mjs   [22m[32m2.12 KB[39m
+[32mESM[39m [1mbuild/resolver/index.mjs   [22m[32m87.00 B[39m
+[32mESM[39m [1mbuild/hooks/index.mjs      [22m[32m307.00 B[39m
+[32mESM[39m [1mbuild/db/index.mjs         [22m[32m135.00 B[39m
+[32mESM[39m ⚡️ Build success in 38ms
+[34mDTS[39m Build start
+[32mDTS[39m ⚡️ Build success in 2874ms
+[32mDTS[39m [1mbuild/index.d.mts            [22m[32m1.58 KB[39m
+[32mDTS[39m [1mbuild/components/index.d.mts [22m[32m1.41 KB[39m
+[32mDTS[39m [1mbuild/context/index.d.mts    [22m[32m2.58 KB[39m
+[32mDTS[39m [1mbuild/hooks/index.d.mts      [22m[32m2.65 KB[39m
+[32mDTS[39m [1mbuild/db/index.d.mts         [22m[32m25.96 KB[39m
+[32mDTS[39m [1mbuild/resolver/index.d.mts   [22m[32m342.00 B[39m
+[34mCLI[39m Building entry: src/index.tsx, src/components/index.ts, src/context/index.ts, src/db/index.ts, src/hooks/index.ts, src/resolver/index.ts
+[34mCLI[39m Using tsconfig: tsconfig.json
+[34mCLI[39m tsup v8.5.0
+[34mCLI[39m Using tsup config: /Users/ribo/Projects/personal/identus/packages/identus-react/tsup.cjs.ts
+[34mCLI[39m Target: esnext
+[34mCJS[39m Build start
+[32mCJS[39m [1mbuild/context/index.js    [22m[32m1.76 KB[39m
+[32mCJS[39m [1mbuild/db/index.js         [22m[32m4.62 KB[39m
+[32mCJS[39m [1mbuild/index.js            [22m[32m21.54 KB[39m
+[32mCJS[39m [1mbuild/hooks/index.js      [22m[32m3.96 KB[39m
+[32mCJS[39m [1mbuild/resolver/index.js   [22m[32m3.76 KB[39m
+[32mCJS[39m [1mbuild/components/index.js [22m[32m40.19 KB[39m
+[32mCJS[39m ⚡️ Build success in 28ms
+[34mDTS[39m Build start
+[32mDTS[39m ⚡️ Build success in 2834ms
+[32mDTS[39m [1mbuild/index.d.ts            [22m[32m1.58 KB[39m
+[32mDTS[39m [1mbuild/components/index.d.ts [22m[32m1.41 KB[39m
+[32mDTS[39m [1mbuild/context/index.d.ts    [22m[32m2.58 KB[39m
+[32mDTS[39m [1mbuild/hooks/index.d.ts      [22m[32m2.65 KB[39m
+[32mDTS[39m [1mbuild/db/index.d.ts         [22m[32m25.96 KB[39m
+[32mDTS[39m [1mbuild/resolver/index.d.ts   [22m[32m342.00 B[39m

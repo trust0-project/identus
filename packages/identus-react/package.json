@@ -69,7 +69,7 @@
     "react-dom": "^18"
   },
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "file:TBD",
+    "@hyperledger/identus-sdk": "file:/Users/ribo/Projects/iohk/atala-prism-wallet-sdk-ts/",
     "react": "^18",
     "react-dom": "^18"
   }

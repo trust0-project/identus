@@ -1,6 +1,5 @@
 'use client';
 
-
 import type { AppProps } from 'next/app';
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
