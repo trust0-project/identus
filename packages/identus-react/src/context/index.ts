@@ -76,3 +76,4 @@ export const ConnectionsContext = createContext<{
     connections: SDK.Domain.DIDPair[];
     deleteConnection: (connection: SDK.Domain.DIDPair) => Promise<void>;
 } | undefined>(undefined);
+

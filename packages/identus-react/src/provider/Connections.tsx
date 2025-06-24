@@ -14,11 +14,13 @@ export function ConnectionsProvider({ children }: { children: React.ReactNode })
     const { agent } = useAgent();   
     const { db, state: dbState } = useRIDB<typeof schemas>();
     const [connections, setConnections] = useState<SDK.Domain.DIDPair[]>([]);
+
     useEffect(() => {
         if (db && dbState === 'loaded') {
             agent?.pluto.getAllDidPairs().then(setConnections)
         }
     }, [agent, db, dbState]);
+    
     const deleteConnection = useCallback(async (connection: SDK.Domain.DIDPair) => {
         if (!hasDB(db) || dbState !== "loaded") {
             throw new Error("Database not connected");
@@ -33,6 +35,29 @@ export function ConnectionsProvider({ children }: { children: React.ReactNode })
             await db.collections["did-link"].delete(connection.uuid);
           }
     }, [db, dbState]);
+
+    const onConnection = useCallback(async (newConnection: SDK.Domain.DIDPair) => {
+        setConnections((prev) => {
+            const exists = prev.some((connection) => 
+                connection.host.toString() === newConnection.host.toString() &&
+                connection.receiver.toString() === newConnection.receiver.toString()
+            );
+            if (!exists) {
+                return [...prev, newConnection];
+            }
+            return prev;
+        });
+    }, []);
+
+    useEffect(() => {
+        if (agent) {
+            agent.addListener(SDK.ListenerKey.CONNECTION, onConnection);
+            return () => {
+                agent.removeListener(SDK.ListenerKey.CONNECTION, onConnection);
+            };
+        }
+    }, [agent, onConnection])
+
     return <ConnectionsContext.Provider value={{ connections, deleteConnection }}>
         {children}
     </ConnectionsContext.Provider>
