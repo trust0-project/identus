@@ -38,12 +38,12 @@
     "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-jest": "^28.11.0",
     "eslint-plugin-react-hooks": "^5.2.0",
+    "jsdom": "^24.1.0",
     "tsup": "^8.4.0",
     "typedoc": "^0.28.4",
     "typedoc-plugin-markdown": "^4.6.3",
     "typedoc-plugin-rename-defaults": "^0.7.3",
     "typedoc-theme-hierarchy": "^6.0.0",
-    "typescript": "^5.8.3",
-    "jsdom":"^24.1.0"
+    "typescript": "^5.8.3"
   }
 }

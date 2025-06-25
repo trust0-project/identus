@@ -1,6 +1,6 @@
 {
   "name": "@trust0/identus-store",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "packageManager": "yarn@4.9.1",
   "publishConfig": {
@@ -34,7 +34,7 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "file:/Users/ribo/Projects/iohk/atala-prism-wallet-sdk-ts",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.5",
     "@trust0/ridb": "^1.5.28",
     "@trust0/ridb-core": "^1.7.23"
   },
@@ -55,7 +55,7 @@
     "@types/sinon-chai": "^3.2.12",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "jsdom":"^24.1.0",
+    "jsdom": "^24.1.0",
     "punycode": "^2.3.1",
     "sinon": "^18.0.0",
     "sinon-chai": "^3.7.0",

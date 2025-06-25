@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hyperledger/identus-sdk": "file:/Users/ribo/Projects/iohk/atala-prism-wallet-sdk-ts",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.5",
     "@trust0/identus-react": "^0.0.0",
     "next": "15.3.2",
     "react": "^18",
@@ -21,10 +21,10 @@
     "@types/node": "24.0.3",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "react": "^18",
-    "react-dom": "^18",
     "eslint": "^9",
     "eslint-config-next": "15.3.4",
+    "react": "^18",
+    "react-dom": "^18",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

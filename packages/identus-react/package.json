@@ -5,6 +5,9 @@
   "main": "build/index.js",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
@@ -53,23 +56,23 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "nx": "20.8.1",
-    "tsup": "^8.5.0",
-    "typescript": "^5.7.2",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "tsup": "^8.5.0",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "@trust0/identus-store": "^1.0.2",
+    "@trust0/identus-store": "^1.0.3",
     "@trust0/ridb": "^1.5.28",
     "@trust0/ridb-core": "^1.7.23",
     "@trust0/ridb-react": "^1.4.3",
-    "uuid": "^11.1.0",
     "multiformats": "^9.9.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "uuid": "^11.1.0"
   },
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "file:/Users/ribo/Projects/iohk/atala-prism-wallet-sdk-ts/",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.5",
     "react": "^18",
     "react-dom": "^18"
   }
