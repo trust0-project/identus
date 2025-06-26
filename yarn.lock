@@ -2203,16 +2203,36 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trust0/identus-react@npm:^0.0.0, @trust0/identus-react@workspace:packages/identus-react":
+"@trust0/identus-react@npm:^0.0.0":
+  version: 0.0.0
+  resolution: "@trust0/identus-react@npm:0.0.0"
+  dependencies:
+    "@trust0/identus-store": "npm:^1.0.3"
+    "@trust0/ridb": "npm:^1.5.28"
+    "@trust0/ridb-core": "npm:^1.7.23"
+    "@trust0/ridb-react": "npm:^1.4.3"
+    multiformats: "npm:^9.9.0"
+    react: "npm:^18"
+    react-dom: "npm:^18"
+    uuid: "npm:^11.1.0"
+  peerDependencies:
+    "@hyperledger/identus-sdk": ^7.0.0-rc.5
+    react: ^18
+    react-dom: ^18
+  checksum: 10c0/5a312f97fdbaa3b1f1d2bdbadf0775e0ba09e69c3ea6edfb34afcae46d8476d495f0432dbf5f2ce281f89bd55ae3fc73cc6c240059a9017691ad16b4c817996e
+  languageName: node
+  linkType: hard
+
+"@trust0/identus-react@workspace:packages/identus-react":
   version: 0.0.0-use.local
   resolution: "@trust0/identus-react@workspace:packages/identus-react"
   dependencies:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
-    "@trust0/identus-store": "npm:^1.0.3"
+    "@trust0/identus-store": "npm:^1.0.5"
     "@trust0/ridb": "npm:^1.5.28"
     "@trust0/ridb-build": "npm:^0.0.13"
     "@trust0/ridb-core": "npm:^1.7.23"
-    "@trust0/ridb-react": "npm:^1.4.3"
+    "@trust0/ridb-react": "npm:^1.4.5"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     multiformats: "npm:^9.9.0"
@@ -2264,6 +2284,19 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@trust0/identus-store@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "@trust0/identus-store@npm:1.0.5"
+  dependencies:
+    uuid: "npm:^11.1.0"
+  peerDependencies:
+    "@hyperledger/identus-sdk": ^7.0.0-rc.2
+    "@trust0/ridb": ^1.5.28
+    "@trust0/ridb-core": ^1.7.23
+  checksum: 10c0/bbe01685af4e42f59c30886efb1c94e52dfd065c125cad038c8e835afc95d782c633b90e537e51513704f8552419f4ec96b22b8ce47606ff6ea535b1bb700249
+  languageName: node
+  linkType: hard
+
 "@trust0/ridb-build@npm:^0.0.13":
   version: 0.0.13
   resolution: "@trust0/ridb-build@npm:0.0.13"
@@ -2286,6 +2319,17 @@ __metadata:
     react: ^18
     react-dom: ^18
   checksum: 10c0/f386b450cad92da3b67df30d07d8544180de999f2e28311871e406fccc35dc14d3abef69ada8705a6fe11998891a8066443e1fdc54aa3249820e54fda178544f
+  languageName: node
+  linkType: hard
+
+"@trust0/ridb-react@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "@trust0/ridb-react@npm:1.4.5"
+  peerDependencies:
+    "@trust0/ridb": ^1
+    react: ^18
+    react-dom: ^18
+  checksum: 10c0/44da01661099aa15d0a8dfab23022e058a951e88a3a4fd63dfa5c3e38c78ff08dc599c0bb33b5edd93ca56fa7ecdbdba4637b6e734c85120e0366738a2fc8440
   languageName: node
   linkType: hard
 

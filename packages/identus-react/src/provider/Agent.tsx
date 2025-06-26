@@ -1,30 +1,40 @@
 
 
 import React, { useCallback, useMemo, useState } from "react";
-import { RIDBDatabase } from '@trust0/ridb-react';
 import SDK from "@hyperledger/identus-sdk";
 import { v4 as uuidv4 } from 'uuid';
 import { base64 } from 'multiformats/bases/base64';
 
 import { useRIDB } from "@trust0/ridb-react";
-import { StartOptions, StorageType } from "@trust0/ridb";
 import { createStore } from "@trust0/identus-store";
 
 import { AgentContext, HolderContext, IssuerContext, VerifierContext } from "../context";
-import { ExtraResolver, useAgent, useApollo } from "../hooks";
+import { useAgent, useApollo } from "../hooks";
 import { createResolver } from "../resolver";
 import { schemas, migrations } from "../db";
 import { MessagesProvider } from "./Messages";
+import { ConnectionsProvider } from "./Connections";
+import { CredentialsProvider } from "./Credentials";
 
-
-export function WithAgentProvider(options: { children: React.ReactNode, seed: SDK.Domain.Seed, resolverUrl: string, mediatorDID: SDK.Domain.DID, resolvers: ExtraResolver[] }) {
-    const { children, seed, resolverUrl, mediatorDID, resolvers } = options;
-    const Provider = createAgentProvider({ seed, resolverUrl, mediatorDID, resolvers });
-    return <RIDBDatabase startOptions={{ dbName: "sample", storageType: StorageType.IndexDB }} schemas={schemas} migrations={migrations as any}>
-        <Provider>
-            <MessagesProvider>{children}</MessagesProvider>
+type WithChildren<T> = T & { children: React.ReactNode }
+type AgentProviderProps =  {
+    seed: SDK.Domain.Seed, 
+    resolverUrl?: string, 
+    mediatorDID: SDK.Domain.DID
+}
+export function WithAgentProvider(options: WithChildren<AgentProviderProps>) {
+    const { children, seed, resolverUrl, mediatorDID } = options;
+    const Provider = createAgentProvider({ seed, resolverUrl, mediatorDID });
+    return <Provider>
+            <ConnectionsProvider>
+                <CredentialsProvider>
+                    <MessagesProvider>
+                        {children}
+                    </MessagesProvider>
+                </CredentialsProvider>
+            </ConnectionsProvider>
         </Provider>
-    </RIDBDatabase>
+   
 }
 
 export function VerifierProvider({ children }: { children: React.ReactNode }) {
@@ -176,12 +186,12 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
     </IssuerContext.Provider>
 }
 
-export function createAgentProvider<T extends ExtraResolver>(options: { seed: SDK.Domain.Seed, resolverUrl: string, mediatorDID: SDK.Domain.DID, resolvers: T[] }) {
-    const { seed, resolverUrl, mediatorDID, resolvers } = options;
+export function createAgentProvider(options: { seed: SDK.Domain.Seed, resolverUrl: string | undefined, mediatorDID: SDK.Domain.DID }) {
+    const { seed, resolverUrl, mediatorDID } = options;
     return function AgentProvider({ children }: { children: React.ReactNode }) {
         const apollo = useApollo();
         const { db } = useRIDB<typeof schemas>();
-        const store = createStore({ db, storageType: StorageType.IndexDB });
+        const store = createStore({ db });
         const pluto = useMemo(() => new SDK.Pluto(store, apollo), [store, apollo]);
         const [agent, setAgent] = useState<SDK.Agent | null>(null);
         const [state, setState] = useState<SDK.Domain.Startable.State>(SDK.Domain.Startable.State.STOPPED);
@@ -197,16 +207,9 @@ export function createAgentProvider<T extends ExtraResolver>(options: { seed: SD
                 setAgent(null);
             }
         }, [agent, setState, setAgent]);
-        const start = useCallback(async (startOptions: StartOptions<typeof schemas>) => {
-            if (!db) {
-                throw new Error("No db found");
-            }
-            await db.start(startOptions);
+        const start = useCallback(async () => {
             setState(SDK.Domain.Startable.State.STARTING);
-            const apollo = new SDK.Apollo();
-            if (resolverUrl) {
-                resolvers.push(createResolver(resolverUrl) as any)
-            }
+            const resolvers = resolverUrl ? [createResolver(resolverUrl)] : [];
             const castor = new SDK.Castor(apollo, resolvers);
             const agent = await SDK.Agent.initialize({
                 apollo,
@@ -220,7 +223,13 @@ export function createAgentProvider<T extends ExtraResolver>(options: { seed: SD
             setAgent(agent);
         }, [db, pluto]);
         return <AgentContext.Provider value={{ agent, setAgent, start, stop, state }}>
-            {children}
+            <MessagesProvider>
+                <ConnectionsProvider>
+                    <CredentialsProvider>
+                        {children}
+                    </CredentialsProvider>
+                </ConnectionsProvider>
+            </MessagesProvider>
         </AgentContext.Provider>
     }
 }

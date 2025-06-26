@@ -84,10 +84,26 @@ export const schemas = {
             required: true as const
         },
     }),
-}
-
-export const issuerSchemas = {
-    ...schemas,
+    settings: {
+        version: 0 as const,
+        primaryKey: 'id',
+        type: SchemaFieldType.object,
+        encrypted: ['value'],
+        properties: {
+            id: {
+                type: SchemaFieldType.string,
+                required: true as const
+            },
+            key: {
+                type: SchemaFieldType.string,
+                required: true as const
+            },
+            value: {
+                type: SchemaFieldType.string,
+                required: true as const
+            }
+        }
+    },
     issuance: {
         version: 0 as const,
         primaryKey: 'id',

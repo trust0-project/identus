@@ -1,8 +1,5 @@
 import SDK from "@hyperledger/identus-sdk";
 import { createContext } from "react";
-import { StartOptions } from "@trust0/ridb";
-
-import { schemas } from "../db";
 
 export const PrismDIDContext = createContext<{
     did: SDK.Domain.DID | null;
@@ -13,7 +10,7 @@ export type DatabaseState = 'disconnected' | 'loading' | 'loaded' | 'error';
 
 type AgentContextType = {
     agent: SDK.Agent | null;
-    start: (startOptions: StartOptions<typeof schemas>) => Promise<void>;
+    start: () => Promise<void>;
     stop: () => Promise<void>;
     state: SDK.Domain.Startable.State;
 }

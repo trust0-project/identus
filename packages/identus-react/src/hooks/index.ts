@@ -1,6 +1,6 @@
 import SDK from "@hyperledger/identus-sdk";
 import { useContext, useMemo } from "react";
-import { AgentContext, CredentialsContext, MessagesContext, IssuerContext, HolderContext, VerifierContext } from "../context";
+import { AgentContext, CredentialsContext, MessagesContext, IssuerContext, HolderContext, VerifierContext, ConnectionsContext } from "../context";
 
 export function useApollo() {
     const apollo = useMemo(() => new SDK.Apollo(), []);
@@ -58,6 +58,14 @@ export function useCredentials() {
     const context = useContext(CredentialsContext);
     if (!context) {
         throw new Error('useCredentials must be used within a CredentialsProvider');
+    }
+    return context;
+}
+
+export function useConnections() {
+    const context = useContext(ConnectionsContext);
+    if (!context) {
+        throw new Error('useConnections must be used within a ConnectionsProvider');
     }
     return context;
 }

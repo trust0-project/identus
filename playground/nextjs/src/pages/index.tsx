@@ -6,8 +6,6 @@ import { StorageType } from "@trust0/ridb";
 
 import { WithAgentProvider, IssuerProvider, HolderProvider, VerifierProvider, createAgentProvider, MessagesProvider } from "@trust0/identus-react";
 import { useIssuer, useHolder, useVerifier, useMessages } from "@trust0/identus-react/hooks";
-import { RIDBDatabase } from "@trust0/ridb-react";
-import { issuerSchemas, migrations } from "@trust0/identus-react/db";
 import { Message } from "@/components";
 
 // Issuer Agent Component
@@ -423,7 +421,6 @@ function IssuerColumnWithProvider({ dbName, seed, resolverUrl, mediatorDID }: {
 }) {
   const Provider = createAgentProvider({ seed, resolverUrl, mediatorDID, resolvers: [] });
   return (
-    <RIDBDatabase startOptions={{ dbName, storageType: StorageType.IndexDB }} schemas={issuerSchemas} migrations={migrations as any}>
       <Provider>
         <MessagesProvider>
           <IssuerProvider>
@@ -431,7 +428,6 @@ function IssuerColumnWithProvider({ dbName, seed, resolverUrl, mediatorDID }: {
           </IssuerProvider>
         </MessagesProvider>
       </Provider>
-    </RIDBDatabase>
   );
 }
 
