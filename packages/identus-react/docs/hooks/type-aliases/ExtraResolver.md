@@ -8,7 +8,7 @@
 
 > **ExtraResolver** = (`apollo`) => `SDK.Domain.DIDResolver`
 
-Defined in: [hooks/index.ts:53](https://github.com/trust0-project/identus/blob/6e116e70ebca69fb9f7ae79bf35341c428d9e5fd/packages/identus-react/src/hooks/index.ts#L53)
+Defined in: [hooks/index.ts:53](https://github.com/trust0-project/identus/blob/954e2761ec12ee676172e43e60153139e8242a10/packages/identus-react/src/hooks/index.ts#L53)
 
 Type definition for additional DID resolvers that can be passed to Castor.
 

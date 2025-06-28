@@ -1,3 +1,17 @@
+## 0.0.64 (2025-06-28)
+
+### 🩹 Fixes
+
+- Update README.md ([954e276](https://github.com/trust0-project/identus/commit/954e276))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.9
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.63 (2025-06-28)
 
 ### 🩹 Fixes

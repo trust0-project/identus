@@ -8,7 +8,7 @@
 
 > `const` **migrations**: `object`
 
-Defined in: [db/index.ts:152](https://github.com/trust0-project/identus/blob/6e116e70ebca69fb9f7ae79bf35341c428d9e5fd/packages/identus-react/src/db/index.ts#L152)
+Defined in: [db/index.ts:152](https://github.com/trust0-project/identus/blob/954e2761ec12ee676172e43e60153139e8242a10/packages/identus-react/src/db/index.ts#L152)
 
 ## Type declaration
 

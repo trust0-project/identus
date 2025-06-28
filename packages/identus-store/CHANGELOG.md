@@ -1,3 +1,13 @@
+## 1.0.9 (2025-06-28)
+
+### 🩹 Fixes
+
+- Update README.md ([954e276](https://github.com/trust0-project/identus/commit/954e276))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.8 (2025-06-28)
 
 ### 🩹 Fixes
