@@ -52,19 +52,23 @@ export const credentialOfferMessage = new SDK.OfferCredential(
 );
 
 export const credentialAgent: SDK.Domain.W3CVerifiableCredential = {
-  "@context": [SDK.Domain.W3CVerifiableCredentialContext.credential],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
   credentialSubject: {
     additionalProp2: "Test3",
     id: "did:prism:beea5234af46804714d8ea8ec77b66cc7f3e815c68abb475f254cf9c30626763:CscBCsQBEmQKD2F1dGhlbnRpY2F0aW9uMBAEQk8KCXNlY3AyNTZrMRIgeSg-2OO1JdnpzUOBitzIicXdfzeAcTfWAN-YCeuCbyIaIJQ4GTI30taViwchT3e0nLXBS43B4j9jlslKo2ZldXzjElwKB21hc3RlcjAQAUJPCglzZWNwMjU2azESIHkoPtjjtSXZ6c1DgYrcyInF3X83gHE31gDfmAnrgm8iGiCUOBkyN9LWlYsHIU93tJy1wUuNweI_Y5bJSqNmZXV84w",
   },
-  type: [SDK.Domain.W3CVerifiableCredentialType.credential],
+  type: ["VerifiableCredential"],
   issuer: "did:prism:beea5234af46804714d8ea8ec77b66cc7f3e815c68abb475f254cf9c30626763:CscBCsQBEmQKD2F1dGhlbnRpY2F0aW9uMBAEQk8KCXNlY3AyNTZrMRIgeSg-2OO1JdnpzUOBitzIicXdfzeAcTfWAN-YCeuCbyIaIJQ4GTI30taViwchT3e0nLXBS43B4j9jlslKo2ZldXzjElwKB21hc3RlcjAQAUJPCglzZWNwMjU2azESIHkoPtjjtSXZ6c1DgYrcyInF3X83gHE31gDfmAnrgm8iGiCUOBkyN9LWlYsHIU93tJy1wUuNweI_Y5bJSqNmZXV84w",
   issuanceDate: new Date().toISOString(),
 };
 
 export const credential: SDK.Domain.W3CVerifiableCredential = {
-  type: [SDK.Domain.W3CVerifiableCredentialType.credential],
-  "@context": [SDK.Domain.W3CVerifiableCredentialContext.credential],
+  type: ["VerifiableCredential"],
+  "@context": [
+    "https://www.w3.org/2018/credentials/v1"
+  ],
   credentialSubject: {
     additionalProp2: 'Test3',
     id: 'did:prism:beea5234af46804714d8ea8ec77b66cc7f3e815c68abb475f254cf9c30626763:CscBCsQBEmQKD2F1dGhlbnRpY2F0aW9uMBAEQk8KCXNlY3AyNTZrMRIgeSg-2OO1JdnpzUOBitzIicXdfzeAcTfWAN-YCeuCbyIaIJQ4GTI30taViwchT3e0nLXBS43B4j9jlslKo2ZldXzjElwKB21hc3RlcjAQAUJPCglzZWNwMjU2azESIHkoPtjjtSXZ6c1DgYrcyInF3X83gHE31gDfmAnrgm8iGiCUOBkyN9LWlYsHIU93tJy1wUuNweI_Y5bJSqNmZXV84w'

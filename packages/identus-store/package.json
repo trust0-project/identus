@@ -1,28 +1,26 @@
 {
   "name": "@trust0/identus-store",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "packageManager": "yarn@4.9.1",
   "publishConfig": {
     "access": "public"
   },
-  "main": "./build/index.js",
-  "module": "./build/index.mjs",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "types": "./build/index.d.ts",
-      "import": "./build/index.mjs",
-      "require": "./build/index.js"
+      "import": "./build/esm/index.js",
+      "require": "./build/cjs/index.js"
     }
   },
   "files": [
-    "./build/**/*",
-    "./**/*.md"
+    "./build"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/trust0-project/identus.git"
+    "url": "https://github.com/trust0-project/identus-store.git"
   },
   "author": "elribonazo@gmail.com",
   "scripts": {
@@ -34,7 +32,7 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "^7.0.0-rc.5",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.2",
     "@trust0/ridb": "^1.5.28",
     "@trust0/ridb-core": "^1.7.23"
   },
@@ -55,7 +53,11 @@
     "@types/sinon-chai": "^3.2.12",
     "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
-    "jsdom": "^24.1.0",
+    "esbuild": "0.25.1",
+    "esbuild-plugin-d.ts": "^1.3.1",
+    "esbuild-plugin-wasm": "^1.1.0",
+    "esbuild-plugin-wasm-pack": "^1.1.0",
+    "jsdom": "^26.1.0",
     "punycode": "^2.3.1",
     "sinon": "^18.0.0",
     "sinon-chai": "^3.7.0",
