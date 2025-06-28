@@ -78,7 +78,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          yarn install
+          yarn
           npm run build
           npx nx release --skip-publish --verbose
           if [[ $GITHUB_REF == *"refs/heads/develop"* ]]; then
