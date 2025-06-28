@@ -3,9 +3,7 @@
     "entryPoints": [
         "./src/index.tsx",
         "./src/hooks/index.ts",
-        "./src/context/index.ts",
-        "./src/resolver/index.ts",
-        "./src/db/index.ts"
+        "./src/context/index.ts"
     ],
     "basePath": "./src",
     "readme": "none",
