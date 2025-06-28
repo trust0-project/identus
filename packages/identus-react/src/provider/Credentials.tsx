@@ -44,7 +44,7 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
         if (agent && newMessages.size > issueCredentialMessages.size) {
             if (issueCredentialMessages.size > 0) {
                 const credentialMessages = messagesListener.map(({message}) => message);
-                Promise.all(credentialMessages.map(agent?.handle))
+                Promise.all(credentialMessages.map(agent.handle))
             }
             setIssueCredentialMessages(newMessages);
         }

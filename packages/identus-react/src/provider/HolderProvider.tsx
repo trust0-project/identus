@@ -2,10 +2,11 @@ import React from "react";
 import SDK from "@hyperledger/identus-sdk";
 import { useCallback } from "react";
 import { HolderContext } from "../context";
-import { useAgent } from "../hooks";
+import { useAgent, useMessages } from "../hooks";
 
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
+    const { getMessages } = useMessages();
     const parseOOBOffer = useCallback(async (offer: string, selfPeerDID: SDK.Domain.DID) => {
         const message = SDK.Domain.Message.fromJson(offer);
         const attachment = message.attachments.at(0)?.payload;
@@ -24,6 +25,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const presentation = await agent.runTask(task);
         const presentationMessage = presentation.makeMessage();
         await agent.send(presentationMessage);
+        await getMessages()
     }, [agent]);
     const acceptOOBOffer = useCallback(async (offer: SDK.Domain.Message) => {
         if (!agent) {
@@ -33,6 +35,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const requestCredential = await agent.handle(credentialOfferMessage.makeMessage());
         const requestMessage = requestCredential.makeMessage()
         await agent.send(requestMessage);
+        await getMessages()
     }, [agent]);
     return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}

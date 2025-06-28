@@ -144,10 +144,6 @@ export const schemas = {
             issuingDID: {
                 type: SchemaFieldType.string,
                 required: true as const
-            },
-            status: {
-                type: SchemaFieldType.string,
-                required: true as const
             }
         }
     },

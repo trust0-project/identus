@@ -77,18 +77,12 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
         await readMessageDB(message);
-        setMessages((prev) => 
-            prev.map((m) => 
-                m.message.id === message.id 
-                    ? { ...m, read: true }
-                    : m
-            )
-        );
+        getMessages();
     }, [readMessageDB]);
 
     const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
         await deleteMessageDB(message);
-        setMessages((prev) => prev.filter((m) => m.message.id !== message.id));
+        getMessages();
     }, [deleteMessageDB]);
 
     return <MessagesContext.Provider value={{ 

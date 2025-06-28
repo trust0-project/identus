@@ -3,10 +3,11 @@ import { v4 as uuidv4 } from 'uuid';
 import { base64 } from 'multiformats/bases/base64';
 import SDK from "@hyperledger/identus-sdk";
 import { IssuerContext } from "../context";
-import { useAgent } from "../hooks";
+import { useAgent, useMessages } from "../hooks";
 
 export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
+    const { getMessages } = useMessages();
     const createOOBOffer = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, id: string, claims: any) => {
         if (!agent) {
             throw new Error("No agent found");
@@ -88,6 +89,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         })
         const issued = await agent.runTask(protocol);
         await agent.send(issued.makeMessage());
+        await getMessages()
     }, [agent]);
     return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential }}>
         {children}
