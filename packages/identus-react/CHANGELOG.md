@@ -1,3 +1,13 @@
+## 0.0.67 (2025-06-28)
+
+### 🩹 Fixes
+
+- small issue in docs Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([7c3040e](https://github.com/trust0-project/identus/commit/7c3040e))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.66 (2025-06-28)
 
 ### 🩹 Fixes

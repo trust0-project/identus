@@ -8,6 +8,7 @@
 
 ## Type Aliases
 
+- [AgentContextType](type-aliases/AgentContextType.md)
 - [DatabaseState](type-aliases/DatabaseState.md)
 - [DIDAlias](type-aliases/DIDAlias.md)
 - [GroupedDIDs](type-aliases/GroupedDIDs.md)

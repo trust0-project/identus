@@ -6,9 +6,9 @@
 
 # Variable: AgentContext
 
-> `const` **AgentContext**: `Context`\<`undefined` \| `AgentContextType` & `object`\>
+> `const` **AgentContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [context/index.ts:311](https://github.com/trust0-project/identus/blob/febcd2542e30b741b517312de202d6c8715053f6/packages/identus-react/src/context/index.ts#L311)
+Defined in: [context/index.ts:311](https://github.com/trust0-project/identus/blob/7c3040eb306e8d11ac7215cdeff98684d68823c4/packages/identus-react/src/context/index.ts#L311)
 
 React context for managing the main Identus Agent operations.
 
