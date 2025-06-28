@@ -4,13 +4,7 @@
 </p>
 
 # 🚀 Identus
-
-[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
-[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
-[![React](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)](https://reactjs.org/)
-[![Rust](https://img.shields.io/badge/Rust-000000?logo=rust&logoColor=white)](https://www.rust-lang.org/)
-
-> **Next-generation tooling for [Hyperledger Identus SDK](https://github.com/hyperledger-identus/sdk-ts)** - Bridging the gap between decentralized identity and production-ready applications.
+**Next-generation tooling for [Hyperledger Identus SDK](https://github.com/hyperledger-identus/sdk-ts)** - Bridging the gap between decentralized identity and production-ready applications.
 
 ## 🌟 Overview
 
