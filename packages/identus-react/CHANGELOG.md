@@ -1,3 +1,13 @@
+## 0.0.65 (2025-06-28)
+
+### 🩹 Fixes
+
+- react docs Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9e2680f](https://github.com/trust0-project/identus/commit/9e2680f))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.64 (2025-06-28)
 
 ### 🩹 Fixes
