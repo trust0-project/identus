@@ -136,7 +136,7 @@ export type GroupedDIDs = Record<string, DIDAlias[]>;
  * 
  * @private
  */
-type AgentContextType = {
+export type AgentContextType = {
     /** Current Agent instance, null if not initialized */
     agent: SDK.Agent | null;
     /** Function to start the agent */
