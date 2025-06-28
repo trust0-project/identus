@@ -59,7 +59,7 @@ function MyIdentityApp() {
 
 For detailed documentation and examples, visit:
 - [GitHub Repository](https://github.com/trust0-project/identus-react)
-- [Hyperledger Identus Documentation](https://docs.atalaprism.io/)
+- [Hyperledger Identus Documentation](https://hyperledger-identus.github.io/docs/)
 
 ## Functions
 

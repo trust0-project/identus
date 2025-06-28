@@ -1,3 +1,17 @@
+## 0.0.66 (2025-06-28)
+
+### 🩹 Fixes
+
+- improve docs Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([febcd25](https://github.com/trust0-project/identus/commit/febcd25))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.10
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.65 (2025-06-28)
 
 ### 🩹 Fixes

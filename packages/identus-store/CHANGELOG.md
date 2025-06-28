@@ -1,3 +1,13 @@
+## 1.0.10 (2025-06-28)
+
+### 🩹 Fixes
+
+- improve docs Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([febcd25](https://github.com/trust0-project/identus/commit/febcd25))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.9 (2025-06-28)
 
 ### 🩹 Fixes
