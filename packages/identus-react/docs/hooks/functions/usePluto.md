@@ -8,7 +8,7 @@
 
 > **usePluto**(`storageType`): `Pluto`
 
-Defined in: [hooks/index.ts:198](https://github.com/trust0-project/identus/blob/5b43368a7bb6070ac216d840cfd9b05d5b51c76b/packages/identus-react/src/hooks/index.ts#L198)
+Defined in: [hooks/index.ts:159](https://github.com/trust0-project/identus/blob/6e116e70ebca69fb9f7ae79bf35341c428d9e5fd/packages/identus-react/src/hooks/index.ts#L159)
 
 Creates and returns a memoized Pluto instance for persistent storage operations.
 
@@ -28,42 +28,3 @@ Storage backend to use (defaults to IndexedDB)
 `Pluto`
 
 A memoized Pluto instance configured with the specified storage
-
-## Example
-
-```tsx
-import { usePluto } from '@trust0/identus-react/hooks';
-import { StorageType } from '@trust0/ridb';
-
-function StorageManager() {
-  // Use default IndexedDB storage
-  const pluto = usePluto();
-  
-  // Use specific storage type
-  const plutoWithMemory = usePluto(StorageType.Memory);
-  
-  const storeCredential = async (credential) => {
-    try {
-      await pluto.storeCredential(credential);
-      console.log('Credential stored successfully');
-    } catch (error) {
-      console.error('Failed to store credential:', error);
-    }
-  };
-  
-  const retrieveCredentials = async () => {
-    try {
-      const credentials = await pluto.getAllCredentials();
-      console.log('Retrieved credentials:', credentials);
-    } catch (error) {
-      console.error('Failed to retrieve credentials:', error);
-    }
-  };
-  
-  return (
-    <div>
-      <button onClick={retrieveCredentials}>Load Credentials</button>
-    </div>
-  );
-}
-```

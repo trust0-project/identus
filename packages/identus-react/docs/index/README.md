@@ -6,8 +6,6 @@
 
 # index
 
-# @trust0/identus-react
-
 React components and hooks for building decentralized identity applications using Hyperledger Identus on Cardano.
 
 This package provides a comprehensive set of React hooks, contexts, and providers that simplify the integration

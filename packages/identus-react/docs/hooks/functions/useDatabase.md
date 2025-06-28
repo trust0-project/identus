@@ -8,7 +8,7 @@
 
 > **useDatabase**(): `object`
 
-Defined in: [hooks/index.ts:919](https://github.com/trust0-project/identus/blob/5b43368a7bb6070ac216d840cfd9b05d5b51c76b/packages/identus-react/src/hooks/index.ts#L919)
+Defined in: [hooks/index.ts:669](https://github.com/trust0-project/identus/blob/6e116e70ebca69fb9f7ae79bf35341c428d9e5fd/packages/identus-react/src/hooks/index.ts#L669)
 
 Hook for accessing database context and operations.
 
@@ -429,81 +429,3 @@ Current wallet identifier
 ## Throws
 
 When used outside of DatabaseProvider
-
-## Example
-
-```tsx
-import { useDatabase } from '@trust0/identus-react/hooks';
-import { StorageType } from '@trust0/ridb';
-
-function DatabaseManager() {
-  const { 
-    db, 
-    state, 
-    error, 
-    start, 
-    getExtendedDIDs,
-    storeDID,
-    getMessages,
-    getSeed,
-    setSeed
-  } = useDatabase();
-  
-  const initializeDatabase = async () => {
-    try {
-      await start({
-        name: 'my-identity-wallet',
-        storageType: StorageType.IndexDB,
-        schemas: schemas
-      });
-      console.log('Database initialized successfully');
-    } catch (error) {
-      console.error('Failed to initialize database:', error);
-    }
-  };
-  
-  const loadDIDs = async () => {
-    try {
-      const dids = await getExtendedDIDs();
-      console.log('Loaded DIDs:', dids);
-    } catch (error) {
-      console.error('Failed to load DIDs:', error);
-    }
-  };
-  
-  const setupWallet = async () => {
-    try {
-      // Generate or restore seed
-      const existingSeed = await getSeed();
-      if (!existingSeed) {
-        const newSeed = SDK.Domain.Seed.generateRandomSeed();
-        await setSeed(newSeed);
-        console.log('New wallet seed created');
-      } else {
-        console.log('Using existing wallet seed');
-      }
-    } catch (error) {
-      console.error('Failed to setup wallet:', error);
-    }
-  };
-  
-  return (
-    <div>
-      <h3>Database Status: {state}</h3>
-      {error && <p>Error: {error.message}</p>}
-      
-      <div>
-        <button onClick={initializeDatabase} disabled={state === 'loaded'}>
-          Initialize Database
-        </button>
-        <button onClick={loadDIDs} disabled={state !== 'loaded'}>
-          Load DIDs
-        </button>
-        <button onClick={setupWallet} disabled={state !== 'loaded'}>
-          Setup Wallet
-        </button>
-      </div>
-    </div>
-  );
-}
-```

@@ -8,7 +8,7 @@
 
 > **useIssuer**(): `AgentContextType` & `object`
 
-Defined in: [hooks/index.ts:402](https://github.com/trust0-project/identus/blob/5b43368a7bb6070ac216d840cfd9b05d5b51c76b/packages/identus-react/src/hooks/index.ts#L402)
+Defined in: [hooks/index.ts:319](https://github.com/trust0-project/identus/blob/6e116e70ebca69fb9f7ae79bf35341c428d9e5fd/packages/identus-react/src/hooks/index.ts#L319)
 
 Hook for accessing credential issuance context and operations.
 
@@ -28,48 +28,3 @@ Issuer context containing:
 ## Throws
 
 When used outside of IssuerProvider
-
-## Example
-
-```tsx
-import { useIssuer } from '@trust0/identus-react/hooks';
-import SDK from '@hyperledger/identus-sdk';
-
-function CredentialIssuer() {
-  const { createOOBOffer, issueCredential, state } = useIssuer();
-  
-  const issueDriversLicense = async () => {
-    try {
-      // Create out-of-band offer for a driver's license
-      const offer = await createOOBOffer(
-        SDK.Domain.CredentialType.JWT,
-        'drivers-license-123',
-        {
-          name: 'John Doe',
-          licenseNumber: 'DL123456',
-          expirationDate: '2025-12-31'
-        }
-      );
-      
-      console.log('Credential offer created:', offer);
-      
-      // Share the offer with the holder
-      // ... sharing logic
-    } catch (error) {
-      console.error('Failed to create credential offer:', error);
-    }
-  };
-  
-  return (
-    <div>
-      <p>Issuer State: {state}</p>
-      <button 
-        onClick={issueDriversLicense}
-        disabled={state !== 'running'}
-      >
-        Issue Driver's License
-      </button>
-    </div>
-  );
-}
-```
