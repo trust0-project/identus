@@ -22,9 +22,13 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
     ), []);
 
     const fetchCredentials = useCallback(async () => {
-        const credentials = await agent?.pluto.getAllCredentials();
-        return credentials ?? [];
-    }, [agent]);
+        if (agent && dbState === "loaded") {
+            const credentials = await agent?.pluto.getAllCredentials();
+            setCredentials(prev => [...prev, ...credentials.filter((credential) => !prev.some((c) => c.uuid === credential.uuid))]);
+            return credentials ?? [];
+        }
+        return []
+    }, [agent, setCredentials, dbState]);
 
     const [
         issueCredentialMessages, 
@@ -32,14 +36,17 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
     ] = useState<Set<string>>(filterMessages(messagesListener))
 
     useEffect(() => {
-        fetchCredentials().then(setCredentials)
+        fetchCredentials()
     }, [fetchCredentials, setCredentials]);
 
     useEffect(() => {
         const newMessages = filterMessages(messagesListener);
-        if (newMessages.size > issueCredentialMessages.size) {
+        if (agent && newMessages.size > issueCredentialMessages.size) {
+            if (issueCredentialMessages.size > 0) {
+                const credentialMessages = messagesListener.map(({message}) => message);
+                Promise.all(credentialMessages.map(agent?.handle))
+            }
             setIssueCredentialMessages(newMessages);
-            fetchCredentials().then(setCredentials)
         }
     }, [fetchCredentials, messagesListener, issueCredentialMessages]);
 
@@ -50,7 +57,7 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
         await db.collections.credentials.delete(credential.uuid);
     }, [db, dbState]);
     
-    return <CredentialsContext.Provider value={{ credentials, deleteCredential }}>
+    return <CredentialsContext.Provider value={{ credentials, deleteCredential, fetchCredentials }}>
         {children}
     </CredentialsContext.Provider>
 }

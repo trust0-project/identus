@@ -1,6 +1,11 @@
 import SDK from "@hyperledger/identus-sdk";
 import { useContext, useMemo } from "react";
-import { AgentContext, CredentialsContext, MessagesContext, IssuerContext, HolderContext, VerifierContext, ConnectionsContext } from "../context";
+import { AgentContext, CredentialsContext, MessagesContext, IssuerContext, HolderContext, VerifierContext, ConnectionsContext, PrismDIDContext, PeerDIDContext, DatabaseContext } from "../context";
+import { useRIDB } from "@trust0/ridb-react";
+import { schemas } from "../db";
+import { createStore } from "@trust0/identus-store";
+import { StorageType } from "@trust0/ridb";
+import { BaseStorage } from "@trust0/ridb-core";
 
 export function useApollo() {
     const apollo = useMemo(() => new SDK.Apollo(), []);
@@ -12,6 +17,30 @@ export function useCastor(resolvers: ExtraResolver[] = []) {
     const apollo = useApollo();
     const castor = useMemo(() => new SDK.Castor(apollo, resolvers), [apollo, resolvers]);
     return castor;
+}
+
+export function usePrismDID() {
+    const context = useContext(PrismDIDContext);
+    if (!context) {
+        throw new Error('usePrismDID must be used within a PrismDIDProvider');
+    }
+    return context;
+}
+
+export function usePluto(storageType: typeof BaseStorage | StorageType = StorageType.IndexDB) {
+    const {db} = useRIDB<typeof schemas>()
+    const store = useMemo(() => createStore({ db, storageType }), [db])
+    const apollo = useApollo()
+    const pluto = useMemo(() => new SDK.Pluto(store, apollo), [store, apollo])
+    return pluto;
+}
+
+export function usePeerDID() {
+    const context = useContext(PeerDIDContext);
+    if (!context) {
+        throw new Error('usePeerDID must be used within a PeerDIDProvider');
+    }
+    return context;
 }
 
 export function useAgent() {
@@ -66,6 +95,15 @@ export function useConnections() {
     const context = useContext(ConnectionsContext);
     if (!context) {
         throw new Error('useConnections must be used within a ConnectionsProvider');
+    }
+    return context;
+}
+
+
+export function useDatabase() {
+    const context = useContext(DatabaseContext);
+    if (!context) {
+        throw new Error('useDatabase must be used within a DatabaseProvider');
     }
     return context;
 }

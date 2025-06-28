@@ -3,8 +3,7 @@
   "version": "0.0.0",
   "description": "Trust0 contributions to Hyperledger Identus ecosystem",
   "workspaces": [
-    "packages/*",
-    "playground/*"
+    "packages/*"
   ],
   "scripts": {
     "clean": "npx nx run-many --target=clean && rm -rf node_modules",

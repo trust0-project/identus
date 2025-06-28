@@ -1,56 +1,71 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
-import { useRIDB } from "@trust0/ridb-react";
 import { MessagesContext } from "../context";
-import { useAgent } from "../hooks";
-import { schemas } from "../db";
-import { hasDB } from "../utils";
+import { useAgent, useDatabase } from "../hooks";
 
 
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const { agent } = useAgent();
-    const { db, state: dbState } = useRIDB<typeof schemas>();
+    const { state:dbState } = useDatabase()
+    const { 
+        readMessage:readMessageDB, 
+        deleteMessage:deleteMessageDB, 
+        getMessages:getMessagesDB
+    } = useDatabase();
+
     const [messages, setMessages] = useState<{ message: SDK.Domain.Message, read: boolean }[]>([]);
-    useEffect(() => {
-        if (hasDB(db) && dbState === "loaded") {
-            db.collections.messages.find({}).then((messages) => {
-                setMessages(messages.map((message) => ({
-                    message: SDK.Domain.Message.fromJson(message.dataJson),
-                    read: message.read ?? false
-                })));
-            })
-        }
-    }, [db, dbState]);
-    const readMessage = useCallback(async (message: SDK.Domain.Message) => {
-        if (hasDB(db) && dbState === "loaded") {
-            const [found] = await db.collections.messages.find({ $or: [{ read: true }, { id: message.id }] });
-            if (found) {
-                await db.collections.messages.update({
-                    ...found,
-                    read: true
-                } as any)
-            }
-        }
-    }, [db, dbState]);
-    const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
-        if (!hasDB(db) || dbState !== "loaded") {
-            throw new Error("Database not connected");
-        }
-        const query = { $or: [{ uuid: message.uuid }, { id: message.id }] }
-        const [found] = await db.collections.messages.find(query);
-        if (found) {
-            await db.collections.messages.delete(found.uuid);
-        }
-    }, [db, dbState]);
-    const onMessage = useCallback(async (messages: SDK.Domain.Message[]) => {
+
+    const unreadMessages = messages.filter(({read}) => !read)
+        .map(({message}) => message);
+
+    const receivedMessages = messages
+        .filter(({message}) => message.direction === SDK.Domain.MessageDirection.RECEIVED)
+        .map(({message}) => message);
+
+    const sentMessages = messages
+        .filter(({message}) => message.direction === SDK.Domain.MessageDirection.SENT)
+        .map(({message}) => message);
+
+    const mergeMessages = useCallback((newMessages: SDK.Domain.Message[]) => {
         setMessages((prev) => {
-            const newMessages = messages.filter(
-                (message) => !prev.some((m) => m.message.id === message.id)
-            );
-            return [...prev, ...newMessages.map((message) => ({ message, read: false }))];
+            const updatedMessages = [...prev];
+            newMessages.forEach((newMessage) => {
+                const existingIndex = updatedMessages.findIndex((m) => m.message.uuid === newMessage.uuid);
+                if (existingIndex !== -1) {
+                    updatedMessages[existingIndex] = {
+                        ...updatedMessages[existingIndex],
+                        message: newMessage
+                    };
+                } else {
+                    updatedMessages.push({ 
+                        message: newMessage, 
+                        read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? false : true 
+                    });
+                }
+            });
+            return updatedMessages;
         });
-    }, [setMessages]);
+    }, []);
+
+    const getMessages = useCallback(async () => {
+       if (dbState === "loaded") {
+        const newMessages = await getMessagesDB();
+        const newMessageArray = newMessages.map(({message}) => message);
+        mergeMessages(newMessageArray);
+        return newMessages;
+       }
+       return [];
+    }, [getMessagesDB, dbState, mergeMessages]);
+
+    useEffect(() => {
+        getMessages();
+    }, [getMessages]);
+   
+    const onMessage = useCallback(async (messages: SDK.Domain.Message[]) => {
+        mergeMessages(messages);
+    }, [mergeMessages]);
+
     useEffect(() => {
         if (agent) {
             agent.addListener(SDK.ListenerKey.MESSAGE, onMessage);
@@ -58,8 +73,33 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 agent.removeListener(SDK.ListenerKey.MESSAGE, onMessage);
             };
         }
-    }, [agent, onMessage])
-    return <MessagesContext.Provider value={{ messages, readMessage, deleteMessage }}>
+    }, [agent, onMessage]);
+
+    const readMessage = useCallback(async (message: SDK.Domain.Message) => {
+        await readMessageDB(message);
+        setMessages((prev) => 
+            prev.map((m) => 
+                m.message.id === message.id 
+                    ? { ...m, read: true }
+                    : m
+            )
+        );
+    }, [readMessageDB]);
+
+    const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
+        await deleteMessageDB(message);
+        setMessages((prev) => prev.filter((m) => m.message.id !== message.id));
+    }, [deleteMessageDB]);
+
+    return <MessagesContext.Provider value={{ 
+        messages, 
+        unreadMessages,
+        receivedMessages,
+        sentMessages,
+        readMessage, 
+        deleteMessage, 
+        getMessages 
+    }}>
         {children}
     </MessagesContext.Provider>
 }
