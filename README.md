@@ -73,28 +73,33 @@ A comprehensive set of React components and hooks for rapid Identus integration.
 npm install @trust0/identus-store
 
 # For React integration
-npm install @trust0/identus-react  # Coming soon
+npm install @trust0/identus-react 
 ```
 
 ### Basic Usage
 
 ```typescript
-import { IdentusStore } from '@trust0/identus-store';
+import { StorageTypes } from '@trust0/ridb';
+import { createStore } from '@trust0/identus-store';
 import { Agent } from '@hyperledger/identus-sdk';
 
+const db = new RIDB({schemas})
 // Initialize with RIDB storage
-const store = new IdentusStore({
-  storage: 'ridb',
-  encryption: true,
-  dbName: 'my-identus-app'
+const store = createStore({
+  db,
+  storageType: StorageTypes.IndexDB
 });
 
 // Create Identus agent with secure storage
-const agent = new Agent({
+const agent = SDK.Agent.initialize({
   pluto: store.pluto,
   // ... other configurations
 });
 ```
+
+### For react usage
+
+Please go [here](./packages/identus-react/docs/README.md)
 
 ## 🤝 Contributing
 
@@ -110,8 +115,7 @@ We welcome contributions from the community! Here's how to get started:
 
 ```bash
 # Clone the repository
-git clone https://github.com/trust0-project/identus.git
-cd identus
+git clone https://github.com/trust0-project/identus.git && cd identus
 
 # Install dependencies
 npm install
@@ -126,8 +130,6 @@ npm run dev
 ## 📚 Resources
 
 - 🌐 **Website**: [trust0.id](https://trust0.id)
-- 📖 **Documentation**: [docs.trust0.id](https://docs.trust0.id)
-- 💬 **Discord Community**: [Join us](https://discord.gg/trust0)
 - 🐛 **Issues**: [GitHub Issues](https://github.com/trust0-project/identus/issues)
 
 ## 📄 License
@@ -146,6 +148,6 @@ This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENS
 
 **Built with ❤️ by the Trust0 Team**
 
-[Website](https://trust0.id) • [Twitter](https://twitter.com/trust0_id) • [LinkedIn](https://linkedin.com/company/trust0)
+[Website](https://trust0.id) • [Twitter](https://twitter.com/elribonazo)
 
 </div>
