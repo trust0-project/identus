@@ -31,6 +31,8 @@
     "@nx/react-native": "20.8.1",
     "@nx/vite": "20.8.1",
     "@nx/web": "20.8.1",
+    "@swc-node/register": "~1.9.1",
+    "@swc/core": "~1.5.7",
     "@trust0/ridb-build": "^0.0.13",
     "@typescript-eslint/eslint-plugin": "^8.31.1",
     "@typescript-eslint/parser": "^8.31.1",
