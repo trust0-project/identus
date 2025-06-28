@@ -1,18 +1,19 @@
 {
   "name": "@trust0/identus-store",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "packageManager": "yarn@4.9.1",
   "publishConfig": {
     "access": "public"
   },
-  "main": "./build/cjs/index.js",
-  "module": "./build/esm/index.js",
+  "main": "./build/index.js",
+  "module": "./build/index.mjs",
   "types": "./build/index.d.ts",
   "exports": {
     ".": {
-      "import": "./build/esm/index.js",
-      "require": "./build/cjs/index.js"
+      "types": "./build/index.d.ts",
+      "import": "./build/index.mjs",
+      "require": "./build/index.js"
     }
   },
   "files": [

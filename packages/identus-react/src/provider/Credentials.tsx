@@ -43,8 +43,10 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
         const newMessages = filterMessages(messagesListener);
         if (agent && newMessages.size > issueCredentialMessages.size) {
             if (issueCredentialMessages.size > 0) {
-                const credentialMessages = messagesListener.map(({message}) => message);
-                Promise.all(credentialMessages.map(agent.handle))
+                const credentialMessages = messagesListener
+                .filter(({message}) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
+                .map(({message}) => message);
+                Promise.all(credentialMessages.map((message) => agent.handle(message)))
             }
             setIssueCredentialMessages(newMessages);
         }
