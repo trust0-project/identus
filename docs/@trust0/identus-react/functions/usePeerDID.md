@@ -8,7 +8,7 @@
 
 > **usePeerDID**(): `object`
 
-Defined in: [hooks/index.ts:222](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/hooks/index.ts#L222)
+Defined in: [hooks/index.ts:222](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L222)
 
 Hook for accessing Peer DID context and operations.
 
@@ -34,7 +34,7 @@ Function to create a new Peer DID
 
 ### peerDID
 
-> **peerDID**: `null` \| `DID`
+> **peerDID**: `null` \| [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 Current Peer DID instance, null if not yet created
 

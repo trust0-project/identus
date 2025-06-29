@@ -6,9 +6,9 @@
 
 # Function: createStore()
 
-> **createStore**\<`T`\>(`options`): `Store`
+> **createStore**\<`T`\>(`options`): [`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [index.ts:13](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-store/src/index.ts#L13)
+Defined in: [index.ts:13](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-store/src/index.ts#L13)
 
 ## Type Parameters
 
@@ -22,7 +22,7 @@ Defined in: [index.ts:13](https://github.com/trust0-project/identus/blob/6482b5d
 
 #### db
 
-`RIDB`\<`T`\>
+[`RIDB`](https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb/classes/RIDB.md)\<`T`\>
 
 #### password?
 
@@ -30,8 +30,8 @@ Defined in: [index.ts:13](https://github.com/trust0-project/identus/blob/6482b5d
 
 #### storageType?
 
-*typeof* `BaseStorage` \| `StorageType`
+*typeof* [`BaseStorage`](https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/classes/BaseStorage.md) \| [`StorageType`](https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb/enumerations/StorageType.md)
 
 ## Returns
 
-`Store`
+[`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)

@@ -13,17 +13,17 @@
         "GitHub": "https://github.com/trust0/RIDB.git"
     },
     "externalSymbolLinkMappings": {
+        "@trust0/ridb": {
+            "RIDB": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb/classes/RIDB.md",
+            "StorageType": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb/enumerations/StorageType.md"
+        },
         "@trust0/ridb-core": {
             "Collection": "https://github.com/trust0-project/RIDB/docs/@trust0/ridb-core/classes/Collection.md",
-            "SchemaTypeRecord": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/type-aliases/SchemaTypeRecord.md"
+            "SchemaTypeRecord": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/type-aliases/SchemaTypeRecord.md",
+            "BaseStorage": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/classes/BaseStorage.md"
         },
         "@hyperledger/identus-sdk": {
-            "SDK.Apollo": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/classes/Apollo.md",
-            "Agent": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/classes/Agent.md",
-            "Domain": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.md",
-            "Domain.DID": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/interfaces/Domain.DID.md",
-            "Domain.PrivateKey": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/interfaces/Domain.PrivateKey.md",
-            "Domain.Startable.State": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/enums/Domain.Startable.State.md"
+            "*":"https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md"
         },
         "react": {
             "React.Context": "https://www.typescriptlang.org/docs/handbook/utility-types.html#partialtype"

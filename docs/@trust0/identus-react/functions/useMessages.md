@@ -8,7 +8,7 @@
 
 > **useMessages**(): `object`
 
-Defined in: [hooks/index.ts:486](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/hooks/index.ts#L486)
+Defined in: [hooks/index.ts:486](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L486)
 
 Hook for accessing DIDComm message context and operations.
 
@@ -36,7 +36,7 @@ Function to delete a message
 
 ##### message
 
-`Message`
+[`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 #### Returns
 
@@ -68,7 +68,7 @@ Function to mark a message as read
 
 ##### message
 
-`Message`
+[`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 #### Returns
 
@@ -76,19 +76,19 @@ Function to mark a message as read
 
 ### receivedMessages
 
-> **receivedMessages**: `Message`[]
+> **receivedMessages**: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]
 
 Array of received messages only
 
 ### sentMessages
 
-> **sentMessages**: `Message`[]
+> **sentMessages**: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]
 
 Array of sent messages only
 
 ### unreadMessages
 
-> **unreadMessages**: `Message`[]
+> **unreadMessages**: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]
 
 Array of unread messages only
 

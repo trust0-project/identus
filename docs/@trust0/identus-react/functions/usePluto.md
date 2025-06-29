@@ -6,9 +6,9 @@
 
 # Function: usePluto()
 
-> **usePluto**(`storageType`): `Pluto`
+> **usePluto**(`storageType`): [`Pluto`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [hooks/index.ts:165](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/hooks/index.ts#L165)
+Defined in: [hooks/index.ts:165](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L165)
 
 Creates and returns a memoized Pluto instance for persistent storage operations.
 
@@ -21,10 +21,10 @@ DIDs, keys, and other identity-related data. It supports multiple storage backen
 
 Storage backend to use (defaults to IndexedDB)
 
-*typeof* `BaseStorage` | `StorageType`
+*typeof* [`BaseStorage`](https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/classes/BaseStorage.md) | [`StorageType`](https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb/enumerations/StorageType.md)
 
 ## Returns
 
-`Pluto`
+[`Pluto`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 A memoized Pluto instance configured with the specified storage

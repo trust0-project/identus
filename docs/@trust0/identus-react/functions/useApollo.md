@@ -6,9 +6,9 @@
 
 # Function: useApollo()
 
-> **useApollo**(): `Apollo`
+> **useApollo**(): [`Apollo`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [hooks/index.ts:49](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/hooks/index.ts#L49)
+Defined in: [hooks/index.ts:49](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L49)
 
 Creates and returns a memoized instance of Apollo DID resolver.
 
@@ -17,7 +17,7 @@ Decentralized Identifiers (DIDs) to their corresponding DID Documents.
 
 ## Returns
 
-`Apollo`
+[`Apollo`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 A memoized Apollo instance for DID resolution
 

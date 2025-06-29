@@ -6,9 +6,9 @@
 
 # Type Alias: ExtraResolver()
 
-> **ExtraResolver** = (`apollo`) => `SDK.Domain.DIDResolver`
+> **ExtraResolver** = (`apollo`) => [`SDK.Domain.DIDResolver`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [hooks/index.ts:59](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/hooks/index.ts#L59)
+Defined in: [hooks/index.ts:59](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L59)
 
 Type definition for additional DID resolvers that can be passed to Castor.
 
@@ -16,8 +16,8 @@ Type definition for additional DID resolvers that can be passed to Castor.
 
 ### apollo
 
-`SDK.Domain.Apollo`
+[`SDK.Domain.Apollo`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
 ## Returns
 
-`SDK.Domain.DIDResolver`
+[`SDK.Domain.DIDResolver`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
