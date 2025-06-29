@@ -45,7 +45,6 @@
     "theme": "markdown",
     "excludeExternals": false,
     "includeVersion": false,
-    "readme":"none",
     "mergeReadme": true,
     "mergeModulesRenameDefaults": true,
     "mergeModulesMergeMode": "module"

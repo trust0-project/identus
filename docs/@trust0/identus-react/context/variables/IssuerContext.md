@@ -8,7 +8,7 @@
 
 > `const` **IssuerContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [context/index.ts:350](https://github.com/trust0-project/identus/blob/94eb37ac3e348bfb235eefd303acf4a8e113137e/packages/identus-react/src/context/index.ts#L350)
+Defined in: [context/index.ts:350](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/context/index.ts#L350)
 
 React context for credential issuance operations.
 

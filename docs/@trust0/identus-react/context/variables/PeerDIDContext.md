@@ -8,7 +8,7 @@
 
 > `const` **PeerDIDContext**: `Context`\<`undefined` \| \{ `create`: () => `Promise`\<`void`\>; `peerDID`: `null` \| `DID`; \}\>
 
-Defined in: [context/index.ts:93](https://github.com/trust0-project/identus/blob/94eb37ac3e348bfb235eefd303acf4a8e113137e/packages/identus-react/src/context/index.ts#L93)
+Defined in: [context/index.ts:93](https://github.com/trust0-project/identus/blob/6482b5d54913fe08540bba553b4274f2423b6fd4/packages/identus-react/src/context/index.ts#L93)
 
 React context for managing Peer DID operations and state.
 

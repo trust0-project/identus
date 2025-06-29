@@ -6457,6 +6457,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"binary-split@npm:^1.0.5":
+  version: 1.0.5
+  resolution: "binary-split@npm:1.0.5"
+  dependencies:
+    through2: "npm:^2.0.3"
+  checksum: 10c0/8529b554f7c3771bda628f1627a52f44f831f3902301983c8901e3f45317416632a9893e766b82b1e53817524c88dcc4713760792e093191850f1c7e0043daf1
+  languageName: node
+  linkType: hard
+
 "bl@npm:^4.0.3":
   version: 4.1.0
   resolution: "bl@npm:4.1.0"
@@ -7292,6 +7301,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"dbly-linked-list@npm:0.3.4":
+  version: 0.3.4
+  resolution: "dbly-linked-list@npm:0.3.4"
+  dependencies:
+    lodash.isequal: "npm:^4.5.0"
+  checksum: 10c0/092f85b2ca3d9357ec98fbb1d9744419f4f62fb31c6d3952f5bdc986daf236f94a72c8dd71245dda005cf6b2429b6f882327074a95be34e7f0871fe588280c19
+  languageName: node
+  linkType: hard
+
 "debug@npm:2.6.9, debug@npm:^2.2.0":
   version: 2.6.9
   resolution: "debug@npm:2.6.9"
@@ -7326,6 +7344,13 @@ __metadata:
   version: 10.5.0
   resolution: "decimal.js@npm:10.5.0"
   checksum: 10c0/785c35279df32762143914668df35948920b6c1c259b933e0519a69b7003fc0a5ed2a766b1e1dda02574450c566b21738a45f15e274b47c2ac02072c0d1f3ac3
+  languageName: node
+  linkType: hard
+
+"decorator-cache-getter@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "decorator-cache-getter@npm:1.0.0"
+  checksum: 10c0/bfffb9ef9a84170c14ce504eff3890b9d4605c057b37f21169c788cba85ef7af34eef4b986b1272da6272419192fd551e9154ca78b2182c70c33d2106b700e6b
   languageName: node
   linkType: hard
 
@@ -9819,6 +9844,7 @@ __metadata:
     typedoc-plugin-merge-modules: "npm:^7.0.0"
     typedoc-plugin-rename-defaults: "npm:^0.7.3"
     typedoc-theme-hierarchy: "npm:^6.0.0"
+    typedoc-umlclass: "npm:^0.10.2"
     typescript: "npm:^5.8.3"
   languageName: unknown
   linkType: soft
@@ -11377,6 +11403,13 @@ __metadata:
   version: 4.4.2
   resolution: "lodash.get@npm:4.4.2"
   checksum: 10c0/48f40d471a1654397ed41685495acb31498d5ed696185ac8973daef424a749ca0c7871bf7b665d5c14f5cc479394479e0307e781f61d5573831769593411be6e
+  languageName: node
+  linkType: hard
+
+"lodash.isequal@npm:^4.5.0":
+  version: 4.5.0
+  resolution: "lodash.isequal@npm:4.5.0"
+  checksum: 10c0/dfdb2356db19631a4b445d5f37868a095e2402292d59539a987f134a8778c62a2810c2452d11ae9e6dcac71fc9de40a6fedcb20e2952a15b431ad8b29e50e28f
   languageName: node
   linkType: hard
 
@@ -12955,6 +12988,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"plantuml-encoder@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "plantuml-encoder@npm:1.4.0"
+  checksum: 10c0/f1301b02524ba1bcd70048437dd00127c7543f6e149a426c1bab0b729bf8df798121210c2655a4fd92cfcd82684f04788d696074183164ccccaef5e5380b024b
+  languageName: node
+  linkType: hard
+
+"plantuml-pipe@npm:^1.6.0":
+  version: 1.6.0
+  resolution: "plantuml-pipe@npm:1.6.0"
+  dependencies:
+    binary-split: "npm:^1.0.5"
+    split2: "npm:^4.2.0"
+  checksum: 10c0/8d60ae0b60cdb93a866154d46612977eef9406311294234f911c58181075988c5035010b1639bdeabbe28015eeeac8bb532bd9016418fb888e82e1829bd5de52
+  languageName: node
+  linkType: hard
+
 "portfinder@npm:^1.0.28":
   version: 1.0.37
   resolution: "portfinder@npm:1.0.37"
@@ -13063,6 +13113,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"progress@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "progress@npm:2.0.3"
+  checksum: 10c0/1697e07cb1068055dbe9fe858d242368ff5d2073639e652b75a7eb1f2a1a8d4afd404d719de23c7b48481a6aa0040686310e2dac2f53d776daa2176d3f96369c
+  languageName: node
+  linkType: hard
+
 "promise-retry@npm:^2.0.1":
   version: 2.0.1
   resolution: "promise-retry@npm:2.0.1"
@@ -13153,6 +13210,15 @@ __metadata:
   version: 2.2.0
   resolution: "querystringify@npm:2.2.0"
   checksum: 10c0/3258bc3dbdf322ff2663619afe5947c7926a6ef5fb78ad7d384602974c467fadfc8272af44f5eb8cddd0d011aae8fabf3a929a8eee4b86edcc0a21e6bd10f9aa
+  languageName: node
+  linkType: hard
+
+"queue-fifo@npm:^0.2.6":
+  version: 0.2.6
+  resolution: "queue-fifo@npm:0.2.6"
+  dependencies:
+    dbly-linked-list: "npm:0.3.4"
+  checksum: 10c0/f6cd84ddf9bbbf16cefb38ab95639117ed0379b2c7f0d0316702d17423dd80421c740c027eb73e7a80d84787f7cb0344719c3fbce970bcafcf543867c6a8dc6f
   languageName: node
   linkType: hard
 
@@ -14129,6 +14195,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"split2@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "split2@npm:4.2.0"
+  checksum: 10c0/b292beb8ce9215f8c642bb68be6249c5a4c7f332fc8ecadae7be5cbdf1ea95addc95f0459ef2e7ad9d45fd1064698a097e4eb211c83e772b49bc0ee423e91534
+  languageName: node
+  linkType: hard
+
 "sprintf-js@npm:^1.1.3":
   version: 1.1.3
   resolution: "sprintf-js@npm:1.1.3"
@@ -14610,7 +14683,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"through2@npm:^2.0.1":
+"through2@npm:^2.0.1, through2@npm:^2.0.3":
   version: 2.0.5
   resolution: "through2@npm:2.0.5"
   dependencies:
@@ -15050,6 +15123,21 @@ __metadata:
   peerDependencies:
     typedoc: ^0.28.0
   checksum: 10c0/7c59b19cc01b77667295d3aeea3bd5474b2bf24934c3efcf7ddb8f19f58180fb71480213e37743adcec48dd45e970992185a185a00df6ef921ba36fe3593701a
+  languageName: node
+  linkType: hard
+
+"typedoc-umlclass@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "typedoc-umlclass@npm:0.10.2"
+  dependencies:
+    decorator-cache-getter: "npm:^1.0.0"
+    plantuml-encoder: "npm:^1.4.0"
+    plantuml-pipe: "npm:^1.6.0"
+    progress: "npm:^2.0.3"
+    queue-fifo: "npm:^0.2.6"
+  peerDependencies:
+    typedoc: 0.24.x || 0.25.x || ^0.26.5 || 0.27.x || 0.28.x
+  checksum: 10c0/b3b4ba7ff1f52e7b1a17957713795ff0c3f2c86781a27ea50e3e59fe5922e368e41f7dc304d151b57f62acc846d6c6d05312dd7608e3e7478cb0ebf3e95cafe6
   languageName: node
   linkType: hard
 

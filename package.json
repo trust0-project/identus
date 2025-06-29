@@ -55,6 +55,7 @@
     "typedoc-plugin-merge-modules": "^7.0.0",
     "typedoc-plugin-rename-defaults": "^0.7.3",
     "typedoc-theme-hierarchy": "^6.0.0",
+    "typedoc-umlclass": "^0.10.2",
     "typescript": "^5.8.3"
   },
   "dependencies": {
