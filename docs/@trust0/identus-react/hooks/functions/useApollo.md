@@ -1,4 +1,4 @@
-[**Documentation v0.0.0**](../../../../README.md)
+[**Documentation**](../../../../README.md)
 
 ***
 
@@ -8,7 +8,7 @@
 
 > **useApollo**(): `Apollo`
 
-Defined in: [hooks/index.ts:43](https://github.com/trust0-project/identus/blob/69d1b8333543f0031493d048daa58ec460d110f2/packages/identus-react/src/hooks/index.ts#L43)
+Defined in: [hooks/index.ts:43](https://github.com/trust0-project/identus/blob/3749e9a950934dc175049977b6cd44e590678417/packages/identus-react/src/hooks/index.ts#L43)
 
 Creates and returns a memoized instance of Apollo DID resolver.
 

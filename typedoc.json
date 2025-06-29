@@ -46,7 +46,7 @@
     "categorizeByGroup": false,
     "theme": "markdown",
     "excludeExternals": false,
-    "includeVersion": true,
+    "includeVersion": false,
     "mergeModulesRenameDefaults": true,
     "mergeModulesMergeMode": "module"
 }
