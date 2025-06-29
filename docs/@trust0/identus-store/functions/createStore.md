@@ -8,7 +8,7 @@
 
 > **createStore**\<`T`\>(`options`): `Store`
 
-Defined in: [index.ts:20](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-store/src/index.ts#L20)
+Defined in: [index.ts:13](https://github.com/trust0-project/identus/blob/28f0ae0fec4ff168ccf58335112c5afe61719f88/packages/identus-store/src/index.ts#L13)
 
 ## Type Parameters
 

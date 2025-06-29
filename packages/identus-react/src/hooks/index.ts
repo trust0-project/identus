@@ -1,3 +1,9 @@
+/**
+ * @packageDocumentation
+ * 
+ * @module
+ * @mergeModuleWith <project>
+ */ 
 import SDK from "@hyperledger/identus-sdk";
 import { useContext, useMemo } from "react";
 import { AgentContext, CredentialsContext, MessagesContext, IssuerContext, HolderContext, VerifierContext, ConnectionsContext, PrismDIDContext, PeerDIDContext, DatabaseContext } from "../context";

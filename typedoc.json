@@ -2,11 +2,11 @@
     "$schema": "https://typedoc-plugin-markdown.org/schema.json",
     "entryPointStrategy": "packages",
     "entryPoints": ["packages/*"],
-    "basePath":   "./src",
     "out": "docs",
     "plugin": [
         "typedoc-plugin-markdown",
-        "typedoc-plugin-rename-defaults"
+        "typedoc-plugin-rename-defaults",
+        "typedoc-plugin-merge-modules"
     ],
     "navigationLinks": {
         "Docs": "https://github.com/trust0/RIDB.git",
@@ -44,5 +44,7 @@
     "theme": "markdown",
     "excludeExternals": false,
     "includeVersion": false,
-    "readme": "none"
+    "readme": "none",
+    "mergeModulesRenameDefaults": true,
+    "mergeModulesMergeMode": "module"
 }

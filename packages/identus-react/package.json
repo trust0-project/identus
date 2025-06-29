@@ -5,34 +5,48 @@
   "main": "build/index.js",
   "module": "build/index.mjs",
   "types": "build/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": "build/index.d.ts"
+    }
+  },
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "./build",
+    "./src"
+  ],
   "exports": {
     ".": {
       "types": "./build/index.d.ts",
       "import": "./build/index.mjs",
-      "require": "./build/index.js"
+      "require": "./build/index.js",
+      "default": "./build/index.js"
     },
     "./context": {
       "types": "./build/context/index.d.ts",
       "import": "./build/context/index.mjs",
-      "require": "./build/context/index.js"
+      "require": "./build/context/index.js",
+      "default": "./build/context/index.js"
     },
     "./hooks": {
       "types": "./build/hooks/index.d.ts",
       "import": "./build/hooks/index.mjs",
-      "require": "./build/hooks/index.js"
+      "require": "./build/hooks/index.js",
+      "default": "./build/hooks/index.js"
     },
     "./resolver": {
       "types": "./build/resolver/index.d.ts",
       "import": "./build/resolver/index.mjs",
-      "require": "./build/resolver/index.js"
+      "require": "./build/resolver/index.js",
+      "default": "./build/resolver/index.js"
     },
     "./db": {
       "types": "./build/db/index.d.ts",
       "import": "./build/db/index.mjs",
-      "require": "./build/db/index.js"
+      "require": "./build/db/index.js",
+      "default": "./build/db/index.js"
     }
   },
   "scripts": {

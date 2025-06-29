@@ -1,14 +1,14 @@
-[**Documentation**](../../../../README.md)
+[**Documentation**](../../../README.md)
 
 ***
 
-[Documentation](../../../../README.md) / [@trust0/identus-react](../../README.md) / [hooks](../README.md) / useAgent
+[Documentation](../../../README.md) / [@trust0/identus-react](../README.md) / useAgent
 
 # Function: useAgent()
 
-> **useAgent**(): [`AgentContextType`](../../context/type-aliases/AgentContextType.md) & `object`
+> **useAgent**(): [`AgentContextType`](../context/type-aliases/AgentContextType.md) & `object`
 
-Defined in: [hooks/index.ts:288](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-react/src/hooks/index.ts#L288)
+Defined in: [hooks/index.ts:294](https://github.com/trust0-project/identus/blob/28f0ae0fec4ff168ccf58335112c5afe61719f88/packages/identus-react/src/hooks/index.ts#L294)
 
 Hook for accessing the main Identus Agent context and operations.
 

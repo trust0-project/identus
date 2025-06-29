@@ -1,14 +1,14 @@
-[**Documentation**](../../../../README.md)
+[**Documentation**](../../../README.md)
 
 ***
 
-[Documentation](../../../../README.md) / [@trust0/identus-react](../../README.md) / [hooks](../README.md) / usePeerDID
+[Documentation](../../../README.md) / [@trust0/identus-react](../README.md) / usePeerDID
 
 # Function: usePeerDID()
 
 > **usePeerDID**(): `object`
 
-Defined in: [hooks/index.ts:216](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-react/src/hooks/index.ts#L216)
+Defined in: [hooks/index.ts:222](https://github.com/trust0-project/identus/blob/28f0ae0fec4ff168ccf58335112c5afe61719f88/packages/identus-react/src/hooks/index.ts#L222)
 
 Hook for accessing Peer DID context and operations.
 

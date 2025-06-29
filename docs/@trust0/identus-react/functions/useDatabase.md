@@ -1,14 +1,14 @@
-[**Documentation**](../../../../README.md)
+[**Documentation**](../../../README.md)
 
 ***
 
-[Documentation](../../../../README.md) / [@trust0/identus-react](../../README.md) / [hooks](../README.md) / useDatabase
+[Documentation](../../../README.md) / [@trust0/identus-react](../README.md) / useDatabase
 
 # Function: useDatabase()
 
 > **useDatabase**(): `object`
 
-Defined in: [hooks/index.ts:669](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-react/src/hooks/index.ts#L669)
+Defined in: [hooks/index.ts:675](https://github.com/trust0-project/identus/blob/28f0ae0fec4ff168ccf58335112c5afe61719f88/packages/identus-react/src/hooks/index.ts#L675)
 
 Hook for accessing database context and operations.
 
@@ -132,13 +132,13 @@ Load available database features
 
 ### getGroupedDIDs()
 
-> **getGroupedDIDs**: () => `Promise`\<[`GroupedDIDs`](../../context/type-aliases/GroupedDIDs.md)\>
+> **getGroupedDIDs**: () => `Promise`\<[`GroupedDIDs`](../context/type-aliases/GroupedDIDs.md)\>
 
 Get DIDs grouped by status/type
 
 #### Returns
 
-`Promise`\<[`GroupedDIDs`](../../context/type-aliases/GroupedDIDs.md)\>
+`Promise`\<[`GroupedDIDs`](../context/type-aliases/GroupedDIDs.md)\>
 
 ### getIssuanceFlow()
 
@@ -336,7 +336,7 @@ Function to start/initialize the database
 
 ### state
 
-> **state**: [`DatabaseState`](../../context/type-aliases/DatabaseState.md)
+> **state**: [`DatabaseState`](../context/type-aliases/DatabaseState.md)
 
 Current database connection state
 
