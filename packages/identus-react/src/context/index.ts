@@ -41,8 +41,6 @@ import { schemas } from "../db";
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const PrismDIDContext = createContext<{
     /** Current Prism DID instance, null if not yet created */
@@ -91,8 +89,6 @@ export const PrismDIDContext = createContext<{
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const PeerDIDContext = createContext<{
     /** Current Peer DID instance, null if not yet created */
@@ -104,14 +100,12 @@ export const PeerDIDContext = createContext<{
 /**
  * Enumeration of possible database connection states.
  * 
- * @public
  */
 export type DatabaseState = 'disconnected' | 'loading' | 'loaded' | 'error';
 
 /**
  * Type definition for DID with extended metadata including alias and keys.
  * 
- * @public
  */
 export type DIDAlias = {
     /** The DID instance */
@@ -127,23 +121,19 @@ export type DIDAlias = {
 /**
  * Type definition for DIDs grouped by their status or type.
  * 
- * @public
  */
 export type GroupedDIDs = Record<string, DIDAlias[]>;
 
-/**
- * Type definition for agent context functionality.
- * 
- * @private
- */
+
 export type AgentContextType = {
-    /** Current Agent instance, null if not initialized */
     agent: SDK.Agent | null;
     /** Function to start the agent */
     start: () => Promise<void>;
     /** Function to stop the agent */
     stop: () => Promise<void>;
-    /** Current state of the agent */
+    /** Current state of the agent
+     * [SDK.Domain.Startable.State](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.Protocols.Startable.md)
+     */
     state: SDK.Domain.Startable.State;
 }
 
@@ -193,8 +183,6 @@ export type AgentContextType = {
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const DatabaseContext = createContext<{
     /** RIDB database instance */
@@ -305,8 +293,6 @@ export const DatabaseContext = createContext<{
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const AgentContext = createContext<(AgentContextType & { 
     /** Function to set a new agent instance */
@@ -360,8 +346,6 @@ export const AgentContext = createContext<(AgentContextType & {
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const IssuerContext = createContext<AgentContextType & {
     /**
@@ -440,8 +424,6 @@ export const IssuerContext = createContext<AgentContextType & {
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const VerifierContext = createContext<AgentContextType & {
     /**
@@ -512,8 +494,6 @@ export const VerifierContext = createContext<AgentContextType & {
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const HolderContext = createContext<AgentContextType & {
     /**
@@ -603,8 +583,6 @@ export const HolderContext = createContext<AgentContextType & {
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const MessagesContext = createContext<{
     /** Array of all messages with their read status */
@@ -673,8 +651,6 @@ export const MessagesContext = createContext<{
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const CredentialsContext = createContext<{
     /** Array of stored credentials */
@@ -731,8 +707,6 @@ export const CredentialsContext = createContext<{
  * }
  * ```
  * 
- * @public
- * @since 0.0.1
  */
 export const ConnectionsContext = createContext<{
     /** Array of established DID connections */

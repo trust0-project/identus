@@ -1,2 +1,3 @@
 # identus-react
-React components for Hyperledger Identus, easily build your Identity applications on Cardano
+
+Check out out docs [here](../../docs/@trust0/identus-react)

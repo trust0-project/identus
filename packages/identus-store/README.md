@@ -50,7 +50,7 @@ Here's the main compliant SDK.Pluto.Store interface implementation
 
 ```typescript
 import { BaseStorage, QueryType, SchemaType, StorageType } from '@trust0/ridb';
-import SDK from '@hyperledger/identus-edge-agent-sdk';
+import SDK from '@hyperledger/identus-sdk';
 export declare class RIDBStore implements SDK.Pluto.Store {
     private options;
     private _db;
@@ -167,3 +167,5 @@ const store = new RIDBStore({
     storageType: MyOwnStorage
 })
 ```
+
+Check out out docs [here](../../docs/@trust0/identus-store)
