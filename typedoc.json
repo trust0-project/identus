@@ -3,14 +3,10 @@
     "entryPointStrategy": "packages",
     "entryPoints": ["packages/*"],
     "basePath":   "./src",
-    "readme": "none",
     "out": "docs",
     "plugin": [
         "typedoc-plugin-markdown",
-        "typedoc-plugin-rename-defaults",
-        "typedoc-plugin-merge-modules",
-        "typedoc-plugin-dt-links",
-        "typedoc-plugin-inline-sources"
+        "typedoc-plugin-rename-defaults"
     ],
     "navigationLinks": {
         "Docs": "https://github.com/trust0/RIDB.git",
@@ -37,6 +33,7 @@
         "invalidLink": false,
         "notDocumented": false
     },
+
     "hideGenerator": true,
     "excludePrivate": false,
     "excludeReferences": true,
@@ -47,6 +44,5 @@
     "theme": "markdown",
     "excludeExternals": false,
     "includeVersion": false,
-    "mergeModulesRenameDefaults": true,
-    "mergeModulesMergeMode": "module"
+    "readme": "none"
 }

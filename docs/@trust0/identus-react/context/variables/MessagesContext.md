@@ -8,7 +8,7 @@
 
 > `const` **MessagesContext**: `Context`\<`undefined` \| \{ `deleteMessage`: (`message`) => `Promise`\<`void`\>; `getMessages`: () => `Promise`\<`object`[]\>; `messages`: `object`[]; `readMessage`: (`message`) => `Promise`\<`void`\>; `receivedMessages`: `Message`[]; `sentMessages`: `Message`[]; `unreadMessages`: `Message`[]; \}\>
 
-Defined in: [context/index.ts:587](https://github.com/trust0-project/identus/blob/3749e9a950934dc175049977b6cd44e590678417/packages/identus-react/src/context/index.ts#L587)
+Defined in: [context/index.ts:587](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-react/src/context/index.ts#L587)
 
 React context for DIDComm message management.
 

@@ -56,7 +56,7 @@ Production-ready storage wrapper built on RIDB, specifically designed for Hyperl
 - 🛡️ **Enterprise Security**: Advanced encryption and access controls
 - 📊 **Performance Monitoring**: Built-in metrics and debugging tools
 
-[📖 Documentation](./docs/@trust0/identus-store/README.md)
+[📖 Documentation](docs/@trust0/identus-store/README.md)
 
 ### ⚛️ React Components
 A comprehensive set of React components and hooks for rapid Identus integration.
@@ -66,7 +66,7 @@ A comprehensive set of React components and hooks for rapid Identus integration.
 - 🪝 **Custom Hooks**: State management, storage, and SDK interactions
 - 📱 **Responsive Design**: Mobile-first approach with modern styling
 
-[📖 Documentation](./docs/@trust0/identus-react/README.md)
+[📖 Documentation](docs/@trust0/identus-react/README.md)
 
 ## 🚀 Quick Start
 
@@ -101,7 +101,7 @@ const agent = SDK.Agent.initialize({
 
 ### For react usage
 
-Please go [here](./docs/@trust0/identus-react/README.md)
+Please go [here](docs/@trust0/identus-react/README.md)
 
 ## 🤝 Contributing
 

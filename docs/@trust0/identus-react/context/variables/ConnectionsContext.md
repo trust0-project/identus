@@ -8,7 +8,7 @@
 
 > `const` **ConnectionsContext**: `Context`\<`undefined` \| \{ `connections`: `DIDPair`[]; `deleteConnection`: (`connection`) => `Promise`\<`void`\>; \}\>
 
-Defined in: [context/index.ts:711](https://github.com/trust0-project/identus/blob/3749e9a950934dc175049977b6cd44e590678417/packages/identus-react/src/context/index.ts#L711)
+Defined in: [context/index.ts:711](https://github.com/trust0-project/identus/blob/b4ede682a782af9435b8aeff2f2edb2fc71c7d92/packages/identus-react/src/context/index.ts#L711)
 
 React context for DID connection management.
 

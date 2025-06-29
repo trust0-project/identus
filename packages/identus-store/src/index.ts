@@ -1,3 +1,4 @@
+
 import {
     RIDB,
     StorageType
@@ -8,6 +9,13 @@ import {
     QueryType, 
     SchemaTypeRecord 
 } from '@trust0/ridb-core';
+
+/**
+ * @packageDocumentation
+ * 
+ * @module
+ * @mergeModuleWith <project>
+ */ 
 
 export const createStore = <T extends SchemaTypeRecord>(
   options: {
