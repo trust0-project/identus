@@ -8,7 +8,7 @@
 
 > **useCastor**(`resolvers`): `Castor`
 
-Defined in: [hooks/index.ts:93](https://github.com/trust0-project/identus/blob/0e8c6d00246cbdbd7d213e9d5c311624e464003f/packages/identus-react/src/hooks/index.ts#L93)
+Defined in: [hooks/index.ts:93](https://github.com/trust0-project/identus/blob/69d1b8333543f0031493d048daa58ec460d110f2/packages/identus-react/src/hooks/index.ts#L93)
 
 Creates and returns a memoized instance of Castor with optional additional resolvers.
 
