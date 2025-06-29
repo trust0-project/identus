@@ -8,7 +8,7 @@
 
 > `const` **PrismDIDContext**: `Context`\<`undefined` \| \{ `create`: (`alias`) => `Promise`\<`void`\>; `prismDID`: `null` \| `DID`; \}\>
 
-Defined in: [context/index.ts:45](https://github.com/trust0-project/identus/blob/28f0ae0fec4ff168ccf58335112c5afe61719f88/packages/identus-react/src/context/index.ts#L45)
+Defined in: [context/index.ts:45](https://github.com/trust0-project/identus/blob/94eb37ac3e348bfb235eefd303acf4a8e113137e/packages/identus-react/src/context/index.ts#L45)
 
 React context for managing Prism DID operations and state.
 

@@ -18,6 +18,7 @@
             "SchemaTypeRecord": "https://github.com/trust0-project/RIDB/blob/main/docs/%40trust0/ridb-core/type-aliases/SchemaTypeRecord.md"
         },
         "@hyperledger/identus-sdk": {
+            "SDK.Apollo": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/classes/Apollo.md",
             "Agent": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/classes/Agent.md",
             "Domain": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.md",
             "Domain.DID": "https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/interfaces/Domain.DID.md",
@@ -44,7 +45,8 @@
     "theme": "markdown",
     "excludeExternals": false,
     "includeVersion": false,
-    "readme": "none",
+    "readme":"none",
+    "mergeReadme": true,
     "mergeModulesRenameDefaults": true,
     "mergeModulesMergeMode": "module"
 }
