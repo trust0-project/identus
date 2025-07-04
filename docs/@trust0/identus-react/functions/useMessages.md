@@ -8,7 +8,7 @@
 
 > **useMessages**(): `object`
 
-Defined in: [hooks/index.ts:486](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L486)
+Defined in: packages/identus-react/src/hooks/useMessages.ts:81
 
 Hook for accessing DIDComm message context and operations.
 
@@ -17,14 +17,7 @@ and filtering messages by type. This hook must be used within a MessagesProvider
 
 ## Returns
 
-Messages context containing:
-  - `messages`: Array of all messages with their read status metadata
-  - `receivedMessages`: Filtered array containing only received messages
-  - `sentMessages`: Filtered array containing only sent messages
-  - `unreadMessages`: Filtered array containing only unread messages
-  - `readMessage`: Async function to mark a specific message as read
-  - `deleteMessage`: Async function to permanently delete a message
-  - `getMessages`: Async function to refresh and reload messages from storage
+Messages context
 
 ### deleteMessage()
 

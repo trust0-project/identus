@@ -168,4 +168,4 @@ const store = new RIDBStore({
 })
 ```
 
-Check out out docs [here](../../docs/@trust0/identus-store)
+Check out out docs [here](https://github.com/trust0-project/identus/tree/main/docs/@trust0/identus-store)

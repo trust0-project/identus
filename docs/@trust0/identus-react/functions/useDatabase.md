@@ -8,7 +8,7 @@
 
 > **useDatabase**(): `object`
 
-Defined in: [hooks/index.ts:675](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L675)
+Defined in: packages/identus-react/src/hooks/useDatabase.ts:16
 
 Hook for accessing database context and operations.
 
@@ -17,16 +17,7 @@ credential storage, and application settings. This hook must be used within a Da
 
 ## Returns
 
-Database context containing extensive database operations and state management:
-  - `db`: Database instance for direct operations
-  - `state`: Current database state (loading, loaded, error, etc.)
-  - `error`: Current error state if any database operations failed
-  - `start`: Initialize database with configuration
-  - `getExtendedDIDs`: Retrieve all stored DIDs with metadata
-  - `storeDID`: Store a DID with optional metadata
-  - `getMessages`: Retrieve all stored DIDComm messages
-  - `getSeed`: Get the wallet seed for key derivation
-  - `setSeed`: Store the wallet seed securely
+Database context
 
 ### createIssuanceFlow()
 
@@ -132,13 +123,13 @@ Load available database features
 
 ### getGroupedDIDs()
 
-> **getGroupedDIDs**: () => `Promise`\<[`GroupedDIDs`](../context/type-aliases/GroupedDIDs.md)\>
+> **getGroupedDIDs**: () => `Promise`\<[`GroupedDIDs`](../type-aliases/GroupedDIDs.md)\>
 
 Get DIDs grouped by status/type
 
 #### Returns
 
-`Promise`\<[`GroupedDIDs`](../context/type-aliases/GroupedDIDs.md)\>
+`Promise`\<[`GroupedDIDs`](../type-aliases/GroupedDIDs.md)\>
 
 ### getIssuanceFlow()
 
@@ -336,7 +327,7 @@ Function to start/initialize the database
 
 ### state
 
-> **state**: [`DatabaseState`](../context/type-aliases/DatabaseState.md)
+> **state**: [`DatabaseState`](../type-aliases/DatabaseState.md)
 
 Current database connection state
 

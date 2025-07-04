@@ -6,9 +6,9 @@
 
 # Function: useAgent()
 
-> **useAgent**(): [`AgentContextType`](../context/type-aliases/AgentContextType.md) & `object`
+> **useAgent**(): `object`
 
-Defined in: [hooks/index.ts:294](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L294)
+Defined in: packages/identus-react/src/hooks/useAgent.ts:66
 
 Hook for accessing the main Identus Agent context and operations.
 
@@ -18,12 +18,55 @@ This hook must be used within an AgentProvider.
 
 ## Returns
 
-Agent context containing:
-  - `agent`: Current Agent instance or null if not initialized
-  - `start`: Async function to start the agent and begin operations
-  - `stop`: Async function to stop the agent and cleanup resources  
-  - `state`: Current agent state string (stopped, starting, running, etc.)
-  - `setAgent`: Function to manually set a new agent instance
+Agent context object with agent management functionality
+
+### agent
+
+> **agent**: `null` \| [`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+
+Current Agent instance or null if not initialized
+
+### setAgent()
+
+> **setAgent**: (`agent`) => `void`
+
+Function to manually set a new agent instance
+
+#### Parameters
+
+##### agent
+
+[`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+
+#### Returns
+
+`void`
+
+### start()
+
+> **start**: () => `Promise`\<`void`\>
+
+Function to start the agent and begin operations
+
+#### Returns
+
+`Promise`\<`void`\>
+
+### state
+
+> **state**: [`State`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+
+Current agent state (stopped, starting, running, etc.)
+
+### stop()
+
+> **stop**: () => `Promise`\<`void`\>
+
+Function to stop the agent and cleanup resources
+
+#### Returns
+
+`Promise`\<`void`\>
 
 ## Throws
 

@@ -1,14 +1,14 @@
-[**Documentation**](../../../../README.md)
+[**Documentation**](../../../README.md)
 
 ***
 
-[Documentation](../../../../README.md) / [@trust0/identus-react](../../README.md) / [context](../README.md) / AgentContext
+[Documentation](../../../README.md) / [@trust0/identus-react](../README.md) / AgentContext
 
 # Variable: AgentContext
 
-> `const` **AgentContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
+> `const` **AgentContext**: `Context`\<`undefined` \| \{ `agent`: `null` \| [`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); `setAgent`: (`agent`) => `void`; `start`: () => `Promise`\<`void`\>; `state`: [`State`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); `stop`: () => `Promise`\<`void`\>; \}\>
 
-Defined in: [context/index.ts:297](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/context/index.ts#L297)
+Defined in: [packages/identus-react/src/context/index.ts:304](https://github.com/trust0-project/identus/blob/1334a53338f8e4342e50542c422da64e1a058e6e/packages/identus-react/src/context/index.ts#L304)
 
 React context for managing the main Identus Agent operations.
 

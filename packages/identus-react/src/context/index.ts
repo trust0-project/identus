@@ -1,3 +1,10 @@
+/**
+ * @packageDocumentation
+ * 
+ * @module 
+ * @mergeModuleWith <project>
+ */ 
+
 import SDK from "@hyperledger/identus-sdk";
 import { RIDB, StartOptions } from "@trust0/ridb";
 import { Doc } from "@trust0/ridb-core";
@@ -294,10 +301,18 @@ export const DatabaseContext = createContext<{
  * ```
  * 
  */
-export const AgentContext = createContext<(AgentContextType & { 
-    /** Function to set a new agent instance */
-    setAgent: (agent: SDK.Agent) => void 
-}) | undefined>(undefined);
+export const AgentContext = createContext<{
+    /** Current Agent instance or null if not initialized */
+    agent: SDK.Agent | null;
+    /** Function to start the agent and begin operations */
+    start: () => Promise<void>;
+    /** Function to stop the agent and cleanup resources */
+    stop: () => Promise<void>;
+    /** Current agent state (stopped, starting, running, etc.) */
+    state: SDK.Domain.Startable.State;
+    /** Function to manually set a new agent instance */
+    setAgent: (agent: SDK.Agent) => void;
+} | undefined>(undefined);
 
 /**
  * React context for credential issuance operations.

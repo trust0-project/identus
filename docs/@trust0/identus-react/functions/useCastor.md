@@ -8,7 +8,7 @@
 
 > **useCastor**(`resolvers`): [`Castor`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [hooks/index.ts:99](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L99)
+Defined in: packages/identus-react/src/hooks/useCastor.ts:45
 
 Creates and returns a memoized instance of Castor with optional additional resolvers.
 
@@ -21,13 +21,13 @@ key management, and cryptographic functions. It can be extended with additional 
 
 [`ExtraResolver`](../type-aliases/ExtraResolver.md)[] = `[]`
 
-Array of additional DID resolver constructors to extend Castor functionality
+Optional array of additional DID resolver constructors to extend Castor functionality
 
 ## Returns
 
 [`Castor`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-A memoized Castor instance with configured resolvers
+Castor Context
 
 ## Example
 

@@ -19,7 +19,7 @@ Trust0 Identus provides a comprehensive suite of packages designed to streamline
 - **Cross-Platform**: Seamless browser and Node.js compatibility
 
 ### 🏪 Identus Store
-[📖 Documentation](docs/@trust0/identus-store/README.md)
+[📖 Documentation](https://github.com/trust0-project/identus/tree/main/docs/@trust0/identus-store/README.md)
 Production-ready storage wrapper built on RIDB, specifically designed for Hyperledger Identus SDK.
 
 **Key Benefits:**
@@ -28,7 +28,7 @@ Production-ready storage wrapper built on RIDB, specifically designed for Hyperl
 - 📊 **Performance Monitoring**: Built-in metrics and debugging tools
 
 ### ⚛️ Identus React
-[📖 Documentation](docs/@trust0/identus-react/README.md)
+[📖 Documentation](https://github.com/trust0-project/identus/tree/main/docs/@trust0/identus-react/README.md)
 A comprehensive set of React components and hooks for rapid Identus integration.
 
 **Features:**

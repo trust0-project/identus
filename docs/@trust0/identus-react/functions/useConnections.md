@@ -8,7 +8,7 @@
 
 > **useConnections**(): `object`
 
-Defined in: [hooks/index.ts:638](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L638)
+Defined in: packages/identus-react/src/hooks/useConnections.ts:64
 
 Hook for accessing DID connection context and operations.
 
@@ -18,9 +18,7 @@ used within a ConnectionsProvider.
 
 ## Returns
 
-Connections context containing:
-  - `connections`: Array of all established DID-to-DID connections
-  - `deleteConnection`: Async function to permanently delete a connection
+Connections context
 
 ### connections
 

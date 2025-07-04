@@ -6,9 +6,9 @@
 
 # Function: useVerifier()
 
-> **useVerifier**(): [`AgentContextType`](../context/type-aliases/AgentContextType.md) & `object`
+> **useVerifier**(): [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`
 
-Defined in: [hooks/index.ts:389](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L389)
+Defined in: packages/identus-react/src/hooks/useVerifier.ts:17
 
 Hook for accessing credential verification context and operations.
 
@@ -17,13 +17,7 @@ from holders. This hook must be used within a VerifierProvider and requires a ru
 
 ## Returns
 
-Verifier context containing:
-  - `agent`: Current Agent instance or null if not running
-  - `start`: Async function to start the agent for verification operations
-  - `stop`: Async function to stop the agent
-  - `state`: Current agent state string
-  - `issuePresentationRequest`: Send presentation requests to credential holders
-  - `verifyPresentation`: Verify and validate received credential presentations
+Verifier context
 
 ## Throws
 

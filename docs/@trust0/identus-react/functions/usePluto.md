@@ -8,7 +8,7 @@
 
 > **usePluto**(`storageType`): [`Pluto`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [hooks/index.ts:165](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L165)
+Defined in: packages/identus-react/src/hooks/usePluto.ts:20
 
 Creates and returns a memoized Pluto instance for persistent storage operations.
 
@@ -27,4 +27,4 @@ Storage backend to use (defaults to IndexedDB)
 
 [`Pluto`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-A memoized Pluto instance configured with the specified storage
+Pluto Context

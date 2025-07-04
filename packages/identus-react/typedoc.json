@@ -5,7 +5,6 @@
         "./src/hooks/index.ts",
         "./src/context/index.ts"
     ],
-    "basePath": "./src",
     "out": "docs",
     "plugin": [
         "typedoc-plugin-markdown",
@@ -42,6 +41,7 @@
     "excludeInternal": false,
     "excludeNotDocumented": false,
     "theme": "markdown",
+    "includeVersion": false,
     "mergeReadme": true,
     "excludeExternals": false,
     "exclude": ["node_modules", "build", "./src/testing/**/*"]

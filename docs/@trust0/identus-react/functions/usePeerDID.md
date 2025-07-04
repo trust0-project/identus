@@ -8,7 +8,7 @@
 
 > **usePeerDID**(): `object`
 
-Defined in: [hooks/index.ts:222](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L222)
+Defined in: packages/identus-react/src/hooks/usePeerDID.ts:49
 
 Hook for accessing Peer DID context and operations.
 
@@ -18,9 +18,7 @@ within a PeerDIDProvider.
 
 ## Returns
 
-Peer DID context containing:
-  - `peerDID`: Current Peer DID instance or null if not created yet
-  - `create`: Async function to create a new ephemeral Peer DID for communication
+Peer DID context
 
 ### create()
 

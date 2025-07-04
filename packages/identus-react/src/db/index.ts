@@ -1,3 +1,10 @@
+/**
+ * @packageDocumentation
+ * 
+ * @module 
+ * @mergeModuleWith <project>
+ */ 
+
 import { MigrationPathsForSchema, Property, SchemaFieldType } from "@trust0/ridb-core";
 import SDK from '@hyperledger/identus-sdk';
 

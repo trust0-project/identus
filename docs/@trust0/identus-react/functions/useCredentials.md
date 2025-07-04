@@ -8,7 +8,7 @@
 
 > **useCredentials**(): `object`
 
-Defined in: [hooks/index.ts:568](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L568)
+Defined in: packages/identus-react/src/hooks/useCredentials.ts:74
 
 Hook for accessing credential storage context and operations.
 
@@ -18,10 +18,7 @@ a CredentialsProvider.
 
 ## Returns
 
-Credentials context containing:
-  - `credentials`: Array of all stored verifiable credentials
-  - `deleteCredential`: Async function to permanently delete a credential
-  - `fetchCredentials`: Async function to refresh credentials from storage
+Credentials context
 
 ### credentials
 

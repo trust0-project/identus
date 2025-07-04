@@ -1,14 +1,14 @@
-[**Documentation**](../../../../README.md)
+[**Documentation**](../../../README.md)
 
 ***
 
-[Documentation](../../../../README.md) / [@trust0/identus-react](../../README.md) / [context](../README.md) / HolderContext
+[Documentation](../../../README.md) / [@trust0/identus-react](../README.md) / HolderContext
 
 # Variable: HolderContext
 
 > `const` **HolderContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [context/index.ts:498](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/context/index.ts#L498)
+Defined in: [packages/identus-react/src/context/index.ts:513](https://github.com/trust0-project/identus/blob/1334a53338f8e4342e50542c422da64e1a058e6e/packages/identus-react/src/context/index.ts#L513)
 
 React context for credential holder operations.
 

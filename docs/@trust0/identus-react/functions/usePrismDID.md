@@ -8,7 +8,7 @@
 
 > **usePrismDID**(): `object`
 
-Defined in: [hooks/index.ts:147](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L147)
+Defined in: packages/identus-react/src/hooks/usePrismDID.ts:43
 
 Hook for accessing Prism DID context and operations.
 
@@ -17,9 +17,7 @@ verifiable identity. This hook must be used within a PrismDIDProvider.
 
 ## Returns
 
-Prism DID context containing:
-  - `prismDID`: Current Prism DID instance or null if not created yet
-  - `create`: Async function to create a new Prism DID with given alias
+Prism DID context
 
 ### create()
 
