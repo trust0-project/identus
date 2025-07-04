@@ -1,7 +1,7 @@
 /**
  * @packageDocumentation
  * 
- * @module
+ * @module 
  * @mergeModuleWith <project>
  */ 
 

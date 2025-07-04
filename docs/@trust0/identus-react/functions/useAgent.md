@@ -8,7 +8,7 @@
 
 > **useAgent**(): [`AgentContextType`](../context/type-aliases/AgentContextType.md) & `object`
 
-Defined in: [hooks/index.ts:294](https://github.com/trust0-project/identus/blob/8a58c4c511d6150caafecc2e17057355cee108a6/packages/identus-react/src/hooks/index.ts#L294)
+Defined in: [hooks/index.ts:294](https://github.com/trust0-project/identus/blob/eac5149d36d22802f0b2a6b3f6d5847d1bc57b57/packages/identus-react/src/hooks/index.ts#L294)
 
 Hook for accessing the main Identus Agent context and operations.
 
