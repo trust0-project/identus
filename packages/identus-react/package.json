@@ -1,6 +1,6 @@
 {
   "name": "@trust0/identus-react",
-  "version": "0.0.72",
+  "version": "0.0.73",
   "description": "React components for Hyperledger Identus, easily build your Identity applications on Cardano",
   "main": "build/index.js",
   "module": "build/index.mjs",

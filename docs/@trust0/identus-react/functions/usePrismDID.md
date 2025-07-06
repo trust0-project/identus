@@ -8,7 +8,7 @@
 
 > **usePrismDID**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/usePrismDID.ts:43](https://github.com/trust0-project/identus/blob/ff26890bfce71f2c24afaf0e6387df14285284cd/packages/identus-react/src/hooks/usePrismDID.ts#L43)
+Defined in: [packages/identus-react/src/hooks/usePrismDID.ts:43](https://github.com/trust0-project/identus/blob/6480fffced88812f48e20542d3492e14ba5fb80e/packages/identus-react/src/hooks/usePrismDID.ts#L43)
 
 Hook for accessing Prism DID context and operations.
 
@@ -21,7 +21,7 @@ Prism DID context
 
 ### create()
 
-> **create**: (`alias`) => `Promise`\<`void`\>
+> **create**: (`alias`) => `Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
 
 Function to create a new Prism DID with an alias
 
@@ -33,7 +33,7 @@ Function to create a new Prism DID with an alias
 
 #### Returns
 
-`Promise`\<`void`\>
+`Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
 
 ### prismDID
 

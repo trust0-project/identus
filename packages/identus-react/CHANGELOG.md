@@ -1,3 +1,13 @@
+## 0.0.73 (2025-07-06)
+
+### 🩹 Fixes
+
+- improve holder and did management Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([6480fff](https://github.com/trust0-project/identus/commit/6480fff))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.72 (2025-07-06)
 
 ### 🩹 Fixes
