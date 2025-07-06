@@ -1,3 +1,13 @@
+## 0.0.76 (2025-07-06)
+
+### 🩹 Fixes
+
+- getOOBURL in issuer Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([5d4efa5](https://github.com/trust0-project/identus/commit/5d4efa5))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.75 (2025-07-06)
 
 ### 🩹 Fixes
