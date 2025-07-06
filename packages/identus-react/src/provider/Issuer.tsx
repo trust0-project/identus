@@ -21,8 +21,19 @@ type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never
 
 export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages } = useMessages();
+    const { getMessages, messages } = useMessages();
     const { create: createPeerDID } = usePeerDID();
+
+    const getIssuanceStatus = useCallback((request: Request) => {
+        const relatedMessages = messages.filter(({ message }) => message.thid === request.id);
+        if (relatedMessages.find(({ message:{piuri} }) => piuri === SDK.ProtocolType.DidcommIssueCredential)) {
+            return 'completed'
+        }
+        if (relatedMessages.find(({ message:{piuri} }) => piuri === SDK.ProtocolType.DidcommRequestCredential)) {
+            return 'accept-pending'
+        }
+        return 'pending'
+    }, [messages]);
 
     const getOOBURL = useCallback(async (request: Request) => {
         if (!agent) return null;
@@ -163,7 +174,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         await agent.send(issued.makeMessage());
         await getMessages()
     }, [agent]);
-    return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential, getOOBURL}}>
+    return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential, getOOBURL, getIssuanceStatus}}>
         {children}
     </IssuerContext.Provider>
 }

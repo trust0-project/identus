@@ -370,6 +370,13 @@ export const AgentContext = createContext<{
  */
 export const IssuerContext = createContext<AgentContextType & {
     /**
+     * Get the status of an issuance flow.
+     * 
+     * @param request - Issuance flow request
+     * @returns Status of the issuance flow
+     */
+    getIssuanceStatus(request: Request): "completed" | "accept-pending" | "pending";
+    /**
      * Get the OOB URL for an issuance flow.
      * 
      * @param request - Issuance flow request
