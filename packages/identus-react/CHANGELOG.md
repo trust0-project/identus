@@ -1,3 +1,13 @@
+## 0.0.74 (2025-07-06)
+
+### 🩹 Fixes
+
+- acceptOffer Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([e9bdec3](https://github.com/trust0-project/identus/commit/e9bdec3))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.73 (2025-07-06)
 
 ### 🩹 Fixes
