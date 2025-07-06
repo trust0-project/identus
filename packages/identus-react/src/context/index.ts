@@ -538,7 +538,8 @@ export const HolderContext = createContext<AgentContextType & {
      */
     acceptIssuedCredential(
         message: SDK.Domain.Message,
-    ): Promise<void>;
+    ): Promise<SDK.Domain.Credential>;
+
     /**
      * Handle a presentation request by providing a credential.
      * 

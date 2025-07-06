@@ -45,10 +45,26 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         if (message.piuri !== SDK.ProtocolType.DidcommIssueCredential) {
             throw new Error("Message is not a credential issued message");
         }
+        const protocol = new SDK.Tasks.RunProtocol({
+            type: 'credential-issue',
+            pid: SDK.ProtocolType.DidcommIssueCredential,
+            data: { data: message }
+        });
+        const existingCredentials = await fetchCredentials();
+        const credential = await agent.runTask(protocol);  
+        const existingCredential = existingCredentials.find((id) => id === credential.uuid)
+        if (existingCredential) {
+            //Credential already exists, return it
+            return existingCredential;
+        }
+        //Credential does not exist, process the message to generate the credential
         await agent.send(message);
+        // sync Credentials
         await fetchCredentials();
+        return credential;
     }, [agent, fetchCredentials]);
-    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer, acceptIssuedCredential }}>
+
+    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer, acceptIssuedCredential, extractIssuedCredential }}>
         {children}
     </HolderContext.Provider>
 }
