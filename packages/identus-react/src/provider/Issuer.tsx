@@ -3,11 +3,83 @@ import { v4 as uuidv4 } from 'uuid';
 import { base64 } from 'multiformats/bases/base64';
 import SDK from "@hyperledger/identus-sdk";
 import { IssuerContext } from "../context";
-import { useAgent, useMessages } from "../hooks";
+import { useAgent, useDatabase, useMessages, usePeerDID } from "../hooks";
+
+
+type Claim = {
+    id: string;
+    name: string;
+    value: string;
+    type: string;
+    isValid?: boolean;
+};
+
+type UseDatabase = ReturnType<typeof useDatabase>;
+type IssuanceFlow = Awaited<ReturnType<UseDatabase["getIssuanceFlow"]>>;
+type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never;
+
 
 export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
     const { getMessages } = useMessages();
+    const { create: createPeerDID } = usePeerDID();
+
+    const getOOBURL = useCallback(async (request: Request) => {
+        if (!agent) return null;
+        const peerDID = await createPeerDID();
+        const {claims} = request;
+        const attributes = claims.map((claim) => ({ name: claim.name, value: claim.value }));
+        const oobTask = new SDK.Tasks.CreateOOBOffer({
+            from: peerDID,
+            offer: new SDK.OfferCredential(
+                {
+                    goal_code: "Offer Credential",
+                    credential_preview: {
+                        type: SDK.ProtocolType.DidcommCredentialPreview,
+                        body: {  attributes },
+                    },
+                },
+                [
+                    new SDK.Domain.AttachmentDescriptor(
+                        {
+                            json: {
+                                id: crypto.randomUUID(),
+                                media_type: "application/json",
+                                options: {
+                                    challenge: crypto.randomUUID(),
+                                    domain: window.location.origin || "domain",
+                                },
+                                thid: request.id,
+                                presentation_definition: {
+                                    id: crypto.randomUUID(),
+                                    input_descriptors: [],
+                                    format: {
+                                        jwt: {
+                                            alg: [
+                                                SDK.Domain.JWT_ALG.EdDSA
+                                            ],
+                                            proof_type: [],
+                                        },
+                                    },
+                                },
+                                format: request.credentialFormat,
+                            },
+                        },
+                        "application/json",
+                        request.id,
+                        undefined,
+                        request.credentialFormat
+                    )
+                ],
+                undefined,
+                undefined,
+                request.id
+            )
+        });
+        const oob = await agent.runTask(oobTask);
+        return `${window.location.href}?oob=${oob}`;
+    }, [agent, createPeerDID]);
+
     const createOOBOffer = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, id: string, claims: any) => {
         if (!agent) {
             throw new Error("No agent found");
@@ -91,7 +163,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         await agent.send(issued.makeMessage());
         await getMessages()
     }, [agent]);
-    return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential }}>
+    return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential, getOOBURL}}>
         {children}
     </IssuerContext.Provider>
 }

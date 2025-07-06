@@ -10,6 +10,12 @@ import { RIDB, StartOptions } from "@trust0/ridb";
 import { Doc } from "@trust0/ridb-core";
 import { createContext } from "react";
 import { schemas } from "../db";
+import { useDatabase } from "../hooks";
+
+type UseDatabase = ReturnType<typeof useDatabase>;
+type IssuanceFlow = Awaited<ReturnType<UseDatabase["getIssuanceFlow"]>>;
+type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never;
+
 
 /**
  * React context for managing Prism DID operations and state.
@@ -363,6 +369,13 @@ export const AgentContext = createContext<{
  * 
  */
 export const IssuerContext = createContext<AgentContextType & {
+    /**
+     * Get the OOB URL for an issuance flow.
+     * 
+     * @param request - Issuance flow request
+     * @returns Promise resolving to the OOB URL or null if no request is available
+     */
+    getOOBURL(request: Request): Promise<string | null>;
     /**
      * Create an out-of-band credential offer.
      * 
