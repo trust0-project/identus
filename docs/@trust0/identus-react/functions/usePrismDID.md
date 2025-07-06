@@ -8,7 +8,7 @@
 
 > **usePrismDID**(): `object`
 
-Defined in: packages/identus-react/src/hooks/usePrismDID.ts:43
+Defined in: [packages/identus-react/src/hooks/usePrismDID.ts:43](https://github.com/trust0-project/identus/blob/a78a9182bddb339fd7ebbfdbbb3a30cb62266625/packages/identus-react/src/hooks/usePrismDID.ts#L43)
 
 Hook for accessing Prism DID context and operations.
 
