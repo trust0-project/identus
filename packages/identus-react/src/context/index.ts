@@ -530,6 +530,15 @@ export const HolderContext = createContext<AgentContextType & {
     acceptOOBOffer(
         message: SDK.Domain.Message,
     ): Promise<void>;
+
+    /**
+     * Accept an issued credential.
+     * 
+     * @param message - Issued credential message
+     */
+    acceptIssuedCredential(
+        message: SDK.Domain.Message,
+    ): Promise<void>;
     /**
      * Handle a presentation request by providing a credential.
      * 
