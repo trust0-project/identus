@@ -1,3 +1,13 @@
+## 0.0.75 (2025-07-06)
+
+### 🩹 Fixes
+
+- wrong type in issue protocol Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([acda399](https://github.com/trust0-project/identus/commit/acda399))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.74 (2025-07-06)
 
 ### 🩹 Fixes
