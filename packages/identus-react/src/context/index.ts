@@ -53,7 +53,7 @@ export const PrismDIDContext = createContext<{
     /** Current Prism DID instance, null if not yet created */
     prismDID: SDK.Domain.DID | null;
     /** Function to create a new Prism DID with an alias */
-    create: (alias: string) => Promise<void>;
+    create: (alias: string) => Promise<SDK.Domain.DID>;
 } | undefined>(undefined);
 
 /**
@@ -101,7 +101,7 @@ export const PeerDIDContext = createContext<{
     /** Current Peer DID instance, null if not yet created */
     peerDID: SDK.Domain.DID | null;
     /** Function to create a new Peer DID */
-    create: () => Promise<void>;
+    create: () => Promise<SDK.Domain.DID>;
 } | undefined>(undefined);
 
 /**
@@ -519,9 +519,8 @@ export const HolderContext = createContext<AgentContextType & {
      * @returns Promise resolving to parsed message
      */
     parseOOBOffer(
-        offer: string,
-        selfPeerDID: SDK.Domain.DID
-    ): SDK.Domain.Message;
+        url: string,
+    ): Promise<SDK.Domain.Message>;
     /**
      * Accept an out-of-band credential offer.
      * 

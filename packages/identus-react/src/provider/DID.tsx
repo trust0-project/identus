@@ -16,6 +16,7 @@ function useDIDCreation<T>(
         }
         const newDID = await createDIDFn(agent);
         setDid(newDID);
+        return newDID;
     }, [agent, state, createDIDFn]);
     
     return { did, create };
