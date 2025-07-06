@@ -521,7 +521,7 @@ export const HolderContext = createContext<AgentContextType & {
     parseOOBOffer(
         offer: string,
         selfPeerDID: SDK.Domain.DID
-    ): Promise<SDK.Domain.Message>;
+    ): SDK.Domain.Message;
     /**
      * Accept an out-of-band credential offer.
      * 

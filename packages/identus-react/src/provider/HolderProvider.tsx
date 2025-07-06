@@ -7,7 +7,7 @@ import { useAgent, useMessages } from "../hooks";
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
     const { getMessages } = useMessages();
-    const parseOOBOffer = useCallback(async (offer: string, selfPeerDID: SDK.Domain.DID) => {
+    const parseOOBOffer = useCallback((offer: string, selfPeerDID: SDK.Domain.DID) => {
         const message = SDK.Domain.Message.fromJson(offer);
         const attachment = message.attachments.at(0)?.payload;
         return SDK.Domain.Message.fromJson({
