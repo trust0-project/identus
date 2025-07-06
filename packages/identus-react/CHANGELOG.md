@@ -1,3 +1,13 @@
+## 0.0.77 (2025-07-06)
+
+### 🩹 Fixes
+
+- add getIssuanceStatus Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([bcde619](https://github.com/trust0-project/identus/commit/bcde619))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.76 (2025-07-06)
 
 ### 🩹 Fixes
