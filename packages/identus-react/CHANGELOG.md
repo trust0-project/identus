@@ -1,3 +1,13 @@
+## 0.0.69 (2025-07-06)
+
+### 🩹 Fixes
+
+- implement acceptIssuedCredential for holder hook useHolder() Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([a6d496d](https://github.com/trust0-project/identus/commit/a6d496d))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.68 (2025-07-06)
 
 ### 🩹 Fixes
