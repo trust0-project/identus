@@ -68,7 +68,9 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
             type: 'credential-issue',
             pid: SDK.ProtocolType.DidcommIssueCredential,
             //Types are wrong on TS SDK, must fix there
-            data: message as any
+            data: {
+                message: message
+            } as any
         });
         const credential = await agent.runTask(protocol);  
         const existingCredentials = await fetchCredentials();
