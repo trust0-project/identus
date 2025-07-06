@@ -163,6 +163,7 @@ function DIDManager() {
 
 - [AgentContextType](type-aliases/AgentContextType.md)
 - [DIDAlias](type-aliases/DIDAlias.md)
+- [DIDStatus](type-aliases/DIDStatus.md)
 - [DatabaseState](type-aliases/DatabaseState.md)
 - [ExtraResolver](type-aliases/ExtraResolver.md)
 - [GroupedDIDs](type-aliases/GroupedDIDs.md)
@@ -183,6 +184,15 @@ function DIDManager() {
 ## Functions
 
 - [AgentProvider](functions/AgentProvider.md)
+- [ConnectionsProvider](functions/ConnectionsProvider.md)
+- [CredentialsProvider](functions/CredentialsProvider.md)
+- [DatabaseProvider](functions/DatabaseProvider.md)
+- [HolderProvider](functions/HolderProvider.md)
+- [IssuerProvider](functions/IssuerProvider.md)
+- [MessagesProvider](functions/MessagesProvider.md)
+- [PeerDIDProvider](functions/PeerDIDProvider.md)
+- [PrismDIDProvider](functions/PrismDIDProvider.md)
+- [VerifierProvider](functions/VerifierProvider.md)
 - [useAgent](functions/useAgent.md)
 - [useApollo](functions/useApollo.md)
 - [useCastor](functions/useCastor.md)

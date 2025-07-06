@@ -1,3 +1,13 @@
+## 0.0.78 (2025-07-06)
+
+### 🩹 Fixes
+
+- export providers Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([4f0e7be](https://github.com/trust0-project/identus/commit/4f0e7be))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.77 (2025-07-06)
 
 ### 🩹 Fixes
