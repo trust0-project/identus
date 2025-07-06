@@ -64,7 +64,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         return credential;
     }, [agent, fetchCredentials]);
 
-    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer, acceptIssuedCredential, extractIssuedCredential }}>
+    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer, acceptIssuedCredential }}>
         {children}
     </HolderContext.Provider>
 }
