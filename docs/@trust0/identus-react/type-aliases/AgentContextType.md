@@ -8,7 +8,7 @@
 
 > **AgentContextType** = `object`
 
-Defined in: [packages/identus-react/src/context/index.ts:135](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L135)
+Defined in: [packages/identus-react/src/context/index.ts:135](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/context/index.ts#L135)
 
 ## Properties
 
@@ -16,7 +16,7 @@ Defined in: [packages/identus-react/src/context/index.ts:135](https://github.com
 
 > **agent**: [`SDK.Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`
 
-Defined in: [packages/identus-react/src/context/index.ts:136](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L136)
+Defined in: [packages/identus-react/src/context/index.ts:136](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/context/index.ts#L136)
 
 ***
 
@@ -24,7 +24,7 @@ Defined in: [packages/identus-react/src/context/index.ts:136](https://github.com
 
 > **start**: () => `Promise`\<`void`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:138](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L138)
+Defined in: [packages/identus-react/src/context/index.ts:138](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/context/index.ts#L138)
 
 Function to start the agent
 
@@ -38,7 +38,7 @@ Function to start the agent
 
 > **state**: [`SDK.Domain.Startable.State`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [packages/identus-react/src/context/index.ts:144](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L144)
+Defined in: [packages/identus-react/src/context/index.ts:144](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/context/index.ts#L144)
 
 Current state of the agent
 [SDK.Domain.Startable.State](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.Protocols.Startable.md)
@@ -49,7 +49,7 @@ Current state of the agent
 
 > **stop**: () => `Promise`\<`void`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:140](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L140)
+Defined in: [packages/identus-react/src/context/index.ts:140](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/context/index.ts#L140)
 
 Function to stop the agent
 

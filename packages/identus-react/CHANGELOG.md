@@ -1,3 +1,13 @@
+## 0.0.71 (2025-07-06)
+
+### 🩹 Fixes
+
+- workaround for types Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([f05c662](https://github.com/trust0-project/identus/commit/f05c662))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.70 (2025-07-06)
 
 ### 🩹 Fixes
