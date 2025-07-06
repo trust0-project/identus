@@ -32,8 +32,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const credentialOfferMessage = SDK.OfferCredential.fromMessage(offer);
-        const requestCredential = await agent.handle(credentialOfferMessage.makeMessage());
+        const requestCredential = await agent.handle(offer);
         const requestMessage = requestCredential.makeMessage()
         await agent.send(requestMessage);
         await getMessages()
@@ -51,15 +50,15 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
             //Types are wrong on TS SDK, must fix there
             data: message as any
         });
-        const existingCredentials = await fetchCredentials();
         const credential = await agent.runTask(protocol);  
+        const existingCredentials = await fetchCredentials();
         const existingCredential = existingCredentials.find((id) => id === credential.uuid)
         if (existingCredential) {
             //Credential already exists, return it
             return existingCredential;
         }
         //Credential does not exist, process the message to generate the credential
-        await agent.send(message);
+        await agent.handle(message);
         // sync Credentials
         await fetchCredentials();
         return credential;
