@@ -8,7 +8,7 @@
 
 > `const` **MessagesContext**: `Context`\<`undefined` \| \{ `deleteMessage`: (`message`) => `Promise`\<`void`\>; `getMessages`: () => `Promise`\<`object`[]\>; `messages`: `object`[]; `readMessage`: (`message`) => `Promise`\<`void`\>; `receivedMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `sentMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `unreadMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:611](https://github.com/trust0-project/identus/blob/a6d496dbeb1ff4b1fd951df4078dd7dccd84e094/packages/identus-react/src/context/index.ts#L611)
+Defined in: [packages/identus-react/src/context/index.ts:612](https://github.com/trust0-project/identus/blob/97e19260376a668f2668ec434a26fb9dca6de9e4/packages/identus-react/src/context/index.ts#L612)
 
 React context for DIDComm message management.
 

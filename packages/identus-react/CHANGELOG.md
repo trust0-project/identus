@@ -1,3 +1,14 @@
+## 0.0.70 (2025-07-06)
+
+### 🩹 Fixes
+
+- undefined params Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([97e1926](https://github.com/trust0-project/identus/commit/97e1926))
+- accept issued credential now returns SDK.Domain.Credential and prevents duplicates Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b784283](https://github.com/trust0-project/identus/commit/b784283))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.69 (2025-07-06)
 
 ### 🩹 Fixes
