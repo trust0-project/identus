@@ -45,11 +45,16 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
     }, [agent]);
     const acceptOOBOffer = useCallback(async (offer: SDK.Domain.Message) => {
         if (!agent) {
-            throw new Error("No agent found");
+            throw new Error("Start the agent first");
         }
-        const requestCredential = await agent.handle(offer);
-        const requestMessage = requestCredential.makeMessage()
-        await agent.send(requestMessage);
+        const credentialOffer = SDK.OfferCredential.fromMessage(offer);
+        const requestCredential = await agent.prepareRequestCredentialWithIssuer(credentialOffer);
+        try {
+            const requestMessage = requestCredential.makeMessage()
+            await agent.send(requestMessage);
+        } catch (err) {
+            console.log("continue after err", err);
+        }
         await getMessages()
     }, [agent]);
     const acceptIssuedCredential = useCallback(async (message: SDK.Domain.Message) => {
