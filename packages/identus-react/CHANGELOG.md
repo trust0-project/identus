@@ -1,3 +1,13 @@
+## 0.0.72 (2025-07-06)
+
+### 🩹 Fixes
+
+- issue with accept Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([ff26890](https://github.com/trust0-project/identus/commit/ff26890))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.71 (2025-07-06)
 
 ### 🩹 Fixes

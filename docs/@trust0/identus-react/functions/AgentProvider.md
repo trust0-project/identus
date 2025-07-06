@@ -8,7 +8,7 @@
 
 > **AgentProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/Agent.tsx:132](https://github.com/trust0-project/identus/blob/f05c662938c7f4f23be804297c51a36d486df6eb/packages/identus-react/src/provider/Agent.tsx#L132)
+Defined in: [packages/identus-react/src/provider/Agent.tsx:132](https://github.com/trust0-project/identus/blob/ff26890bfce71f2c24afaf0e6387df14285284cd/packages/identus-react/src/provider/Agent.tsx#L132)
 
 ## Parameters
 
