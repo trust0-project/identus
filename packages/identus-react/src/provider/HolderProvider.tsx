@@ -74,7 +74,9 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         });
         const credential = await agent.runTask(protocol);  
         const existingCredentials = await fetchCredentials();
-        const existingCredential = existingCredentials.find((id) => id === credential.uuid)
+        const existingCredential = existingCredentials.find(({uuid, id}) => {
+            return uuid === credential.uuid || id === credential.id
+        })
         if (existingCredential) {
             //Credential already exists, return it
             return existingCredential;

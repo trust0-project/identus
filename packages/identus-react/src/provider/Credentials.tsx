@@ -14,7 +14,7 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
     const fetchCredentials = useCallback(async () => {
         if (dbState === "loaded") {
             const credentials = await pluto.getAllCredentials();
-            setCredentials(prev => [...prev, ...credentials.filter((credential) => !prev.some((c) => c.uuid === credential.uuid))]);
+            setCredentials(prev => [...prev, ...credentials.filter((credential) => !prev.some((c) => c.id === credential.id || c.uuid === credential.uuid))]);
             return credentials ?? [];
         }
         return []
