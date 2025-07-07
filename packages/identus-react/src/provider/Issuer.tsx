@@ -21,19 +21,20 @@ type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never
 
 export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages, messages } = useMessages();
+    const { getMessages, receivedMessages, sentMessages } = useMessages();
     const { create: createPeerDID } = usePeerDID();
 
     const getIssuanceStatus = useCallback((request: Request) => {
-        const relatedMessages = messages.filter(({ message }) => message.thid === request.id);
-        if (relatedMessages.find(({ message:{piuri} }) => piuri === SDK.ProtocolType.DidcommIssueCredential)) {
-            return 'completed'
-        }
-        if (relatedMessages.find(({ message:{piuri} }) => piuri === SDK.ProtocolType.DidcommRequestCredential)) {
+        const received = receivedMessages.filter(( message ) => message.thid === request.id);
+        const sent = sentMessages.filter(( message ) => message.thid === request.id);
+        if (received.find(({piuri }) => piuri === SDK.ProtocolType.DidcommRequestCredential)) {
             return 'accept-pending'
         }
+        if (sent.find(({ piuri }) => piuri === SDK.ProtocolType.DidcommIssueCredential)) {
+            return 'completed'
+        }
         return 'pending'
-    }, [messages]);
+    }, [receivedMessages, sentMessages]);
 
     const getOOBURL = useCallback(async (request: Request) => {
         if (!agent) return null;
@@ -170,7 +171,8 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
                 claims: claims as any,
             }
         })
-        const issued = await agent.runTask(protocol);
+        const issued: SDK.IssueCredential = await agent.runTask(protocol);
+        issued.thid = message.thid;
         await agent.send(issued.makeMessage());
         await getMessages()
     }, [agent]);
