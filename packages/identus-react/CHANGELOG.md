@@ -1,3 +1,13 @@
+## 0.0.87 (2025-07-07)
+
+### 🩹 Fixes
+
+- Message provider update Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b60508a](https://github.com/trust0-project/identus/commit/b60508a))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.86 (2025-07-07)
 
 ### 🩹 Fixes
