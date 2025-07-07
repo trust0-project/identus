@@ -2,12 +2,11 @@ import React from "react";
 import SDK from "@hyperledger/identus-sdk";
 import { useCallback } from "react";
 import { HolderContext } from "../context";
-import { useAgent, useMessages, useCredentials, usePeerDID } from "../hooks";
+import { useAgent, usePeerDID } from "../hooks";
 import { base64 } from "multiformats/bases/base64";
 
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages } = useMessages();
 
     const { peerDID, create: createPeerDID } = usePeerDID();
 
@@ -40,22 +39,21 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const presentation = await agent.runTask(task);
         const presentationMessage = presentation.makeMessage();
         await agent.send(presentationMessage);
-        await getMessages()
     }, [agent]);
+
     const acceptOOBOffer = useCallback(async (offer: SDK.Domain.Message) => {
         if (!agent) {
             throw new Error("Start the agent first");
         }
-        const credentialOffer = SDK.OfferCredential.fromMessage(offer);
-        const requestCredential = await agent.prepareRequestCredentialWithIssuer(credentialOffer);
+        const requestCredential = await agent.handle(offer);
         try {
             const requestMessage = requestCredential.makeMessage()
             await agent.send(requestMessage);
         } catch (err) {
             console.log("continue after err", err);
         }
-        await getMessages()
     }, [agent]);
+    
     return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}
     </HolderContext.Provider>

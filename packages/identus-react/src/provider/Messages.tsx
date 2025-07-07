@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { MessagesContext } from "../context";
-import { useAgent, useDatabase, useHolder } from "../hooks";
+import { useAgent, useCredentials, useDatabase, useHolder } from "../hooks";
 
 type MessageWithReadStatus = {
     message: SDK.Domain.Message;
@@ -26,10 +26,11 @@ const isPickupDeliveryMessage = (message: SDK.Domain.Message): boolean => {
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const { agent, state: agentState } = useAgent();
     const { state: dbState } = useDatabase();
+    const { fetchCredentials } = useCredentials();
     const { 
         readMessage: readMessageDB, 
         deleteMessage: deleteMessageDB, 
-        getMessages: getMessagesDB
+        getMessages: getMessagesDB,
     } = useDatabase();
 
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
@@ -105,7 +106,14 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 
     // Handle new real-time messages
     const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
-        
+        if (agent && agentState === SDK.Domain.Startable.State.RUNNING) {
+            await Promise.all(
+                newMessages
+                    .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
+                    .map(agent.handle)
+                    .map(async (message) => fetchCredentials())
+            );
+        }
         setMessages(prev => {
             const updatedMessages = [...prev];
             
@@ -120,13 +128,11 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 );
 
                 if (existingIndex !== -1) {
-                    // Update existing message and preserve read status
                     updatedMessages[existingIndex] = {
                         message: newMessage,
                         read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? updatedMessages[existingIndex].read : true          
                     };
                 } else {
-                    // New message - add as unread
                     updatedMessages.push({ 
                         message: newMessage, 
                         read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? false : true
@@ -136,14 +142,8 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             return updatedMessages;
         });
 
-        await Promise.all(
-            newMessages
-                .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
-                .map(async (message) => {
-                    return agent?.handle(message);
-                })
-        );
-    }, [agent]);
+        
+    }, [agent, agentState]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
