@@ -13,32 +13,36 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
 
     const createRequestPresentationMessage = useCallback(async <T extends SDK.Domain.CredentialType>(
         type: T,
-        toDID: SDK.Domain.DID,
         claims: SDK.Domain.PresentationClaims<T>,
+        toDID?: SDK.Domain.DID,
     ) => {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const task = new SDK.Tasks.CreatePresentationRequest({ type, toDID, claims })
+        const task = new SDK.Tasks.CreatePresentationRequest({ type, toDID: toDID ?? SDK.Domain.DID.fromString("did:prism:00000"), claims })
         const requestPresentation = await agent.runTask(task);
-        return requestPresentation.makeMessage();
+        const requestPresentationMessage = requestPresentation.makeMessage();
+        if (!toDID) {
+            delete (requestPresentationMessage as any).to;
+        }
+        return requestPresentationMessage;
     }, [agent]);
 
     const issuePresentationRequest = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, toDID: SDK.Domain.DID, claims: SDK.Domain.PresentationClaims<T>) => {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const requestPresentationMessage = await createRequestPresentationMessage(type, toDID, claims);
+        const requestPresentationMessage = await createRequestPresentationMessage(type, claims, toDID);
         await agent.send(requestPresentationMessage);
     }, [agent, createRequestPresentationMessage]);
 
-    const issueOOBPresentationRequest = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, toDID: SDK.Domain.DID, claims: SDK.Domain.PresentationClaims<T>) => {
+    const issueOOBPresentationRequest = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, claims: SDK.Domain.PresentationClaims<T>) => {
         if (!agent) {
             throw new Error("No agent found");
         }
         const uuid = crypto.randomUUID();
         const peerDID = await createPeerDID();
-        const requestPresentationMessage = await createRequestPresentationMessage(type, toDID, claims);
+        const requestPresentationMessage = await createRequestPresentationMessage(type, claims);
         const oob = new SDK.OutOfBandInvitation(
             {
                 goal_code: "verify-vc",
