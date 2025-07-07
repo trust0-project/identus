@@ -19,13 +19,14 @@ export type DIDStatus = 'unpublished' | 'published' | 'deactivated';
 
 export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const apollo = useApollo();
-    const {db} = useRIDB<typeof schemas>();
+    const {db, start: dbStart} = useRIDB<typeof schemas>();
     const [state, setState] = useState<DatabaseState>('disconnected');
     const [error, setError] = useState<Error | null>(null);
     const [features, setFeatures] = useState<string[]>([]);
     const [currentWallet, setCurrentWallet] = useState<string | null>(null);
+
     const pluto = useMemo(() => {
-        const store = createStore({ db });
+        const store = createStore({ db, start: dbStart });
         return new SDK.Pluto(store, apollo)
     }, [apollo, db])
 
