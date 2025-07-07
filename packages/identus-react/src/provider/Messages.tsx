@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { MessagesContext } from "../context";
-import { useAgent, useDatabase } from "../hooks";
+import { useAgent, useDatabase, useHolder } from "../hooks";
 
 type MessageWithReadStatus = {
     message: SDK.Domain.Message;
@@ -31,6 +31,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         deleteMessage: deleteMessageDB, 
         getMessages: getMessagesDB
     } = useDatabase();
+    const { acceptIssuedCredential } = useHolder();
 
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
 
@@ -76,7 +77,12 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     }, [getMessagesDB, dbState]);
 
     // Handle new real-time messages
-    const handleNewMessages = useCallback((newMessages: SDK.Domain.Message[]) => {
+    const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
+        await Promise.all(
+            newMessages
+                .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
+                .map(agent!.handle)
+        );
         setMessages(prev => {
             const updatedMessages = [...prev];
             
@@ -107,7 +113,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             
             return updatedMessages;
         });
-    }, []);
+    }, [agent]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
@@ -155,6 +161,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             };
         }
     }, [agent, handleNewMessages, agentState]);
+    
 
     const contextValue = useMemo(() => ({
         messages,
