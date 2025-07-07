@@ -1,3 +1,13 @@
+## 0.0.92 (2025-07-07)
+
+### 🩹 Fixes
+
+- piuri improvement to filter messages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([c5547f0](https://github.com/trust0-project/identus/commit/c5547f0))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.91 (2025-07-07)
 
 ### 🩹 Fixes
