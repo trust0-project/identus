@@ -1,3 +1,13 @@
+## 0.0.95 (2025-07-07)
+
+### 🩹 Fixes
+
+- refetch credentials Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([f5b77a1](https://github.com/trust0-project/identus/commit/f5b77a1))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.94 (2025-07-07)
 
 ### 🩹 Fixes
