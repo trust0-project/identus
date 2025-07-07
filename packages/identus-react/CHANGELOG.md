@@ -1,3 +1,18 @@
+## 0.0.79 (2025-07-07)
+
+### 🩹 Fixes
+
+- dependencies Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([4754db9](https://github.com/trust0-project/identus/commit/4754db9))
+- update ridb-react and ridb Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([40faf3c](https://github.com/trust0-project/identus/commit/40faf3c))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.12
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.78 (2025-07-06)
 
 ### 🩹 Fixes

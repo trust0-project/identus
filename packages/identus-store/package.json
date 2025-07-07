@@ -1,6 +1,6 @@
 {
   "name": "@trust0/identus-store",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Identus SDK Pluto.Store build with RIDB",
   "packageManager": "yarn@4.9.1",
   "publishConfig": {
