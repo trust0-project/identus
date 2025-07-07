@@ -19,7 +19,8 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const task = new SDK.Tasks.CreatePresentationRequest({ type, toDID: toDID ?? SDK.Domain.DID.fromString("did:prism:00000"), claims })
+        const peerDID = await createPeerDID();
+        const task = new SDK.Tasks.CreatePresentationRequest({ type, toDID: toDID ?? peerDID, claims })
         const requestPresentation = await agent.runTask(task);
         const requestPresentationMessage = requestPresentation.makeMessage();
         if (!toDID) {
