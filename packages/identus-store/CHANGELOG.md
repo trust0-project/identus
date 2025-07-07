@@ -1,3 +1,13 @@
+## 1.0.13 (2025-07-07)
+
+### 🩹 Fixes
+
+- identus-store startOptions Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b888a8b](https://github.com/trust0-project/identus/commit/b888a8b))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.12 (2025-07-07)
 
 ### 🩹 Fixes
