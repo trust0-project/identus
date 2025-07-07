@@ -8,7 +8,7 @@
 
 > **MessagesProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/Messages.tsx:26](https://github.com/trust0-project/identus/blob/8781526ab7889caeea9503585e51ba6194706f3d/packages/identus-react/src/provider/Messages.tsx#L26)
+Defined in: [packages/identus-react/src/provider/Messages.tsx:26](https://github.com/trust0-project/identus/blob/82ea90e568438103f901b2946a1b3846fd33ae86/packages/identus-react/src/provider/Messages.tsx#L26)
 
 ## Parameters
 

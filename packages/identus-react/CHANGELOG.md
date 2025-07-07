@@ -1,3 +1,13 @@
+## 0.0.94 (2025-07-07)
+
+### 🩹 Fixes
+
+- message offset and pagination Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([82ea90e](https://github.com/trust0-project/identus/commit/82ea90e))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.93 (2025-07-07)
 
 ### 🩹 Fixes
