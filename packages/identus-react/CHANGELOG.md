@@ -1,3 +1,13 @@
+## 0.0.99 (2025-07-07)
+
+### 🩹 Fixes
+
+- code improvement Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([eef55ba](https://github.com/trust0-project/identus/commit/eef55ba))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.98 (2025-07-07)
 
 ### 🩹 Fixes
