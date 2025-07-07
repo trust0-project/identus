@@ -74,7 +74,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                         }
         
                         const existingIndex = updatedMessages.findIndex(
-                            item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
+                            item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
                         );
         
                         if (existingIndex !== -1) {
@@ -105,13 +105,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 
     // Handle new real-time messages
     const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
-        await Promise.all(
-            newMessages
-                .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
-                .map(async (message) => {
-                    return agent?.handle(message);
-                })
-        );
+        
         setMessages(prev => {
             const updatedMessages = [...prev];
             
@@ -122,7 +116,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 }
 
                 const existingIndex = updatedMessages.findIndex(
-                    item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
+                    item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
                 );
 
                 if (existingIndex !== -1) {
@@ -139,20 +133,26 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                     });
                 }
             });
-            
             return updatedMessages;
         });
+
+        await Promise.all(
+            newMessages
+                .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
+                .map(async (message) => {
+                    return agent?.handle(message);
+                })
+        );
     }, [agent]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
         try {
             await readMessageDB(message);
-            
             // Update local state immediately without refetching
             setMessages(prev => 
                 prev.map(item => 
-                    item.message.id === message.id 
+                    item.message.id === message.id || item.message.uuid === message.uuid
                         ? { ...item, read: true }
                         : item
                 )
@@ -166,7 +166,6 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
         try {
             await deleteMessageDB(message);
-            
             // Remove from local state immediately without refetching
             setMessages(prev => 
                 prev.filter(item => item.message.uuid !== message.uuid)

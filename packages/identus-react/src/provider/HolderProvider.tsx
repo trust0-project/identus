@@ -8,7 +8,6 @@ import { base64 } from "multiformats/bases/base64";
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
     const { getMessages } = useMessages();
-    const { fetchCredentials } = useCredentials();
 
     const { peerDID, create: createPeerDID } = usePeerDID();
 
