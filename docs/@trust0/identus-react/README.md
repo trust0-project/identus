@@ -203,6 +203,5 @@ function DIDManager() {
 - [useIssuer](functions/useIssuer.md)
 - [useMessages](functions/useMessages.md)
 - [usePeerDID](functions/usePeerDID.md)
-- [usePluto](functions/usePluto.md)
 - [usePrismDID](functions/usePrismDID.md)
 - [useVerifier](functions/useVerifier.md)

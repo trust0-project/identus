@@ -1,3 +1,13 @@
+## 0.0.81 (2025-07-07)
+
+### 🩹 Fixes
+
+- remove usePluto Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([adaaa0b](https://github.com/trust0-project/identus/commit/adaaa0b))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.80 (2025-07-07)
 
 ### 🩹 Fixes

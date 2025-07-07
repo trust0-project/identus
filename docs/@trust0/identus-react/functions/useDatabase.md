@@ -8,7 +8,7 @@
 
 > **useDatabase**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useDatabase.ts:16](https://github.com/trust0-project/identus/blob/e70d2004708c48cb2000ff7ceeb93e9283a9a668/packages/identus-react/src/hooks/useDatabase.ts#L16)
+Defined in: [packages/identus-react/src/hooks/useDatabase.ts:16](https://github.com/trust0-project/identus/blob/adaaa0b5a27041a84edaaa1ff1c90be6125d3237/packages/identus-react/src/hooks/useDatabase.ts#L16)
 
 Hook for accessing database context and operations.
 
