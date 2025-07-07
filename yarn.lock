@@ -4808,8 +4808,8 @@ __metadata:
     "@csstools/css-tokenizer": "npm:^3.0.3"
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
     "@hyperledger/identus-sdk": "npm:^7.0.0-rc.2"
-    "@trust0/ridb": "npm:^1.5.28"
-    "@trust0/ridb-core": "npm:^1.7.23"
+    "@trust0/ridb": "npm:^1.5.30"
+    "@trust0/ridb-core": "npm:^1.7.25"
     "@types/chai": "npm:^4.3.4"
     "@types/chai-as-promised": "npm:^7.1.5"
     "@types/node": "npm:^22.13.1"
@@ -4832,8 +4832,8 @@ __metadata:
     vitest: "npm:^1.6.0"
   peerDependencies:
     "@hyperledger/identus-sdk": ^7.0.0-rc.2
-    "@trust0/ridb": ^1.5.28
-    "@trust0/ridb-core": ^1.7.23
+    "@trust0/ridb": ^1.5.30
+    "@trust0/ridb-core": ^1.7.25
   languageName: unknown
   linkType: soft
 
@@ -4841,13 +4841,6 @@ __metadata:
   version: 0.0.13
   resolution: "@trust0/ridb-build@npm:0.0.13"
   checksum: 10c0/0eed79a5b2f40b67275300b657dcad8d5a8f92f056275e0330b8fb798e7269bb5820dd89c4c683259b2018b341d1e1d3526dbab7fa7eea11305f89db5a5376a8
-  languageName: node
-  linkType: hard
-
-"@trust0/ridb-core@npm:^1.7.23":
-  version: 1.7.23
-  resolution: "@trust0/ridb-core@npm:1.7.23"
-  checksum: 10c0/b0b5d8b54ec05c3744ba2fc7afcc35d68c5f8e141c19d1b08d93889492cd9d28f97133e210ce9e802e9fb1400de70ab3cae878ba3aaa1e215071ba3e4896cb9a
   languageName: node
   linkType: hard
 
@@ -4866,15 +4859,6 @@ __metadata:
     react: ^18
     react-dom: ^18
   checksum: 10c0/bd08ecb480e3fe1c654c1478fe2defbd5590f8a432d77233cb0e8f60364cbee3a59ea3e6d07e78b2470a94cc577a656d8c037faf0e7021c9c70f8c676d60f53a
-  languageName: node
-  linkType: hard
-
-"@trust0/ridb@npm:^1.5.28":
-  version: 1.5.28
-  resolution: "@trust0/ridb@npm:1.5.28"
-  dependencies:
-    "@trust0/ridb-core": "npm:^1.7.23"
-  checksum: 10c0/b138c61bbd956713b2bf6973fbc9a5e8b94ff43d675091d7828966e7aad3553ed54157c8fa9b0a2a290a3736361ee7d3b7587cfd7ca80e3aa8ab80562b8dca93
   languageName: node
   linkType: hard
 
