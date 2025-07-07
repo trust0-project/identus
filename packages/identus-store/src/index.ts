@@ -1,28 +1,33 @@
-
 import {
     RIDB,
     StorageType
 } from '@trust0/ridb';
 import SDK from '@hyperledger/identus-sdk';
-import { 
-    BaseStorage, 
-    QueryType, 
-    SchemaTypeRecord 
+import {
+    BaseStorage,
+    QueryType,
+    SchemaTypeRecord
 } from '@trust0/ridb-core';
 
-export const createStore = <T extends SchemaTypeRecord>(
-  options: {
+
+type CreateStoreOptions<T extends SchemaTypeRecord> = {
     db: RIDB<T>,
-    password?: string,
-    storageType?: typeof BaseStorage | StorageType
-  }
+} & (
+        {
+            password?: string,
+            storageType?: typeof BaseStorage | StorageType,
+        } | { start: () => Promise<void> }
+    )
+export const createStore = <T extends SchemaTypeRecord>(
+    options: CreateStoreOptions<T>
 ): SDK.Pluto.Store => {
-    const { db, ...startOptions } = options;
+    const { db } = options;
+    
     const parseName = (collectionName: keyof T): keyof T => {
-        const name = 
+        const name =
             String(collectionName)
-            .replace(/([a-z])([A-Z])/g, '$1-$2')
-            .toLowerCase() as keyof T;
+                .replace(/([a-z])([A-Z])/g, '$1-$2')
+                .toLowerCase() as keyof T;
 
         if (!db.collections[name]) {
             throw new Error(`Collection ${String(name)} does not exist`)
@@ -53,11 +58,15 @@ export const createStore = <T extends SchemaTypeRecord>(
         },
         async start() {
             if (!db.started) {
+                const hasCustomStart = 'start' in options;
+                if (hasCustomStart) {
+                    return options.start()
+                } 
+                const {db, ...startOptions} = options;
                 if (Object.keys(startOptions).length > 0) {
-                    await db.start(startOptions)
-                } else {
-                    await db.start()
-                }
+                    return db.start(startOptions)
+                } 
+                return db.start()
             }
         },
         async stop() {
