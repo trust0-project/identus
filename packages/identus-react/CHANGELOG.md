@@ -1,3 +1,13 @@
+## 0.0.102 (2025-07-07)
+
+### 🩹 Fixes
+
+- revert push Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([dc8c601](https://github.com/trust0-project/identus/commit/dc8c601))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.101 (2025-07-07)
 
 ### 🩹 Fixes
