@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useCallback,  useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
@@ -8,8 +8,9 @@ import { uuid } from "@stablelib/uuid";
 import { Doc } from "@trust0/ridb-core";
 import { GroupedDIDs, DatabaseContext } from "../context";
 import { schemas } from "../db";
-import { useApollo, usePluto } from "../hooks";
+import { useApollo } from "../hooks";
 import { FEATURES, PRISM_RESOLVER_URL_KEY, MEDIATOR_DID, WALLET_NAME } from "../config";
+import { createStore } from "@trust0/identus-store";
 
 const hasDB = (db: RIDB<typeof schemas> | null):
     db is RIDB<typeof schemas> => db !== null;
@@ -24,7 +25,9 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const [features, setFeatures] = useState<string[]>([]);
     const [currentWallet, setCurrentWallet] = useState<string | null>(null);
     
-    const pluto = usePluto()
+    const store = useMemo(() => createStore({ db }), [db])
+    const pluto = useMemo(() => new SDK.Pluto(store, apollo), [store, apollo])
+
     const getMessages = useCallback(async () => {
         if (!hasDB(db)) {
             throw new Error("Database not connected");

@@ -2,7 +2,7 @@ import React, { useCallback, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { AgentContext } from "../context";
-import { useApollo, usePluto } from "../hooks";
+import { useApollo, useDatabase } from "../hooks";
 import { createResolver } from "../resolver";
 import { MessagesProvider } from "./Messages";
 import { ConnectionsProvider } from "./Connections";
@@ -12,14 +12,13 @@ import { IssuerProvider } from "./Issuer";
 import { HolderProvider } from "./HolderProvider";
 import { VerifierProvider } from "./VerifierProvider";
 import { hasDB } from "../utils";
-import { RIDBDatabase, useRIDB } from "@trust0/ridb-react";
+import { RIDBDatabase } from "@trust0/ridb-react";
 import { migrations, schemas } from "../db";
 import { DatabaseProvider } from "./Database";
 
 function WrappedAgentProvider({ children }: { children: React.ReactNode }) {
     const apollo = useApollo();
-    const pluto = usePluto();
-    const { db } = useRIDB<typeof schemas>();
+    const { db, pluto } = useDatabase();
     const [agent, setAgent] = useState<SDK.Agent | null>(null);
     const [state, setState] = useState<SDK.Domain.Startable.State>(SDK.Domain.Startable.State.STOPPED);
 

@@ -8,7 +8,6 @@
 export * from "./useApollo";
 export * from "./useCastor";
 export * from "./usePrismDID";
-export * from "./usePluto";
 export * from "./usePeerDID";
 export * from "./useAgent";
 export * from "./useIssuer";
