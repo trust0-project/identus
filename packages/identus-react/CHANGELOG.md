@@ -1,3 +1,13 @@
+## 0.0.97 (2025-07-07)
+
+### 🩹 Fixes
+
+- storage improvement Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b0bd9d8](https://github.com/trust0-project/identus/commit/b0bd9d8))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.96 (2025-07-07)
 
 ### 🩹 Fixes
