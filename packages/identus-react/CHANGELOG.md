@@ -1,3 +1,13 @@
+## 0.0.88 (2025-07-07)
+
+### 🩹 Fixes
+
+- handleMessages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([3514dce](https://github.com/trust0-project/identus/commit/3514dce))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.87 (2025-07-07)
 
 ### 🩹 Fixes

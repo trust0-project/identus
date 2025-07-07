@@ -8,7 +8,7 @@
 
 > **IssuerProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/Issuer.tsx:22](https://github.com/trust0-project/identus/blob/b60508aa9d22f763100a27eb2b289f9a94e24a52/packages/identus-react/src/provider/Issuer.tsx#L22)
+Defined in: [packages/identus-react/src/provider/Issuer.tsx:22](https://github.com/trust0-project/identus/blob/3514dce326cc00fe35b9c6892e846796fef0a57b/packages/identus-react/src/provider/Issuer.tsx#L22)
 
 ## Parameters
 
