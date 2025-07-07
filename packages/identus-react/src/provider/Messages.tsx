@@ -110,7 +110,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             await Promise.all(
                 newMessages
                     .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
-                    .map(agent.handle)
+                    .map((message) => agent.handle(message))
             )
             await fetchCredentials()
         }
