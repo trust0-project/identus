@@ -1,3 +1,13 @@
+## 0.0.85 (2025-07-07)
+
+### 🩹 Fixes
+
+- delete by uuid Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([2b13c84](https://github.com/trust0-project/identus/commit/2b13c84))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.84 (2025-07-07)
 
 ### 🩹 Fixes
