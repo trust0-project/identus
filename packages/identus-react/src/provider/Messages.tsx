@@ -31,10 +31,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         deleteMessage: deleteMessageDB, 
         getMessages: getMessagesDB
     } = useDatabase();
-    const { acceptIssuedCredential } = useHolder();
-
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
-
     // Memoized computed values to avoid recalculation on every render
     const unreadMessages = useMemo(() => 
         messages
