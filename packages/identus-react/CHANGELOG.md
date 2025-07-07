@@ -1,3 +1,13 @@
+## 0.0.86 (2025-07-07)
+
+### 🩹 Fixes
+
+- auto accept a credential Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([f4c5ad7](https://github.com/trust0-project/identus/commit/f4c5ad7))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.85 (2025-07-07)
 
 ### 🩹 Fixes
