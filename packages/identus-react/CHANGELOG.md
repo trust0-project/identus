@@ -1,3 +1,13 @@
+## 0.0.101 (2025-07-07)
+
+### 🩹 Fixes
+
+- don't loose track of thid on issuance requests Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([0c6075a](https://github.com/trust0-project/identus/commit/0c6075a))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.100 (2025-07-07)
 
 ### 🩹 Fixes
