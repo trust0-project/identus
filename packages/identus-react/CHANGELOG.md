@@ -1,3 +1,14 @@
+## 0.0.93 (2025-07-07)
+
+### 🩹 Fixes
+
+- message filtering Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([8781526](https://github.com/trust0-project/identus/commit/8781526))
+- remove holder method Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([74f614b](https://github.com/trust0-project/identus/commit/74f614b))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.92 (2025-07-07)
 
 ### 🩹 Fixes
