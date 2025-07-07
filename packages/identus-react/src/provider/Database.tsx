@@ -200,7 +200,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         const query = { $or: [{ uuid: message.uuid }, { id: message.id }] }
         const [found] = await db.collections.messages.find(query);
         if (found) {
-            await db.collections.messages.delete(found.id);
+            await db.collections.messages.delete(found.uuid);
         }
     }, [db]);
 
