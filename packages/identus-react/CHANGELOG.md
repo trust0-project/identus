@@ -1,3 +1,13 @@
+## 0.0.105 (2025-07-07)
+
+### 🩹 Fixes
+
+- fix verifyProvider createRequestPresentationMessage peerDID Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([38318ef](https://github.com/trust0-project/identus/commit/38318ef))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.104 (2025-07-07)
 
 ### 🩹 Fixes
