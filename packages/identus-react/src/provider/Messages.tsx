@@ -56,15 +56,44 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     );
 
     // Initial fetch of messages from database
-    const fetchMessages = useCallback(async () => {
+    const fetchMessages = useCallback(async (piuri?: string) => {
         if (dbState === "loaded") {
             try {
                 const dbMessages = await getMessagesDB();
                 // Filter out pickup/delivery messages entirely
                 const filteredMessages = dbMessages.filter(({ message }) => 
-                    !isPickupDeliveryMessage(message)
+                    !isPickupDeliveryMessage(message) && (piuri ? message.piuri === piuri : true)
                 );
-                setMessages(filteredMessages);
+                setMessages(prev => {
+                    const updatedMessages = [...prev];
+                    
+                    filteredMessages.forEach(({message:newMessage}) => {
+                        // Skip pickup/delivery messages entirely
+                        if (isPickupDeliveryMessage(newMessage)) {
+                            return;
+                        }
+        
+                        const existingIndex = updatedMessages.findIndex(
+                            item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
+                        );
+        
+                        if (existingIndex !== -1) {
+                            // Update existing message and preserve read status
+                            updatedMessages[existingIndex] = {
+                                message: newMessage,
+                                read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? updatedMessages[existingIndex].read : true          
+                            };
+                        } else {
+                            // New message - add as unread
+                            updatedMessages.push({ 
+                                message: newMessage, 
+                                read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? false : true
+                            });
+                        }
+                    });
+                    
+                    return updatedMessages;
+                });
                 return filteredMessages;
             } catch (error) {
                 console.error("Failed to fetch messages:", error);

@@ -642,7 +642,7 @@ export const MessagesContext = createContext<{
     /** Function to delete a message */
     deleteMessage: (message: SDK.Domain.Message) => Promise<void>;
     /** Function to refresh messages from storage */
-    getMessages: () => Promise<{ message: SDK.Domain.Message, read: boolean }[]>;
+    getMessages: (piuri?: string) => Promise<{ message: SDK.Domain.Message, read: boolean }[]>;
 } | undefined>(undefined);
 
 /**
