@@ -1,3 +1,13 @@
+## 0.0.89 (2025-07-07)
+
+### 🩹 Fixes
+
+- credentials fetching Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b99ab64](https://github.com/trust0-project/identus/commit/b99ab64))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.88 (2025-07-07)
 
 ### 🩹 Fixes
