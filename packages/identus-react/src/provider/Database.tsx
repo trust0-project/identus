@@ -34,11 +34,15 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         if (!hasDB(db)) {
             throw new Error("Database not connected");
         }
-        const messages = await db.collections.messages.find({});
-        return messages.map((message) => ({
-            message: SDK.Domain.Message.fromJson(message.dataJson),
-            read: message.read ?? false
-        }))
+        let allMessages = [];
+        let batch = [];
+        while((batch = await db.collections.messages.find({}, { limit: 3, offset: allMessages.length }))) {
+            allMessages.push(...batch.map((message) => ({
+                message: SDK.Domain.Message.fromJson(message.dataJson),
+                read: message.read ?? false
+            })))
+        }
+        return allMessages
     }, [db]);
 
     const getExtendedDIDs = useCallback(async () => {
