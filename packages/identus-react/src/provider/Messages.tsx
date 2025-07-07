@@ -25,12 +25,12 @@ const isPickupDeliveryMessage = (message: SDK.Domain.Message): boolean => {
 
 export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const { agent, state: agentState } = useAgent();
-    const { state: dbState } = useDatabase();
-    const { fetchCredentials } = useCredentials();
     const { 
         readMessage: readMessageDB, 
         deleteMessage: deleteMessageDB, 
         getMessages: getMessagesDB,
+        state: dbState, 
+        getCredentials:fetchCredentials
     } = useDatabase();
 
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
