@@ -31,6 +31,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         deleteMessage: deleteMessageDB, 
         getMessages: getMessagesDB
     } = useDatabase();
+
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
     // Memoized computed values to avoid recalculation on every render
     const unreadMessages = useMemo(() => 
@@ -78,7 +79,9 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         await Promise.all(
             newMessages
                 .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
-                .map(agent!.handle)
+                .map(async (message) => {
+                    return agent?.handle(message);
+                })
         );
         setMessages(prev => {
             const updatedMessages = [...prev];
