@@ -1,3 +1,13 @@
+## 0.0.91 (2025-07-07)
+
+### 🩹 Fixes
+
+- credential filtering Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([5b15ced](https://github.com/trust0-project/identus/commit/5b15ced))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.90 (2025-07-07)
 
 ### 🩹 Fixes
