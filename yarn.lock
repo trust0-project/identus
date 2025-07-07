@@ -4778,10 +4778,10 @@ __metadata:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
     "@hyperledger/identus-sdk": "npm:^7.0.0-rc.5"
     "@trust0/identus-store": "npm:^1.0.11"
-    "@trust0/ridb": "npm:^1.5.28"
+    "@trust0/ridb": "npm:^1.5.30"
     "@trust0/ridb-build": "npm:^0.0.13"
-    "@trust0/ridb-core": "npm:^1.7.23"
-    "@trust0/ridb-react": "npm:^1.4.5"
+    "@trust0/ridb-core": "npm:^1.7.25"
+    "@trust0/ridb-react": "npm:^1.4.9"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     multiformats: "npm:^9.9.0"
@@ -4851,14 +4851,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trust0/ridb-react@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "@trust0/ridb-react@npm:1.4.5"
+"@trust0/ridb-core@npm:^1.7.25":
+  version: 1.7.25
+  resolution: "@trust0/ridb-core@npm:1.7.25"
+  checksum: 10c0/75ccb913a431e59f4fadc266273b7fd6d6db34b711a52a773863d680801aaae3fa97ed7810f241f40fe9f6322e03189033034f2fb7bf1c2fbba05338f5bf6bd6
+  languageName: node
+  linkType: hard
+
+"@trust0/ridb-react@npm:^1.4.9":
+  version: 1.4.9
+  resolution: "@trust0/ridb-react@npm:1.4.9"
   peerDependencies:
     "@trust0/ridb": ^1
     react: ^18
     react-dom: ^18
-  checksum: 10c0/44da01661099aa15d0a8dfab23022e058a951e88a3a4fd63dfa5c3e38c78ff08dc599c0bb33b5edd93ca56fa7ecdbdba4637b6e734c85120e0366738a2fc8440
+  checksum: 10c0/bd08ecb480e3fe1c654c1478fe2defbd5590f8a432d77233cb0e8f60364cbee3a59ea3e6d07e78b2470a94cc577a656d8c037faf0e7021c9c70f8c676d60f53a
   languageName: node
   linkType: hard
 
@@ -4868,6 +4875,15 @@ __metadata:
   dependencies:
     "@trust0/ridb-core": "npm:^1.7.23"
   checksum: 10c0/b138c61bbd956713b2bf6973fbc9a5e8b94ff43d675091d7828966e7aad3553ed54157c8fa9b0a2a290a3736361ee7d3b7587cfd7ca80e3aa8ab80562b8dca93
+  languageName: node
+  linkType: hard
+
+"@trust0/ridb@npm:^1.5.30":
+  version: 1.5.30
+  resolution: "@trust0/ridb@npm:1.5.30"
+  dependencies:
+    "@trust0/ridb-core": "npm:^1.7.25"
+  checksum: 10c0/4a99aa1012204c28b50376a29fd2fe736b7798b42cf8ae1e5a33d69fd87bd48f5920bb864e54c4d29c5f596941b2e5e83f865897edb9cfe2adbb463a0e03f361
   languageName: node
   linkType: hard
 
