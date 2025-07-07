@@ -3,7 +3,7 @@
 import React, { useCallback } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
-import {  VerifierContext } from "../context";
+import { VerifierContext } from "../context";
 import { useAgent, useMessages, usePeerDID } from "../hooks";
 
 export function VerifierProvider({ children }: { children: React.ReactNode }) {
@@ -12,10 +12,10 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
     const { create: createPeerDID } = usePeerDID();
 
     const createRequestPresentationMessage = useCallback(async <T extends SDK.Domain.CredentialType>(
-        type: T, 
-        toDID: SDK.Domain.DID, 
+        type: T,
+        toDID: SDK.Domain.DID,
         claims: SDK.Domain.PresentationClaims<T>,
-    )=> {
+    ) => {
         if (!agent) {
             throw new Error("No agent found");
         }
@@ -43,7 +43,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
             {
                 goal_code: "verify-vc",
                 goal: "Verify Credential",
-                accept:[
+                accept: [
                     "didcomm/v2"
                 ]
             },
@@ -56,7 +56,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
                     },
                     "application/json",
                 )
-            ] 
+            ]
         )
         return Buffer.from(JSON.stringify(oob)).toString("base64")
     }, [agent, createPeerDID, createRequestPresentationMessage]);
@@ -68,11 +68,11 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         if (presentation.piuri !== SDK.ProtocolType.DidcommRequestPresentation) {
             throw new Error("Invalid presentation type");
         }
-        const response =await agent.handle(presentation)
+        const response = await agent.handle(presentation)
         await getMessages()
         return response
     }, [agent]);
-    return <VerifierContext.Provider value={{ agent, start, stop, state, issuePresentationRequest, verifyPresentation,issueOOBPresentationRequest }}>
+    return <VerifierContext.Provider value={{ agent, start, stop, state, issuePresentationRequest, verifyPresentation, issueOOBPresentationRequest }}>
         {children}
     </VerifierContext.Provider>
 }
