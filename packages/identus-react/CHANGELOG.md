@@ -1,3 +1,13 @@
+## 0.0.84 (2025-07-07)
+
+### 🩹 Fixes
+
+- pluto with start options Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([d801dc9](https://github.com/trust0-project/identus/commit/d801dc9))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.83 (2025-07-07)
 
 ### 🧱 Updated Dependencies
