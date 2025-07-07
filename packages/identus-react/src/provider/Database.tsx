@@ -24,9 +24,10 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const [error, setError] = useState<Error | null>(null);
     const [features, setFeatures] = useState<string[]>([]);
     const [currentWallet, setCurrentWallet] = useState<string | null>(null);
-    
-    const store = useMemo(() => createStore({ db }), [db])
-    const pluto = useMemo(() => new SDK.Pluto(store, apollo), [store, apollo])
+    const pluto = useMemo(() => {
+        const store = createStore({ db });
+        return new SDK.Pluto(store, apollo)
+    }, [apollo, db])
 
     const getMessages = useCallback(async () => {
         if (!hasDB(db)) {
