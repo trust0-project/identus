@@ -210,6 +210,7 @@ export const DatabaseContext = createContext<{
     wallet: string | null;
     /** Pluto storage instance */
     pluto: SDK.Domain.Pluto;
+    
     /** Function to start/initialize the database */
     start: (options: StartOptions<typeof schemas>) => Promise<void>;
     /** Retrieve all messages with read status */
@@ -260,6 +261,10 @@ export const DatabaseContext = createContext<{
     setWallet: (wallet: string | null) => Promise<void>;
     /** Set DID resolver URL */
     setResolverUrl: (resolverUrl: string | null) => Promise<void>;
+    /** Get all credentials */
+    getCredentials: () => Promise<SDK.Domain.Credential[]>;
+    /** Delete a credential */
+    deleteCredential: (credential: SDK.Domain.Credential) => Promise<void>;
 } | undefined>(undefined);
 
 /**

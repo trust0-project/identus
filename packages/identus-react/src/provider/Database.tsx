@@ -19,7 +19,7 @@ export type DIDStatus = 'unpublished' | 'published' | 'deactivated';
 
 export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const apollo = useApollo();
-    const {db, start: dbStart} = useRIDB<typeof schemas>();
+    const {db, start: dbStart,} = useRIDB<typeof schemas>();
     const [state, setState] = useState<DatabaseState>('disconnected');
     const [error, setError] = useState<Error | null>(null);
     const [features, setFeatures] = useState<string[]>([]);
@@ -348,6 +348,21 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
             setState('disconnected');
         }
     }, [db, getFeatures, getWallet]);
+
+    const getCredentials = useCallback(async () => {
+        if (state === "loaded") {
+            const credentials = await pluto.getAllCredentials();
+            return credentials ?? [];
+        }
+        return []
+    }, [pluto, state]);
+
+    const deleteCredential = useCallback(async (credential: SDK.Domain.Credential) => {
+        if (!hasDB(db) || state !== "loaded") {
+            throw new Error("Database not connected");
+        }
+        await db.collections.credentials.delete(credential.uuid);
+    }, [db, state]);
     
     return <DatabaseContext.Provider value={{
         db,
@@ -357,6 +372,8 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         wallet: currentWallet,
         pluto,
         start,
+        getCredentials,
+        deleteCredential,
         getMessages,
         readMessage,
         deleteMessage,

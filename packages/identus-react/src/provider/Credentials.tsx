@@ -2,18 +2,17 @@ import React, { useCallback, useEffect, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { CredentialsContext } from "../context";
-import { useAgent, useDatabase } from "../hooks";
+import { useDatabase } from "../hooks";
 import { hasDB } from "../utils";
 
 
 export function CredentialsProvider({ children }: { children: React.ReactNode }) {
-    const { agent } = useAgent(); 
-    const { db, state: dbState, pluto } = useDatabase();
+    const { db, state: dbState, pluto, deleteCredential: deleteCredentialDB, getCredentials: getCredentialsDB } = useDatabase();
     const [credentials, setCredentials] = useState<SDK.Domain.Credential[]>([]);
 
     const fetchCredentials = useCallback(async () => {
         if (dbState === "loaded") {
-            const credentials = await pluto.getAllCredentials();
+            const credentials = await getCredentialsDB();
             setCredentials(prev => [...prev, ...credentials.filter((credential) => !prev.some((c) => c.id === credential.id || c.uuid === credential.uuid))]);
             return credentials ?? [];
         }
@@ -28,8 +27,9 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
         if (!hasDB(db) || dbState !== "loaded") {
             throw new Error("Database not connected");
         }
-        await db.collections.credentials.delete(credential.uuid);
-    }, [db, dbState]);
+        await deleteCredentialDB(credential);
+        setCredentials(prev => prev.filter(c => c.id !== credential.id && c.uuid !== credential.uuid));
+    }, [db, dbState, deleteCredentialDB, setCredentials]);
     
     return <CredentialsContext.Provider value={{ credentials, deleteCredential, fetchCredentials }}>
         {children}
