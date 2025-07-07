@@ -1,3 +1,13 @@
+## 0.0.98 (2025-07-07)
+
+### 🩹 Fixes
+
+- clean holder provider Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([73327ec](https://github.com/trust0-project/identus/commit/73327ec))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.97 (2025-07-07)
 
 ### 🩹 Fixes
