@@ -1,3 +1,13 @@
+## 0.0.104 (2025-07-07)
+
+### 🩹 Fixes
+
+- oob verification code without to did Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([69216c2](https://github.com/trust0-project/identus/commit/69216c2))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.103 (2025-07-07)
 
 ### 🩹 Fixes
