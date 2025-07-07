@@ -27,6 +27,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
             ...attachment,
             from: message.from,
             to: selfPeerDID,
+            thid: message.thid
         })
     }, [peerDID, createPeerDID]);
 
