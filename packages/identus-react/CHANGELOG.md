@@ -1,3 +1,13 @@
+## 0.0.82 (2025-07-07)
+
+### 🩹 Fixes
+
+- pluto improvement Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([f7e291d](https://github.com/trust0-project/identus/commit/f7e291d))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.81 (2025-07-07)
 
 ### 🩹 Fixes
