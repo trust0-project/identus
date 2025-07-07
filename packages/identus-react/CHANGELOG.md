@@ -1,3 +1,13 @@
+## 0.0.100 (2025-07-07)
+
+### 🩹 Fixes
+
+- isssuance thid Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([1c55c51](https://github.com/trust0-project/identus/commit/1c55c51))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.99 (2025-07-07)
 
 ### 🩹 Fixes

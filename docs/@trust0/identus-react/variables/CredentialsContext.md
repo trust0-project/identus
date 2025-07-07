@@ -8,7 +8,7 @@
 
 > `const` **CredentialsContext**: `Context`\<`undefined` \| \{ `credentials`: [`Credential`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `deleteCredential`: (`credential`) => `Promise`\<`void`\>; `fetchCredentials`: () => `Promise`\<[`Credential`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]\>; \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:695](https://github.com/trust0-project/identus/blob/eef55ba67613b5b86357825d9b88029b8e41377e/packages/identus-react/src/context/index.ts#L695)
+Defined in: [packages/identus-react/src/context/index.ts:695](https://github.com/trust0-project/identus/blob/1c55c51adec5b41bade4f7cf716b0eaa0edf6a82/packages/identus-react/src/context/index.ts#L695)
 
 React context for credential storage and management.
 

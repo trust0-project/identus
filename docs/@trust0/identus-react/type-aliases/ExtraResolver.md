@@ -8,7 +8,7 @@
 
 > **ExtraResolver** = (`apollo`) => [`SDK.Domain.DIDResolver`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [packages/identus-react/src/hooks/useCastor.ts:5](https://github.com/trust0-project/identus/blob/eef55ba67613b5b86357825d9b88029b8e41377e/packages/identus-react/src/hooks/useCastor.ts#L5)
+Defined in: [packages/identus-react/src/hooks/useCastor.ts:5](https://github.com/trust0-project/identus/blob/1c55c51adec5b41bade4f7cf716b0eaa0edf6a82/packages/identus-react/src/hooks/useCastor.ts#L5)
 
 ## Parameters
 
