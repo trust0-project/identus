@@ -466,6 +466,7 @@ export const IssuerContext = createContext<AgentContextType & {
  * 
  */
 export const VerifierContext = createContext<AgentContextType & {
+    issueOOBPresentationRequest: <T extends SDK.Domain.CredentialType>(type: T, toDID: SDK.Domain.DID, claims: SDK.Domain.PresentationClaims<T>) => Promise<string>
     /**
      * Issue a presentation request to a holder.
      * 
@@ -539,8 +540,15 @@ export const HolderContext = createContext<AgentContextType & {
     /**
      * Parse an out-of-band credential offer.
      * 
-     * @param offer - Credential offer URL or string
-     * @param selfPeerDID - Holder's peer DID for communication
+     * @param url - Credential offer URL or string
+     * @returns Promise resolving to parsed message
+     */
+    parseOOB(url: string): Promise<SDK.Domain.Message>;
+
+    /**
+     * Parse an out-of-band credential offer.
+     * @deprecated Use parseOOBO instead
+     * @param url - Credential offer URL or string
      * @returns Promise resolving to parsed message
      */
     parseOOBOffer(

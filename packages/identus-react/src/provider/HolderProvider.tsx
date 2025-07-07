@@ -54,7 +54,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         }
     }, [agent]);
     
-    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
+    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer,parseOOB:parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}
     </HolderContext.Provider>
 }
