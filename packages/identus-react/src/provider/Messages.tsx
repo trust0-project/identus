@@ -93,7 +93,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 }
 
                 const existingIndex = updatedMessages.findIndex(
-                    item => item.message.uuid === newMessage.uuid
+                    item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
                 );
 
                 if (existingIndex !== -1) {
@@ -123,7 +123,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             // Update local state immediately without refetching
             setMessages(prev => 
                 prev.map(item => 
-                    item.message.uuid === message.uuid 
+                    item.message.id === message.id 
                         ? { ...item, read: true }
                         : item
                 )
