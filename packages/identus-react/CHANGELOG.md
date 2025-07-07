@@ -1,3 +1,14 @@
+## 0.0.103 (2025-07-07)
+
+### 🩹 Fixes
+
+- typo Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([1810b9b](https://github.com/trust0-project/identus/commit/1810b9b))
+- oob presentation request Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([349777a](https://github.com/trust0-project/identus/commit/349777a))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.102 (2025-07-07)
 
 ### 🩹 Fixes
