@@ -111,8 +111,8 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 newMessages
                     .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
                     .map(agent.handle)
-                    .map(async (message) => fetchCredentials())
-            );
+            )
+            await fetchCredentials()
         }
         setMessages(prev => {
             const updatedMessages = [...prev];
@@ -143,7 +143,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         });
 
         
-    }, [agent, agentState]);
+    }, [agent, agentState, fetchCredentials, setMessages, isPickupDeliveryMessage]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
@@ -160,7 +160,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         } catch (error) {
             console.error("Failed to mark message as read:", error);
         }
-    }, [readMessageDB]);
+    }, [readMessageDB, setMessages]);
 
     // Delete message - remove from both DB and local state
     const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
@@ -173,7 +173,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         } catch (error) {
             console.error("Failed to delete message:", error);
         }
-    }, [deleteMessageDB]);
+    }, [deleteMessageDB, setMessages]);
 
     // Initial load effect
     useEffect(() => {
