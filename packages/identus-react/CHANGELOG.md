@@ -1,3 +1,13 @@
+## 0.0.90 (2025-07-07)
+
+### 🩹 Fixes
+
+- better find existing messages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([26b3536](https://github.com/trust0-project/identus/commit/26b3536))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.89 (2025-07-07)
 
 ### 🩹 Fixes
