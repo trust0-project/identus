@@ -57,38 +57,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         }
         await getMessages()
     }, [agent]);
-    const acceptIssuedCredential = useCallback(async (message: SDK.Domain.Message) => {
-        if (!agent) {
-            throw new Error("No agent found");
-        }
-        if (message.piuri !== SDK.ProtocolType.DidcommIssueCredential) {
-            throw new Error("Message is not a credential issued message");
-        }
-        const protocol = new SDK.Tasks.RunProtocol({
-            type: 'credential-issue',
-            pid: SDK.ProtocolType.DidcommIssueCredential,
-            //Types are wrong on TS SDK, must fix there
-            data: {
-                message: message
-            } as any
-        });
-        const credential = await agent.runTask(protocol);  
-        const existingCredentials = await fetchCredentials();
-        const existingCredential = existingCredentials.find(({uuid, id}) => {
-            return uuid === credential.uuid || id === credential.id
-        })
-        if (existingCredential) {
-            //Credential already exists, return it
-            return existingCredential;
-        }
-        //Credential does not exist, process the message to generate the credential
-        await agent.handle(message);
-        // sync Credentials
-        await fetchCredentials();
-        return credential;
-    }, [agent, fetchCredentials]);
-
-    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer, acceptIssuedCredential }}>
+    return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}
     </HolderContext.Provider>
 }

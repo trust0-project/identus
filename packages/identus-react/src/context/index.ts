@@ -551,15 +551,6 @@ export const HolderContext = createContext<AgentContextType & {
     ): Promise<void>;
 
     /**
-     * Accept an issued credential.
-     * 
-     * @param message - Issued credential message
-     */
-    acceptIssuedCredential(
-        message: SDK.Domain.Message,
-    ): Promise<SDK.Domain.Credential>;
-
-    /**
      * Handle a presentation request by providing a credential.
      * 
      * @param message - Presentation request message
