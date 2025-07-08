@@ -1,3 +1,13 @@
+## 0.0.107 (2025-07-08)
+
+### 🩹 Fixes
+
+- fetching resources Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([b6fa072](https://github.com/trust0-project/identus/commit/b6fa072))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.106 (2025-07-08)
 
 ### 🩹 Fixes

@@ -8,7 +8,7 @@
 
 > **useConnections**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useConnections.ts:64](https://github.com/trust0-project/identus/blob/4a6b95a933da7f04a2fcf621177e0e96c79686a5/packages/identus-react/src/hooks/useConnections.ts#L64)
+Defined in: [packages/identus-react/src/hooks/useConnections.ts:64](https://github.com/trust0-project/identus/blob/b6fa072b2233c829d83bbc7f55677d7530979af7/packages/identus-react/src/hooks/useConnections.ts#L64)
 
 Hook for accessing DID connection context and operations.
 
