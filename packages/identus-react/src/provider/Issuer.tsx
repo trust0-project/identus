@@ -5,15 +5,6 @@ import SDK from "@hyperledger/identus-sdk";
 import { IssuerContext } from "../context";
 import { useAgent, useDatabase, useMessages, usePeerDID } from "../hooks";
 
-
-type Claim = {
-    id: string;
-    name: string;
-    value: string;
-    type: string;
-    isValid?: boolean;
-};
-
 type UseDatabase = ReturnType<typeof useDatabase>;
 type IssuanceFlow = Awaited<ReturnType<UseDatabase["getIssuanceFlow"]>>;
 type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never;

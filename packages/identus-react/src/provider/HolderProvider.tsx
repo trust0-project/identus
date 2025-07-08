@@ -2,12 +2,12 @@ import React from "react";
 import SDK from "@hyperledger/identus-sdk";
 import { useCallback } from "react";
 import { HolderContext } from "../context";
-import { useAgent, usePeerDID } from "../hooks";
+import { useAgent, useMessages, usePeerDID } from "../hooks";
 import { base64 } from "multiformats/bases/base64";
 
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-
+    const { getMessages } = useMessages();
     const { peerDID, create: createPeerDID } = usePeerDID();
 
     const parseOOBOffer = useCallback(async (url: string) => {
@@ -39,7 +39,8 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const presentation = await agent.runTask(task);
         const presentationMessage = presentation.makeMessage();
         await agent.send(presentationMessage);
-    }, [agent]);
+        await getMessages();
+    }, [agent, getMessages]);
 
     const acceptOOBOffer = useCallback(async (offer: SDK.Domain.Message) => {
         if (!agent) {
@@ -49,10 +50,11 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         try {
             const requestMessage = requestCredential.makeMessage()
             await agent.send(requestMessage);
+            await getMessages();
         } catch (err) {
             console.log("continue after err", err);
         }
-    }, [agent]);
+    }, [agent, getMessages]);
     
     return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer,parseOOB:parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}
