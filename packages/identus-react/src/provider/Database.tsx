@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useCallback,  useState } from "react";
+import { useCallback, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { DatabaseState, useRIDB } from "@trust0/ridb-react";
@@ -19,7 +19,7 @@ export type DIDStatus = 'unpublished' | 'published' | 'deactivated';
 
 export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const apollo = useApollo();
-    const {db, start: dbStart,} = useRIDB<typeof schemas>();
+    const { db, start: dbStart, } = useRIDB<typeof schemas>();
     const [state, setState] = useState<DatabaseState>('disconnected');
     const [error, setError] = useState<Error | null>(null);
     const [features, setFeatures] = useState<string[]>([]);
@@ -34,15 +34,14 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         if (!hasDB(db)) {
             throw new Error("Database not connected");
         }
-        let allMessages = [];
-        let batch = [];
-        while((batch = await db.collections.messages.find({}, { limit: 3, offset: allMessages.length }))) {
-            allMessages.push(...batch.map((message) => ({
-                message: SDK.Domain.Message.fromJson(message.dataJson),
-                read: message.read ?? false
-            })))
-        }
-        return allMessages
+        const allMessages = await db.collections.messages.find({});
+        console.log(`[DatabaseProvider] Found ${allMessages.length} messages in database`);
+        console.log(allMessages);
+        return allMessages.map((message) => ({
+            message: SDK.Domain.Message.fromJson(message.dataJson),
+            read: message.read ?? false
+        })
+        )
     }, [db]);
 
     const getExtendedDIDs = useCallback(async () => {
@@ -363,7 +362,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         }
         await db.collections.credentials.delete(credential.uuid);
     }, [db, state]);
-    
+
     return <DatabaseContext.Provider value={{
         db,
         state,
