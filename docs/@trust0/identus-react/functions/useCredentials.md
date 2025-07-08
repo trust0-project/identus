@@ -8,7 +8,7 @@
 
 > **useCredentials**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useCredentials.ts:74](https://github.com/trust0-project/identus/blob/b6fa072b2233c829d83bbc7f55677d7530979af7/packages/identus-react/src/hooks/useCredentials.ts#L74)
+Defined in: [packages/identus-react/src/hooks/useCredentials.ts:74](https://github.com/trust0-project/identus/blob/9b30acee0203d83a86724ca89290e3482f790a0d/packages/identus-react/src/hooks/useCredentials.ts#L74)
 
 Hook for accessing credential storage context and operations.
 
@@ -42,15 +42,15 @@ Function to delete a credential
 
 `Promise`\<`void`\>
 
-### fetchCredentials()
+### load()
 
-> **fetchCredentials**: () => `Promise`\<[`Credential`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]\>
+> **load**: () => `Promise`\<`void`\>
 
 Function to refresh credentials from storage
 
 #### Returns
 
-`Promise`\<[`Credential`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]\>
+`Promise`\<`void`\>
 
 ## Throws
 

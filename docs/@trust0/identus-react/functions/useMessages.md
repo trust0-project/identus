@@ -8,7 +8,7 @@
 
 > **useMessages**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useMessages.ts:81](https://github.com/trust0-project/identus/blob/b6fa072b2233c829d83bbc7f55677d7530979af7/packages/identus-react/src/hooks/useMessages.ts#L81)
+Defined in: [packages/identus-react/src/hooks/useMessages.ts:81](https://github.com/trust0-project/identus/blob/9b30acee0203d83a86724ca89290e3482f790a0d/packages/identus-react/src/hooks/useMessages.ts#L81)
 
 Hook for accessing DIDComm message context and operations.
 
@@ -35,21 +35,15 @@ Function to delete a message
 
 `Promise`\<`void`\>
 
-### getMessages()
+### load()
 
-> **getMessages**: (`piuri?`) => `Promise`\<`object`[]\>
+> **load**: () => `Promise`\<`void`\>
 
 Function to refresh messages from storage
 
-#### Parameters
-
-##### piuri?
-
-`string`
-
 #### Returns
 
-`Promise`\<`object`[]\>
+`Promise`\<`void`\>
 
 ### messages
 

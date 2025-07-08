@@ -8,7 +8,7 @@
 
 > **useConnections**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useConnections.ts:64](https://github.com/trust0-project/identus/blob/b6fa072b2233c829d83bbc7f55677d7530979af7/packages/identus-react/src/hooks/useConnections.ts#L64)
+Defined in: [packages/identus-react/src/hooks/useConnections.ts:64](https://github.com/trust0-project/identus/blob/9b30acee0203d83a86724ca89290e3482f790a0d/packages/identus-react/src/hooks/useConnections.ts#L64)
 
 Hook for accessing DID connection context and operations.
 
@@ -37,6 +37,16 @@ Function to delete a connection
 ##### connection
 
 [`DIDPair`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+
+#### Returns
+
+`Promise`\<`void`\>
+
+### load()
+
+> **load**: () => `Promise`\<`void`\>
+
+Function to refresh connections from storage
 
 #### Returns
 

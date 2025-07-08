@@ -8,7 +8,7 @@
 
 > **useAgent**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useAgent.ts:66](https://github.com/trust0-project/identus/blob/b6fa072b2233c829d83bbc7f55677d7530979af7/packages/identus-react/src/hooks/useAgent.ts#L66)
+Defined in: [packages/identus-react/src/hooks/useAgent.ts:66](https://github.com/trust0-project/identus/blob/9b30acee0203d83a86724ca89290e3482f790a0d/packages/identus-react/src/hooks/useAgent.ts#L66)
 
 Hook for accessing the main Identus Agent context and operations.
 

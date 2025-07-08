@@ -1,3 +1,13 @@
+## 0.0.108 (2025-07-08)
+
+### 🩹 Fixes
+
+- provider improvement Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9b30ace](https://github.com/trust0-project/identus/commit/9b30ace))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.107 (2025-07-08)
 
 ### 🩹 Fixes
