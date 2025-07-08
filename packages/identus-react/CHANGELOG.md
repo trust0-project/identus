@@ -1,3 +1,13 @@
+## 0.0.109 (2025-07-08)
+
+### 🩹 Fixes
+
+- message direction set properly Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([d55b569](https://github.com/trust0-project/identus/commit/d55b569))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.108 (2025-07-08)
 
 ### 🩹 Fixes
