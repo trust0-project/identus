@@ -1,3 +1,13 @@
+## 0.0.110 (2025-07-08)
+
+### 🩹 Fixes
+
+- reading messages from db Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([692ba3c](https://github.com/trust0-project/identus/commit/692ba3c))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.109 (2025-07-08)
 
 ### 🩹 Fixes

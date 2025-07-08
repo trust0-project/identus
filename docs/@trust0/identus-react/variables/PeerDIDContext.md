@@ -8,7 +8,7 @@
 
 > `const` **PeerDIDContext**: `Context`\<`undefined` \| \{ `create`: () => `Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>; `peerDID`: `null` \| [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:106](https://github.com/trust0-project/identus/blob/d55b569afd79121174b094526c6f007905d53366/packages/identus-react/src/context/index.ts#L106)
+Defined in: [packages/identus-react/src/context/index.ts:106](https://github.com/trust0-project/identus/blob/692ba3cdcf5907940ba9937d381a0d59009c0418/packages/identus-react/src/context/index.ts#L106)
 
 React context for managing Peer DID operations and state.
 
