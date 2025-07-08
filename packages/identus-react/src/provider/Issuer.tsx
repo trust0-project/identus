@@ -16,13 +16,13 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { create: createPeerDID } = usePeerDID();
 
     const getIssuanceStatus = useCallback((request: Request) => {
-        const received = receivedMessages.filter(( message ) => message.thid === request.id);
-        const sent = sentMessages.filter(( message ) => message.thid === request.id);
-        if (received.find(({piuri }) => piuri === SDK.ProtocolType.DidcommRequestCredential)) {
-            return 'accept-pending'
-        }
+        const received = receivedMessages.filter((message) => message.thid === request.id);
+        const sent = sentMessages.filter((message) => message.thid === request.id);
         if (sent.find(({ piuri }) => piuri === SDK.ProtocolType.DidcommIssueCredential)) {
             return 'completed'
+        }
+        if (received.find(({ piuri }) => piuri === SDK.ProtocolType.DidcommRequestCredential)) {
+            return 'accept-pending'
         }
         return 'pending'
     }, [receivedMessages, sentMessages]);
