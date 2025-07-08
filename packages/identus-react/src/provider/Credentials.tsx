@@ -20,8 +20,10 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
     }, [pluto, setCredentials, dbState]);
 
     useEffect(() => {
-        fetchCredentials()
-    }, [fetchCredentials, setCredentials]);
+        if (dbState === "loaded") {
+            fetchCredentials()
+        }
+    }, [fetchCredentials, dbState]);
 
     const deleteCredential = useCallback(async (credential: SDK.Domain.Credential) => {
         if (!hasDB(db) || dbState !== "loaded") {

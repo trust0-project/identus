@@ -177,8 +177,10 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 
     // Initial load effect
     useEffect(() => {
-        fetchMessages();
-    }, [fetchMessages]);
+        if (agentState === SDK.Domain.Startable.State.RUNNING) {
+            fetchMessages();
+        }
+    }, [fetchMessages, agentState, agent]);
 
     // Set up real-time message listener
     useEffect(() => {
