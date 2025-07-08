@@ -1,3 +1,13 @@
+## 0.0.111 (2025-07-08)
+
+### 🩹 Fixes
+
+- small fix for getIssuanceStatus Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([bd9b053](https://github.com/trust0-project/identus/commit/bd9b053))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.110 (2025-07-08)
 
 ### 🩹 Fixes
