@@ -1,25 +1,30 @@
 import React, { useCallback, useEffect, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
-
-import { useRIDB } from "@trust0/ridb-react";
-
 import {  ConnectionsContext } from "../context";
-import {  useAgent } from "../hooks";
-import { schemas } from "../db";
+import {  useAgent, useDatabase } from "../hooks";
 import { hasDB } from "../utils";
 
 
 
 export function ConnectionsProvider({ children }: { children: React.ReactNode }) {
     const { agent } = useAgent();   
-    const { db, state: dbState } = useRIDB<typeof schemas>();
+    const { db, state: dbState, pluto } = useDatabase();
     const [connections, setConnections] = useState<SDK.Domain.DIDPair[]>([]);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    const load = useCallback(async () => {
+        if (dbState === 'loaded' && !isLoaded) {
+            const connections = await pluto.getAllDidPairs();
+            setConnections(connections);
+            setIsLoaded(true);
+        }
+    }, [dbState, isLoaded, pluto, setConnections, setIsLoaded]);
 
     useEffect(() => {
-        if (db && dbState === 'loaded') {
-            agent?.pluto.getAllDidPairs().then(setConnections)
+        if (dbState === 'loaded' && !isLoaded) {
+            load()
         }
-    }, [agent, db, dbState]);
+    }, [dbState, isLoaded, load]);
     
     const deleteConnection = useCallback(async (connection: SDK.Domain.DIDPair) => {
         if (!hasDB(db) || dbState !== "loaded") {
@@ -58,7 +63,7 @@ export function ConnectionsProvider({ children }: { children: React.ReactNode })
         }
     }, [agent, onConnection])
 
-    return <ConnectionsContext.Provider value={{ connections, deleteConnection }}>
+    return <ConnectionsContext.Provider value={{ connections, deleteConnection, load }}>
         {children}
     </ConnectionsContext.Provider>
 }

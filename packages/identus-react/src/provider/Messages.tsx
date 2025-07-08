@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useMemo, useState } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { MessagesContext } from "../context";
-import { useAgent, useCredentials, useDatabase, useHolder } from "../hooks";
+import { useAgent, useCredentials, useDatabase } from "../hooks";
 
 type MessageWithReadStatus = {
     message: SDK.Domain.Message;
@@ -30,11 +30,13 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
         deleteMessage: deleteMessageDB, 
         getMessages: getMessagesDB,
         state: dbState, 
-        getCredentials:fetchCredentials
     } = useDatabase();
 
+    const { load: loadCredentials } = useCredentials();
+
+    const [isLoaded, setIsLoaded] = useState(false);
     const [messages, setMessages] = useState<MessageWithReadStatus[]>([]);
-    // Memoized computed values to avoid recalculation on every render
+
     const unreadMessages = useMemo(() => 
         messages
             .filter(({ read, message }) => !read && message.direction === SDK.Domain.MessageDirection.RECEIVED)
@@ -57,52 +59,25 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     );
 
     // Initial fetch of messages from database
-    const fetchMessages = useCallback(async (piuri?: string) => {
+    const load = useCallback(async () => {
         if (dbState === "loaded") {
             try {
                 const dbMessages = await getMessagesDB();
                 // Filter out pickup/delivery messages entirely
                 const filteredMessages = dbMessages.filter(({ message }) => 
-                    !isPickupDeliveryMessage(message) && (piuri ? message.piuri === piuri : true)
+                    !isPickupDeliveryMessage(message)
                 );
-                setMessages(prev => {
-                    const updatedMessages = [...prev];
-                    
-                    filteredMessages.forEach(({message:newMessage}) => {
-                        // Skip pickup/delivery messages entirely
-                        if (isPickupDeliveryMessage(newMessage)) {
-                            return;
-                        }
-        
-                        const existingIndex = updatedMessages.findIndex(
-                            item => item.message.id === newMessage.id || item.message.uuid === newMessage.uuid
-                        );
-        
-                        if (existingIndex !== -1) {
-                            // Update existing message and preserve read status
-                            updatedMessages[existingIndex] = {
-                                message: newMessage,
-                                read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? updatedMessages[existingIndex].read : true          
-                            };
-                        } else {
-                            // New message - add as unread
-                            updatedMessages.push({ 
-                                message: newMessage, 
-                                read: newMessage.direction === SDK.Domain.MessageDirection.RECEIVED ? false : true
-                            });
-                        }
-                    });
-                    
-                    return updatedMessages;
-                });
-                return filteredMessages;
+                const parsedMessages = filteredMessages.map(({message, read}) => ({
+                    message,
+                    read: message.direction === SDK.Domain.MessageDirection.SENT ? true: read
+                }));
+                
+                setMessages(parsedMessages);
             } catch (error) {
                 console.error("Failed to fetch messages:", error);
-                return [];
             }
         }
-        return [];
-    }, [getMessagesDB, dbState]);
+    }, [getMessagesDB, dbState, isPickupDeliveryMessage]);
 
     // Handle new real-time messages
     const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
@@ -112,7 +87,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                     .filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential)
                     .map((message) => agent.handle(message))
             )
-            await fetchCredentials()
+            await loadCredentials()
         }
         setMessages(prev => {
             const updatedMessages = [...prev];
@@ -141,46 +116,37 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             });
             return updatedMessages;
         });
-
-        
-    }, [agent, agentState, fetchCredentials, setMessages, isPickupDeliveryMessage]);
+    }, [agent, agentState, loadCredentials, setMessages, isPickupDeliveryMessage]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
-        try {
-            await readMessageDB(message);
-            // Update local state immediately without refetching
-            setMessages(prev => 
-                prev.map(item => 
-                    item.message.id === message.id || item.message.uuid === message.uuid
-                        ? { ...item, read: true }
-                        : item
-                )
-            );
-        } catch (error) {
-            console.error("Failed to mark message as read:", error);
-        }
+        await readMessageDB(message);
+        // Update local state immediately without refetching
+        setMessages(prev => 
+            prev.map(item => 
+                item.message.id === message.id || item.message.uuid === message.uuid
+                    ? { ...item, read: true }
+                    : item
+            )
+        );
     }, [readMessageDB, setMessages]);
 
     // Delete message - remove from both DB and local state
     const deleteMessage = useCallback(async (message: SDK.Domain.Message) => {
-        try {
-            await deleteMessageDB(message);
-            // Remove from local state immediately without refetching
-            setMessages(prev => 
-                prev.filter(item => item.message.uuid !== message.uuid)
-            );
-        } catch (error) {
-            console.error("Failed to delete message:", error);
-        }
+        await deleteMessageDB(message);
+        setMessages(prev => 
+            prev.filter(item => item.message.uuid !== message.uuid)
+        );
     }, [deleteMessageDB, setMessages]);
 
     // Initial load effect
     useEffect(() => {
-        if (agentState === SDK.Domain.Startable.State.RUNNING) {
-            fetchMessages();
+        if (dbState === "loaded" && !isLoaded) {
+            load()
+            setIsLoaded(true);
         }
-    }, [fetchMessages, agentState, agent]);
+    }, [load, dbState, isLoaded]);
+
 
     // Set up real-time message listener
     useEffect(() => {
@@ -193,26 +159,16 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     }, [agent, handleNewMessages, agentState]);
     
 
-    const contextValue = useMemo(() => ({
-        messages,
-        unreadMessages,
-        receivedMessages,
-        sentMessages,
-        readMessage,
-        deleteMessage,
-        getMessages: fetchMessages
-    }), [
-        messages,
-        unreadMessages,
-        receivedMessages,
-        sentMessages,
-        readMessage,
-        deleteMessage,
-        fetchMessages
-    ]);
-
     return (
-        <MessagesContext.Provider value={contextValue}>
+        <MessagesContext.Provider value={{
+            messages,
+            unreadMessages,
+            receivedMessages,
+            sentMessages,
+            readMessage,
+            deleteMessage,
+            load
+        }}>
             {children}
         </MessagesContext.Provider>
     );

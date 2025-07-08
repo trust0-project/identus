@@ -12,7 +12,7 @@ type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never
 
 export function IssuerProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages, receivedMessages, sentMessages } = useMessages();
+    const { load: reloadMessages, receivedMessages, sentMessages } = useMessages();
     const { create: createPeerDID } = usePeerDID();
 
     const getIssuanceStatus = useCallback((request: Request) => {
@@ -165,7 +165,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         const issued: SDK.IssueCredential = await agent.runTask(protocol);
         issued.thid = message.thid;
         await agent.send(issued.makeMessage());
-        await getMessages()
+        await reloadMessages()
     }, [agent]);
     return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential, getOOBURL, getIssuanceStatus}}>
         {children}

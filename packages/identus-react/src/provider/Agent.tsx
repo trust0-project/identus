@@ -108,9 +108,10 @@ function WrappedAgentProvider({ children }: { children: React.ReactNode }) {
         setAgent(agent);
     }, [pluto]);
     return <AgentContext.Provider value={{ agent, setAgent, start, stop, state }}>
-        <MessagesProvider>
-            <ConnectionsProvider>
-                <CredentialsProvider>
+        <CredentialsProvider>
+
+            <MessagesProvider>
+                <ConnectionsProvider>
                     <PeerDIDProvider>
                         <PrismDIDProvider>
                             <IssuerProvider>
@@ -122,9 +123,10 @@ function WrappedAgentProvider({ children }: { children: React.ReactNode }) {
                             </IssuerProvider>
                         </PrismDIDProvider>
                     </PeerDIDProvider>
-                </CredentialsProvider>
-            </ConnectionsProvider>
-        </MessagesProvider>
+
+                </ConnectionsProvider>
+            </MessagesProvider>
+        </CredentialsProvider>
     </AgentContext.Provider>
 }
 

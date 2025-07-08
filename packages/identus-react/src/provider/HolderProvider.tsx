@@ -7,7 +7,7 @@ import { base64 } from "multiformats/bases/base64";
 
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages } = useMessages();
+    const { load: reloadMessages } = useMessages();
     const { peerDID, create: createPeerDID } = usePeerDID();
 
     const parseOOBOffer = useCallback(async (url: string) => {
@@ -39,8 +39,8 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const presentation = await agent.runTask(task);
         const presentationMessage = presentation.makeMessage();
         await agent.send(presentationMessage);
-        await getMessages();
-    }, [agent, getMessages]);
+        await reloadMessages();
+    }, [agent, reloadMessages]);
 
     const acceptOOBOffer = useCallback(async (offer: SDK.Domain.Message) => {
         if (!agent) {
@@ -50,11 +50,11 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         try {
             const requestMessage = requestCredential.makeMessage()
             await agent.send(requestMessage);
-            await getMessages();
+            await reloadMessages();
         } catch (err) {
             console.log("continue after err", err);
         }
-    }, [agent, getMessages]);
+    }, [agent, reloadMessages]);
     
     return <HolderContext.Provider value={{ agent, start, stop, state, parseOOBOffer,parseOOB:parseOOBOffer, handlePresentationRequest, acceptOOBOffer }}>
         {children}

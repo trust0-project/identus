@@ -646,7 +646,7 @@ export const MessagesContext = createContext<{
     /** Function to delete a message */
     deleteMessage: (message: SDK.Domain.Message) => Promise<void>;
     /** Function to refresh messages from storage */
-    getMessages: (piuri?: string) => Promise<{ message: SDK.Domain.Message, read: boolean }[]>;
+    load: () => Promise<void>;
 } | undefined>(undefined);
 
 /**
@@ -706,7 +706,7 @@ export const CredentialsContext = createContext<{
     /** Function to delete a credential */
     deleteCredential: (credential: SDK.Domain.Credential) => Promise<void>;
     /** Function to refresh credentials from storage */
-    fetchCredentials: () => Promise<SDK.Domain.Credential[]>;
+    load: () => Promise<void>;
 } | undefined>(undefined);
 
 /**
@@ -761,5 +761,7 @@ export const ConnectionsContext = createContext<{
     connections: SDK.Domain.DIDPair[];
     /** Function to delete a connection */
     deleteConnection: (connection: SDK.Domain.DIDPair) => Promise<void>;
+    /** Function to refresh connections from storage */
+    load: () => Promise<void>;
 } | undefined>(undefined);
 

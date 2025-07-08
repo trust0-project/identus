@@ -8,7 +8,6 @@ import { useAgent, useMessages, usePeerDID } from "../hooks";
 
 export function VerifierProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
-    const { getMessages } = useMessages();
     const { create: createPeerDID } = usePeerDID();
 
     const createRequestPresentationMessage = useCallback(async <T extends SDK.Domain.CredentialType>(
@@ -74,9 +73,9 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
             throw new Error("Invalid presentation type");
         }
         const response = await agent.handle(presentation)
-        await getMessages()
         return response
     }, [agent]);
+
     return <VerifierContext.Provider value={{ agent, start, stop, state, issuePresentationRequest, verifyPresentation, issueOOBPresentationRequest }}>
         {children}
     </VerifierContext.Provider>

@@ -7,23 +7,23 @@ import { hasDB } from "../utils";
 
 
 export function CredentialsProvider({ children }: { children: React.ReactNode }) {
-    const { db, state: dbState, pluto, deleteCredential: deleteCredentialDB, getCredentials: getCredentialsDB } = useDatabase();
+    const { db, state: dbState, deleteCredential: deleteCredentialDB, getCredentials: getCredentialsDB } = useDatabase();
     const [credentials, setCredentials] = useState<SDK.Domain.Credential[]>([]);
+    const [isLoaded, setIsLoaded] = useState(false);
 
-    const fetchCredentials = useCallback(async () => {
+    const load = useCallback(async () => {
         if (dbState === "loaded") {
             const credentials = await getCredentialsDB();
             setCredentials(prev => [...prev, ...credentials.filter((credential) => !prev.some((c) => c.id === credential.id || c.uuid === credential.uuid))]);
-            return credentials ?? [];
         }
-        return []
-    }, [pluto, setCredentials, dbState]);
+    }, [dbState, getCredentialsDB, setCredentials]);
 
     useEffect(() => {
-        if (dbState === "loaded") {
-            fetchCredentials()
+        if (dbState === "loaded" && !isLoaded) {
+            load()
+            setIsLoaded(true);
         }
-    }, [fetchCredentials, dbState]);
+    }, [load, dbState, isLoaded]);
 
     const deleteCredential = useCallback(async (credential: SDK.Domain.Credential) => {
         if (!hasDB(db) || dbState !== "loaded") {
@@ -33,7 +33,7 @@ export function CredentialsProvider({ children }: { children: React.ReactNode })
         setCredentials(prev => prev.filter(c => c.id !== credential.id && c.uuid !== credential.uuid));
     }, [db, dbState, deleteCredentialDB, setCredentials]);
     
-    return <CredentialsContext.Provider value={{ credentials, deleteCredential, fetchCredentials }}>
+    return <CredentialsContext.Provider value={{ credentials, deleteCredential, load     }}>
         {children}
     </CredentialsContext.Provider>
 }
