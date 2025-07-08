@@ -1,3 +1,13 @@
+## 0.0.106 (2025-07-08)
+
+### 🩹 Fixes
+
+- make the Identus store more efficient by enabling pagination Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([4a6b95a](https://github.com/trust0-project/identus/commit/4a6b95a))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.105 (2025-07-07)
 
 ### 🩹 Fixes
