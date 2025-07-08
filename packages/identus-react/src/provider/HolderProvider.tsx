@@ -38,6 +38,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const task = new SDK.Tasks.CreatePresentation({ request, credential })
         const presentation = await agent.runTask(task);
         const presentationMessage = presentation.makeMessage();
+        presentationMessage.direction = SDK.Domain.MessageDirection.SENT;
         await agent.send(presentationMessage);
         await reloadMessages();
     }, [agent, reloadMessages]);
@@ -49,6 +50,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         const requestCredential = await agent.handle(offer);
         try {
             const requestMessage = requestCredential.makeMessage()
+            requestMessage.direction = SDK.Domain.MessageDirection.SENT;
             await agent.send(requestMessage);
             await reloadMessages();
         } catch (err) {

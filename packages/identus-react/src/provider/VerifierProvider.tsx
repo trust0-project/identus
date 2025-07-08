@@ -33,6 +33,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
             throw new Error("No agent found");
         }
         const requestPresentationMessage = await createRequestPresentationMessage(type, claims, toDID);
+        requestPresentationMessage.direction = SDK.Domain.MessageDirection.SENT;
         await agent.send(requestPresentationMessage);
     }, [agent, createRequestPresentationMessage]);
 

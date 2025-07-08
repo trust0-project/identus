@@ -164,7 +164,9 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         })
         const issued: SDK.IssueCredential = await agent.runTask(protocol);
         issued.thid = message.thid;
-        await agent.send(issued.makeMessage());
+        const issuedMessage = issued.makeMessage();
+        issuedMessage.direction = SDK.Domain.MessageDirection.SENT;
+        await agent.send(issuedMessage);
         await reloadMessages()
     }, [agent]);
     return <IssuerContext.Provider value={{ agent, start, stop, state, createOOBOffer, issueCredential, getOOBURL, getIssuanceStatus}}>
