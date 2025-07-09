@@ -1,3 +1,13 @@
+## 0.0.116 (2025-07-09)
+
+### 🩹 Fixes
+
+- issue credential to holder by aud field for jwt and sdjwt Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([dd94c41](https://github.com/trust0-project/identus/commit/dd94c41))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.115 (2025-07-09)
 
 ### 🩹 Fixes

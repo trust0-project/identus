@@ -8,7 +8,7 @@
 
 > **usePeerDID**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/usePeerDID.ts:49](https://github.com/trust0-project/identus/blob/420057f3cc05b15bb97280a752f7f8a0a6d9a55c/packages/identus-react/src/hooks/usePeerDID.ts#L49)
+Defined in: [packages/identus-react/src/hooks/usePeerDID.ts:49](https://github.com/trust0-project/identus/blob/dd94c41b8c008d493cc0772777f720cc014b50fa/packages/identus-react/src/hooks/usePeerDID.ts#L49)
 
 Hook for accessing Peer DID context and operations.
 
