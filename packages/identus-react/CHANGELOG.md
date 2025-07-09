@@ -1,3 +1,13 @@
+## 0.0.113 (2025-07-09)
+
+### 🩹 Fixes
+
+- store presentation request Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([4319705](https://github.com/trust0-project/identus/commit/4319705))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.112 (2025-07-09)
 
 ### 🩹 Fixes
