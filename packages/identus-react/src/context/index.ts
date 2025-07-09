@@ -399,7 +399,7 @@ export const IssuerContext = createContext<AgentContextType & {
     createOOBOffer<T extends SDK.Domain.CredentialType>(
         type: T,
         id: string,
-        claims: SDK.Domain.PresentationClaims<T>
+        claims: { name: string, value: string, type: string }[]
     ): Promise<string>;
     /**
      * Issue a credential directly to a holder.
@@ -413,7 +413,7 @@ export const IssuerContext = createContext<AgentContextType & {
     issueCredential<T extends SDK.Domain.CredentialType>(
         type: T,
         message: SDK.Domain.Message,
-        claims: SDK.Domain.PresentationClaims<T>,
+        claims: { name: string, value: string, type: string }[],
         issuerDID: SDK.Domain.DID,
         holderDID: SDK.Domain.DID,
     ): Promise<void>;

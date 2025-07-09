@@ -1,9 +1,10 @@
+// @ts-ignore
+import { base64 } from "multiformats/bases/base64";
 import React from "react";
 import SDK from "@hyperledger/identus-sdk";
 import { useCallback } from "react";
 import { HolderContext } from "../context";
 import { useAgent, useMessages, usePeerDID } from "../hooks";
-import { base64 } from "multiformats/bases/base64";
 
 export function HolderProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();

@@ -1,6 +1,7 @@
+// @ts-ignore
+import { base64 } from 'multiformats/bases/base64';
 import React, { useCallback } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { base64 } from 'multiformats/bases/base64';
 import SDK from "@hyperledger/identus-sdk";
 import { IssuerContext } from "../context";
 import { useAgent, useDatabase, useMessages, usePeerDID } from "../hooks";
@@ -83,7 +84,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         return `${window.location.href}?oob=${oob}`;
     }, [agent, createPeerDID]);
 
-    const createOOBOffer = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, id: string, claims: any) => {
+    const createOOBOffer = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, id: string, claims: { name: string, value: string, type: string }[]) => {
         if (!agent) {
             throw new Error("No agent found");
         }
@@ -99,7 +100,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
                     credential_preview: {
                         type: SDK.ProtocolType.DidcommCredentialPreview,
                         body: {
-                            attributes: claims as any,
+                            attributes: claims,
                         },
                     },
                 },
@@ -144,7 +145,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         const oobJson = Buffer.from(oobDecoded).toString();
         return oobJson;
     }, [agent]);
-    const issueCredential = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, message: SDK.Domain.Message, claims: SDK.Domain.PresentationClaims<T>, issuerDID: SDK.Domain.DID, holderDID: SDK.Domain.DID) => {
+    const issueCredential = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, message: SDK.Domain.Message, claims: { name: string, value: string, type: string }[], issuerDID: SDK.Domain.DID, holderDID: SDK.Domain.DID) => {
         if (!agent) {
             throw new Error("No agent found");
         }
@@ -159,7 +160,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
                 holderDID,
                 message,
                 format: type,
-                claims: claims as any,
+                claims: claims,
             }
         })
         const issued: SDK.IssueCredential = await agent.runTask(protocol);
