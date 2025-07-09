@@ -145,7 +145,13 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         const oobJson = Buffer.from(oobDecoded).toString();
         return oobJson;
     }, [agent]);
-    const issueCredential = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, message: SDK.Domain.Message, claims: { name: string, value: string, type: string }[], issuerDID: SDK.Domain.DID, holderDID: SDK.Domain.DID) => {
+    const issueCredential = useCallback(async <T extends SDK.Domain.CredentialType>(
+        type: T, 
+        message: SDK.Domain.Message, 
+        claims: { name: string, value: string, type: string }[], 
+        issuerDID: SDK.Domain.DID, 
+        holderDID: SDK.Domain.DID
+    ) => {
         if (!agent) {
             throw new Error("No agent found");
         }
@@ -160,7 +166,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
                 holderDID,
                 message,
                 format: type,
-                claims: claims,
+                claims: claims
             }
         })
         const issued: SDK.IssueCredential = await agent.runTask(protocol);
