@@ -8,7 +8,7 @@
 
 > **useCredentials**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useCredentials.ts:74](https://github.com/trust0-project/identus/blob/bd9b053affe13e08b28b5939844104e9cc829449/packages/identus-react/src/hooks/useCredentials.ts#L74)
+Defined in: [packages/identus-react/src/hooks/useCredentials.ts:74](https://github.com/trust0-project/identus/blob/9f7666f79544e124604ebfe5ab0b08403f9e8849/packages/identus-react/src/hooks/useCredentials.ts#L74)
 
 Hook for accessing credential storage context and operations.
 

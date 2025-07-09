@@ -1,3 +1,13 @@
+## 0.0.112 (2025-07-09)
+
+### 🩹 Fixes
+
+- wrong checks Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9f7666f](https://github.com/trust0-project/identus/commit/9f7666f))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.111 (2025-07-08)
 
 ### 🩹 Fixes
