@@ -67,7 +67,7 @@
   "homepage": "https://github.com/trust0-project/identus-react#readme",
   "devDependencies": {
     "@esbuild-plugins/node-resolve": "^0.2.2",
-    "@hyperledger/identus-sdk": "^7.0.0-rc.7",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.8",
     "@trust0/ridb-build": "^0.0.13",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -88,7 +88,7 @@
     "uuid": "^11.1.0"
   },
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "^7.0.0-rc.7",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.8",
     "react": "^18",
     "react-dom": "^18"
   }
