@@ -44,6 +44,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         const uuid = crypto.randomUUID();
         const peerDID = await createPeerDID();
         const requestPresentationMessage = await createRequestPresentationMessage(type, claims);
+        await agent.pluto.storeMessage(requestPresentationMessage);
         const oob = new SDK.OutOfBandInvitation(
             {
                 goal_code: "verify-vc",
