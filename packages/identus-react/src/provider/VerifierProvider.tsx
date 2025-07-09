@@ -70,7 +70,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         if (!agent) {
             throw new Error("No agent found");
         }
-        if (presentation.piuri !== SDK.ProtocolType.DidcommRequestPresentation) {
+        if (presentation.piuri !== SDK.ProtocolType.DidcommPresentation) {
             throw new Error("Invalid presentation type");
         }
         const response = await agent.handle(presentation)
