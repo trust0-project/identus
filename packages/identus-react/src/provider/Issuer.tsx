@@ -149,8 +149,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         type: T, 
         message: SDK.Domain.Message, 
         claims: { name: string, value: string, type: string }[], 
-        issuerDID: SDK.Domain.DID, 
-        holderDID: SDK.Domain.DID
+        issuerDID: SDK.Domain.DID
     ) => {
         if (!agent) {
             throw new Error("No agent found");
@@ -158,12 +157,16 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
         if (type !== SDK.Domain.CredentialType.JWT && type !== SDK.Domain.CredentialType.SDJWT) {
             throw new Error("Invalid credential type");
         }
+        if (message.piuri !== SDK.ProtocolType.DidcommRequestCredential) {
+            throw new Error("Invalid message type");
+        }
+        const requestPresentation = SDK.JWTCredential.fromJWS(message.attachments[0].payload);
         const protocol = new SDK.Tasks.RunProtocol({
             type: 'credential-request',
             pid: SDK.ProtocolType.DidcommRequestCredential,
             data: {
                 issuerDID,
-                holderDID,
+                holderDID: requestPresentation.issuer,
                 message,
                 format: type,
                 claims: claims
