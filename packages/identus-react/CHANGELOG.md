@@ -1,3 +1,13 @@
+## 0.0.117 (2025-07-11)
+
+### 🩹 Fixes
+
+- did is published Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([70257c7](https://github.com/trust0-project/identus/commit/70257c7))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.116 (2025-07-09)
 
 ### 🩹 Fixes
