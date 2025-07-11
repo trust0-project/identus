@@ -60,6 +60,7 @@ export const PrismDIDContext = createContext<{
     prismDID: SDK.Domain.DID | null;
     /** Function to create a new Prism DID with an alias */
     create: (alias: string) => Promise<SDK.Domain.DID>;
+    isPublished: (did: SDK.Domain.DID) => Promise<boolean>;
 } | undefined>(undefined);
 
 /**
@@ -701,6 +702,7 @@ export const MessagesContext = createContext<{
  * 
  */
 export const CredentialsContext = createContext<{
+    
     /** Array of stored credentials */
     credentials: SDK.Domain.Credential[];
     /** Function to delete a credential */
