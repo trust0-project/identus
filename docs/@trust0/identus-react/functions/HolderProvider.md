@@ -8,7 +8,7 @@
 
 > **HolderProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/HolderProvider.tsx:9](https://github.com/trust0-project/identus/blob/8c997fd92e0dce0bcaca8f585657564361867728/packages/identus-react/src/provider/HolderProvider.tsx#L9)
+Defined in: [packages/identus-react/src/provider/HolderProvider.tsx:9](https://github.com/trust0-project/identus/blob/9aa63ce6158d420e9188511e0533b33037bf61df/packages/identus-react/src/provider/HolderProvider.tsx#L9)
 
 ## Parameters
 

@@ -1,3 +1,13 @@
+## 0.0.119 (2025-07-12)
+
+### 🩹 Fixes
+
+- increase prism did each time we create new one Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9aa63ce](https://github.com/trust0-project/identus/commit/9aa63ce))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.118 (2025-07-12)
 
 ### 🩹 Fixes

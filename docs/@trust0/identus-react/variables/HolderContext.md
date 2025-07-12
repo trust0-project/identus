@@ -8,7 +8,7 @@
 
 > `const` **HolderContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:540](https://github.com/trust0-project/identus/blob/8c997fd92e0dce0bcaca8f585657564361867728/packages/identus-react/src/context/index.ts#L540)
+Defined in: [packages/identus-react/src/context/index.ts:540](https://github.com/trust0-project/identus/blob/9aa63ce6158d420e9188511e0533b33037bf61df/packages/identus-react/src/context/index.ts#L540)
 
 React context for credential holder operations.
 

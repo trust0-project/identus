@@ -8,7 +8,7 @@
 
 > **useMessages**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useMessages.ts:81](https://github.com/trust0-project/identus/blob/8c997fd92e0dce0bcaca8f585657564361867728/packages/identus-react/src/hooks/useMessages.ts#L81)
+Defined in: [packages/identus-react/src/hooks/useMessages.ts:81](https://github.com/trust0-project/identus/blob/9aa63ce6158d420e9188511e0533b33037bf61df/packages/identus-react/src/hooks/useMessages.ts#L81)
 
 Hook for accessing DIDComm message context and operations.
 
