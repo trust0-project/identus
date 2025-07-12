@@ -9,7 +9,6 @@ function useDIDCreation<T>(
 ) {
     const { agent, state } = useAgent();
     const [did, setDid] = useState<T | null>(null);
-    
     const create = useCallback(async () => {
         if (!agent || state !== SDK.Domain.Startable.State.RUNNING) {
             throw new Error('Agent not found or not running');
@@ -18,15 +17,18 @@ function useDIDCreation<T>(
         setDid(newDID);
         return newDID;
     }, [agent, state, createDIDFn]);
-    
     return { did, create };
 }
 
 export function PrismDIDProvider({ children }: { children: React.ReactNode }) {
     const { agent, state } = useAgent();
-    const {db, state: dbState} = useDatabase();
+    const {db, state: dbState, getGroupedDIDs} = useDatabase();
     const { did, create } = useDIDCreation(
-        (agent) => agent.createNewPrismDID('did', [])
+       async  (agent) => {
+        const {prism = []} = await getGroupedDIDs();
+        const keyPathIndex = prism.length + 1;
+        return agent.createNewPrismDID('did', [], keyPathIndex)
+       }
     );
 
     const isPublished = useCallback(async (did: SDK.Domain.DID) => {
