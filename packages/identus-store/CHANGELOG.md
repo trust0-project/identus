@@ -1,3 +1,14 @@
+## 1.0.16 (2025-07-12)
+
+### 🩹 Fixes
+
+- versions update for react Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([8c997fd](https://github.com/trust0-project/identus/commit/8c997fd))
+- update versions store Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([67781ff](https://github.com/trust0-project/identus/commit/67781ff))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.15 (2025-07-09)
 
 ### 🩹 Fixes

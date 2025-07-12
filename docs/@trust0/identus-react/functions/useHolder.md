@@ -8,7 +8,7 @@
 
 > **useHolder**(): [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`
 
-Defined in: [packages/identus-react/src/hooks/useHolder.ts:16](https://github.com/trust0-project/identus/blob/70257c7f576d893ec84798c6299981631616f941/packages/identus-react/src/hooks/useHolder.ts#L16)
+Defined in: [packages/identus-react/src/hooks/useHolder.ts:16](https://github.com/trust0-project/identus/blob/8c997fd92e0dce0bcaca8f585657564361867728/packages/identus-react/src/hooks/useHolder.ts#L16)
 
 Hook for accessing credential holder context and operations.
 
