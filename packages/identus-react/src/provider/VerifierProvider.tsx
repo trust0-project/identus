@@ -32,13 +32,17 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
             task = new SDK.Tasks.CreatePresentationRequest({ 
                 type, 
                 toDID: toDID ?? peerDID, 
-                claims:claims.claims
+                claims:{
+                    claims: claims.claims
+                }
             })
         } else if ("claims" in claims) {
             task = new SDK.Tasks.CreatePresentationRequest({ 
                 type, 
                 toDID: toDID ?? peerDID, 
-                claims:claims.claims
+                claims: {
+                    claims: claims.claims
+                }
             })
         } else {
             task = new SDK.Tasks.CreatePresentationRequest({ 
