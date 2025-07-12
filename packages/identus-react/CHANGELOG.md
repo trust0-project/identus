@@ -1,3 +1,13 @@
+## 0.0.120 (2025-07-12)
+
+### 🩹 Fixes
+
+- create request preentation for issuer + claims Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([7598e32](https://github.com/trust0-project/identus/commit/7598e32))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.119 (2025-07-12)
 
 ### 🩹 Fixes
