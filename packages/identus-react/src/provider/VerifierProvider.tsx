@@ -5,7 +5,10 @@ import SDK from "@hyperledger/identus-sdk";
 
 import { VerifierContext } from "../context";
 import { useAgent, useMessages, usePeerDID } from "../hooks";
+import OEAPlugin  from '@hyperledger/identus-sdk/plugins/oea';
 
+
+OEAPlugin.tasks
 export function VerifierProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
     const { create: createPeerDID } = usePeerDID();
@@ -19,7 +22,31 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
             throw new Error("No agent found");
         }
         const peerDID = await createPeerDID();
-        const task = new SDK.Tasks.CreatePresentationRequest({ type, toDID: toDID ?? peerDID, claims })
+        let task: SDK.Utils.Task<any>;
+        
+        if ("issuer" in claims) {
+            claims.claims.iss = {
+                type: "string",
+                value: claims.issuer
+            }
+            task = new SDK.Tasks.CreatePresentationRequest({ 
+                type, 
+                toDID: toDID ?? peerDID, 
+                claims:claims.claims
+            })
+        } else if ("claims" in claims) {
+            task = new SDK.Tasks.CreatePresentationRequest({ 
+                type, 
+                toDID: toDID ?? peerDID, 
+                claims:claims.claims
+            })
+        } else {
+            task = new SDK.Tasks.CreatePresentationRequest({ 
+                type, 
+                toDID: toDID ?? peerDID, 
+                claims:claims
+            })
+        }
         const requestPresentation = await agent.runTask(task);
         const requestPresentationMessage = requestPresentation.makeMessage();
         if (!toDID) {
