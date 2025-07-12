@@ -8,7 +8,7 @@
 
 > `const` **ConnectionsContext**: `Context`\<`undefined` \| \{ `connections`: [`DIDPair`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `deleteConnection`: (`connection`) => `Promise`\<`void`\>; `load`: () => `Promise`\<`void`\>; \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:761](https://github.com/trust0-project/identus/blob/7598e32af173b7c46c69fff7aa7d6600b8fc04b0/packages/identus-react/src/context/index.ts#L761)
+Defined in: [packages/identus-react/src/context/index.ts:761](https://github.com/trust0-project/identus/blob/6fd634152259b54553765c700f2d701e133e4807/packages/identus-react/src/context/index.ts#L761)
 
 React context for DID connection management.
 

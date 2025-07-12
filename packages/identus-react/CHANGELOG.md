@@ -1,3 +1,13 @@
+## 0.0.121 (2025-07-12)
+
+### 🩹 Fixes
+
+- wrong claims object Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([6fd6341](https://github.com/trust0-project/identus/commit/6fd6341))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.120 (2025-07-12)
 
 ### 🩹 Fixes
