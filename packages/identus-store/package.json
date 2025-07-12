@@ -33,9 +33,9 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "^7.0.0-rc.8",
-    "@trust0/ridb": "^1.5.30",
-    "@trust0/ridb-core": "^1.7.25"
+    "@hyperledger/identus-sdk": "^7.0.0-rc.11",
+    "@trust0/ridb": "^1.5.31",
+    "@trust0/ridb-core": "^1.7.26"
   },
   "devDependencies": {
     "@csstools/css-calc": "^2.1.3",
@@ -43,9 +43,9 @@
     "@csstools/css-parser-algorithms": "^3.0.4",
     "@csstools/css-tokenizer": "^3.0.3",
     "@esbuild-plugins/node-resolve": "^0.2.2",
-    "@hyperledger/identus-sdk": "^7.0.0-rc.8",
-    "@trust0/ridb": "^1.5.30",
-    "@trust0/ridb-core": "^1.7.25",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.11",
+    "@trust0/ridb": "^1.5.31",
+    "@trust0/ridb-core": "^1.7.26",
     "@types/chai": "^4.3.4",
     "@types/chai-as-promised": "^7.1.5",
     "@types/node": "^22.13.1",

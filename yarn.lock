@@ -2442,9 +2442,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperledger/identus-sdk@npm:^7.0.0-rc.8":
-  version: 7.0.0-rc.8
-  resolution: "@hyperledger/identus-sdk@npm:7.0.0-rc.8"
+"@hyperledger/identus-sdk@npm:^7.0.0-rc.11, @hyperledger/identus-sdk@npm:^7.0.0-rc.8":
+  version: 7.0.0-rc.11
+  resolution: "@hyperledger/identus-sdk@npm:7.0.0-rc.11"
   dependencies:
     "@hyperledger/identus-apollo": "npm:^1.4.5"
     "@noble/ciphers": "npm:^0.6.0"
@@ -2471,7 +2471,7 @@ __metadata:
     core-js: ^3.32.2
     elliptic: ^6.5.4
     jsdom: ^24.1.0
-  checksum: 10c0/eab89c8e4343b2707e9fe7ea052476ec27080b42085974cc874f01b362a9066b28cd604e59180aa60bc00260754158561b986b6c23e0e82f8d84b38871414478
+  checksum: 10c0/09a9d065051e9df5c65e006bbcb6640fa331613c80ae36dc8ee263fb9f3628c05f4eb6b3a3b9119e95628f8d10d8bfe3d665e87bd650081ccf34c9a159ab3f4a
   languageName: node
   linkType: hard
 
@@ -4807,9 +4807,9 @@ __metadata:
     "@csstools/css-parser-algorithms": "npm:^3.0.4"
     "@csstools/css-tokenizer": "npm:^3.0.3"
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
-    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.8"
-    "@trust0/ridb": "npm:^1.5.30"
-    "@trust0/ridb-core": "npm:^1.7.25"
+    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.11"
+    "@trust0/ridb": "npm:^1.5.31"
+    "@trust0/ridb-core": "npm:^1.7.26"
     "@types/chai": "npm:^4.3.4"
     "@types/chai-as-promised": "npm:^7.1.5"
     "@types/node": "npm:^22.13.1"
@@ -4831,9 +4831,9 @@ __metadata:
     vite: "npm:^5.4.0"
     vitest: "npm:^1.6.0"
   peerDependencies:
-    "@hyperledger/identus-sdk": ^7.0.0-rc.8
-    "@trust0/ridb": ^1.5.30
-    "@trust0/ridb-core": ^1.7.25
+    "@hyperledger/identus-sdk": ^7.0.0-rc.11
+    "@trust0/ridb": ^1.5.31
+    "@trust0/ridb-core": ^1.7.26
   languageName: unknown
   linkType: soft
 
@@ -4848,6 +4848,13 @@ __metadata:
   version: 1.7.25
   resolution: "@trust0/ridb-core@npm:1.7.25"
   checksum: 10c0/75ccb913a431e59f4fadc266273b7fd6d6db34b711a52a773863d680801aaae3fa97ed7810f241f40fe9f6322e03189033034f2fb7bf1c2fbba05338f5bf6bd6
+  languageName: node
+  linkType: hard
+
+"@trust0/ridb-core@npm:^1.7.26, @trust0/ridb-core@npm:^1.7.27":
+  version: 1.7.27
+  resolution: "@trust0/ridb-core@npm:1.7.27"
+  checksum: 10c0/3d349b414986ca1e069267b2c3bda9712c20c992be28f78bd0595a68b69cac7929e1664cbb291b6a3c210330e53f88cd507b199ff659c3ae0f031f787fa2f53e
   languageName: node
   linkType: hard
 
@@ -4868,6 +4875,15 @@ __metadata:
   dependencies:
     "@trust0/ridb-core": "npm:^1.7.25"
   checksum: 10c0/4a99aa1012204c28b50376a29fd2fe736b7798b42cf8ae1e5a33d69fd87bd48f5920bb864e54c4d29c5f596941b2e5e83f865897edb9cfe2adbb463a0e03f361
+  languageName: node
+  linkType: hard
+
+"@trust0/ridb@npm:^1.5.31":
+  version: 1.5.32
+  resolution: "@trust0/ridb@npm:1.5.32"
+  dependencies:
+    "@trust0/ridb-core": "npm:^1.7.27"
+  checksum: 10c0/81a0797558d67b9c7d0a2dd5fe9b9855ec1272f2e0812bcb5eb80268c8c278ab1cff56174f93c9693bca61db4cb82ffaaee7fed4604e6644b4264cbdbeb70e48
   languageName: node
   linkType: hard
 
