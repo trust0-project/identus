@@ -1,3 +1,13 @@
+## 0.0.127 (2025-07-13)
+
+### 🩹 Fixes
+
+- imrpove getOOBPresentationRequest method Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([ded2d97](https://github.com/trust0-project/identus/commit/ded2d97))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.126 (2025-07-13)
 
 ### 🩹 Fixes
