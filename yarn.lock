@@ -2442,9 +2442,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hyperledger/identus-sdk@npm:^7.0.0-rc.11":
-  version: 7.0.0-rc.11
-  resolution: "@hyperledger/identus-sdk@npm:7.0.0-rc.11"
+"@hyperledger/identus-sdk@npm:^7.0.0-rc.12":
+  version: 7.0.0-rc.12
+  resolution: "@hyperledger/identus-sdk@npm:7.0.0-rc.12"
   dependencies:
     "@hyperledger/identus-apollo": "npm:^1.4.5"
     "@noble/ciphers": "npm:^0.6.0"
@@ -2471,7 +2471,7 @@ __metadata:
     core-js: ^3.32.2
     elliptic: ^6.5.4
     jsdom: ^24.1.0
-  checksum: 10c0/09a9d065051e9df5c65e006bbcb6640fa331613c80ae36dc8ee263fb9f3628c05f4eb6b3a3b9119e95628f8d10d8bfe3d665e87bd650081ccf34c9a159ab3f4a
+  checksum: 10c0/c8e9b735f4bd90ecda44dd1002facd25895bc0596b16cac4090565c2caa3d538ce3cafe68754c27f0d1bbac69591ff077ce057879ece797c51a435c919026d6f
   languageName: node
   linkType: hard
 
@@ -4776,7 +4776,7 @@ __metadata:
   resolution: "@trust0/identus-react@workspace:packages/identus-react"
   dependencies:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
-    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.11"
+    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.12"
     "@trust0/identus-store": "npm:^1.0.16"
     "@trust0/ridb": "npm:^1.5.31"
     "@trust0/ridb-build": "npm:^0.0.16"
@@ -4792,7 +4792,7 @@ __metadata:
     typescript: "npm:^5.7.2"
     uuid: "npm:^11.1.0"
   peerDependencies:
-    "@hyperledger/identus-sdk": ^7.0.0-rc.11
+    "@hyperledger/identus-sdk": ^7.0.0-rc.12
     react: ^18
     react-dom: ^18
   languageName: unknown
@@ -4807,7 +4807,7 @@ __metadata:
     "@csstools/css-parser-algorithms": "npm:^3.0.4"
     "@csstools/css-tokenizer": "npm:^3.0.3"
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
-    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.11"
+    "@hyperledger/identus-sdk": "npm:^7.0.0-rc.12"
     "@trust0/ridb": "npm:^1.5.31"
     "@trust0/ridb-core": "npm:^1.7.26"
     "@types/chai": "npm:^4.3.4"
@@ -4831,7 +4831,7 @@ __metadata:
     vite: "npm:^5.4.0"
     vitest: "npm:^1.6.0"
   peerDependencies:
-    "@hyperledger/identus-sdk": ^7.0.0-rc.11
+    "@hyperledger/identus-sdk": ^7.0.0-rc.12
     "@trust0/ridb": ^1.5.31
     "@trust0/ridb-core": ^1.7.26
   languageName: unknown

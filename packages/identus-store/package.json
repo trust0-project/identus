@@ -33,7 +33,7 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "^7.0.0-rc.11",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.12",
     "@trust0/ridb": "^1.5.31",
     "@trust0/ridb-core": "^1.7.26"
   },
@@ -43,7 +43,7 @@
     "@csstools/css-parser-algorithms": "^3.0.4",
     "@csstools/css-tokenizer": "^3.0.3",
     "@esbuild-plugins/node-resolve": "^0.2.2",
-    "@hyperledger/identus-sdk": "^7.0.0-rc.11",
+    "@hyperledger/identus-sdk": "^7.0.0-rc.12",
     "@trust0/ridb": "^1.5.31",
     "@trust0/ridb-core": "^1.7.26",
     "@types/chai": "^4.3.4",
