@@ -1,3 +1,13 @@
+## 0.0.122 (2025-07-13)
+
+### 🩹 Fixes
+
+- invalid claims pattern value Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([042a220](https://github.com/trust0-project/identus/commit/042a220))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.121 (2025-07-12)
 
 ### 🩹 Fixes

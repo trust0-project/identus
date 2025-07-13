@@ -8,7 +8,7 @@
 
 > **VerifierProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/VerifierProvider.tsx:12](https://github.com/trust0-project/identus/blob/6fd634152259b54553765c700f2d701e133e4807/packages/identus-react/src/provider/VerifierProvider.tsx#L12)
+Defined in: [packages/identus-react/src/provider/VerifierProvider.tsx:12](https://github.com/trust0-project/identus/blob/042a220e3f73cf2a70dabdc1f00d2fd761523959/packages/identus-react/src/provider/VerifierProvider.tsx#L12)
 
 ## Parameters
 
