@@ -8,7 +8,7 @@
 
 > **ConnectionsProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/Connections.tsx:9](https://github.com/trust0-project/identus/blob/36273ced808cc928bb0bacc3f2bb81563d55ed78/packages/identus-react/src/provider/Connections.tsx#L9)
+Defined in: [packages/identus-react/src/provider/Connections.tsx:9](https://github.com/trust0-project/identus/blob/af52f2e3fa73710ce2410c9ab54cf0ba0d063521/packages/identus-react/src/provider/Connections.tsx#L9)
 
 ## Parameters
 

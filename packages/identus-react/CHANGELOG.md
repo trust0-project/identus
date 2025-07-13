@@ -1,3 +1,13 @@
+## 0.0.126 (2025-07-13)
+
+### 🩹 Fixes
+
+- restore an oob from a message Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([af52f2e](https://github.com/trust0-project/identus/commit/af52f2e))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.125 (2025-07-13)
 
 ### 🩹 Fixes
