@@ -1,3 +1,13 @@
+## 0.0.123 (2025-07-13)
+
+### 🩹 Fixes
+
+- remove logger from message provider Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([6a3633e](https://github.com/trust0-project/identus/commit/6a3633e))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.122 (2025-07-13)
 
 ### 🩹 Fixes
