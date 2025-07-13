@@ -1,3 +1,17 @@
+## 0.0.124 (2025-07-13)
+
+### 🩹 Fixes
+
+- upgrade packages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([c1cac9e](https://github.com/trust0-project/identus/commit/c1cac9e))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.17
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.123 (2025-07-13)
 
 ### 🩹 Fixes

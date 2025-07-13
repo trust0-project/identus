@@ -1,3 +1,13 @@
+## 1.0.17 (2025-07-13)
+
+### 🩹 Fixes
+
+- upgrade packages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([c1cac9e](https://github.com/trust0-project/identus/commit/c1cac9e))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.16 (2025-07-12)
 
 ### 🩹 Fixes
