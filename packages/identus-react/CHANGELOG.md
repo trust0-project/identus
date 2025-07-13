@@ -1,3 +1,13 @@
+## 0.0.125 (2025-07-13)
+
+### 🩹 Fixes
+
+- presentationRequests need to be setup as sent not received messages Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([36273ce](https://github.com/trust0-project/identus/commit/36273ce))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.124 (2025-07-13)
 
 ### 🩹 Fixes
