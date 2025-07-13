@@ -95,6 +95,34 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         return Buffer.from(JSON.stringify(oob)).toString("base64")
     }, [agent, createPeerDID, createRequestPresentationMessage]);
 
+    const getOOBPresentationRequest = useCallback(async (requestPresentationMessage: SDK.Domain.Message) => {
+        if (!agent) {
+            throw new Error("No agent found");
+        }
+        const peerDID = await createPeerDID();
+        requestPresentationMessage.direction = SDK.Domain.MessageDirection.SENT;
+        const oob = new SDK.OutOfBandInvitation(
+            {
+                goal_code: "verify-vc",
+                goal: "Verify Credential",
+                accept: [
+                    "didcomm/v2"
+                ]
+            },
+            peerDID.toString(),
+            requestPresentationMessage.thid,
+            [
+                new SDK.Domain.AttachmentDescriptor(
+                    {
+                        json: requestPresentationMessage
+                    },
+                    "application/json",
+                )
+            ]
+        )
+        return Buffer.from(JSON.stringify(oob)).toString("base64")
+    }, [agent]);
+
     const verifyPresentation = useCallback(async (presentation: SDK.Domain.Message): Promise<boolean> => {
         if (!agent) {
             throw new Error("No agent found");
@@ -106,7 +134,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         return response
     }, [agent]);
 
-    return <VerifierContext.Provider value={{ agent, start, stop, state, issuePresentationRequest, verifyPresentation, issueOOBPresentationRequest }}>
+    return <VerifierContext.Provider value={{ agent, start, stop, state,getOOBPresentationRequest, issuePresentationRequest, verifyPresentation, issueOOBPresentationRequest }}>
         {children}
     </VerifierContext.Provider>
 }
