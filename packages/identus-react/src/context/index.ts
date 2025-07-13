@@ -468,7 +468,7 @@ export const IssuerContext = createContext<AgentContextType & {
  */
 export const VerifierContext = createContext<AgentContextType & {
     issueOOBPresentationRequest: <T extends SDK.Domain.CredentialType>(type: T, claims: SDK.Domain.PresentationClaims<T>) => Promise<string>;
-    getOOBPresentationRequest: (requestPresentationMessage: SDK.Domain.Message) => Promise<string>;
+    getOOBPresentationRequest: (fromPeerDID: SDK.Domain.DID, requestPresentationMessage: SDK.Domain.Message) => string;
     /**
      * Issue a presentation request to a holder.
      * 

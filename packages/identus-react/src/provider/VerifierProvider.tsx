@@ -95,11 +95,10 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         return Buffer.from(JSON.stringify(oob)).toString("base64")
     }, [agent, createPeerDID, createRequestPresentationMessage]);
 
-    const getOOBPresentationRequest = useCallback(async (requestPresentationMessage: SDK.Domain.Message) => {
+    const getOOBPresentationRequest = useCallback((fromPeerDID: SDK.Domain.DID, requestPresentationMessage: SDK.Domain.Message) => {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const peerDID = await createPeerDID();
         requestPresentationMessage.direction = SDK.Domain.MessageDirection.SENT;
         const oob = new SDK.OutOfBandInvitation(
             {
@@ -109,7 +108,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
                     "didcomm/v2"
                 ]
             },
-            peerDID.toString(),
+            fromPeerDID.toString(),
             requestPresentationMessage.thid,
             [
                 new SDK.Domain.AttachmentDescriptor(
