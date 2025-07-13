@@ -27,7 +27,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         if ("issuer" in claims) {
             claims.claims.iss = {
                 type: "string",
-                value: claims.issuer
+                pattern: claims.issuer
             }
             task = new SDK.Tasks.CreatePresentationRequest({ 
                 type, 
