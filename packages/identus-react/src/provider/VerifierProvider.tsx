@@ -4,11 +4,8 @@ import React, { useCallback } from "react";
 import SDK from "@hyperledger/identus-sdk";
 
 import { VerifierContext } from "../context";
-import { useAgent, useMessages, usePeerDID } from "../hooks";
-import OEAPlugin  from '@hyperledger/identus-sdk/plugins/oea';
+import { useAgent, usePeerDID } from "../hooks";
 
-
-OEAPlugin.tasks
 export function VerifierProvider({ children }: { children: React.ReactNode }) {
     const { agent, start, stop, state } = useAgent();
     const { create: createPeerDID } = usePeerDID();
@@ -51,7 +48,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
                 claims:claims
             })
         }
-        const requestPresentation = await agent.runTask(task);
+        const requestPresentation = await agent.runTask<SDK.RequestPresentation>(task);
         const requestPresentationMessage = requestPresentation.makeMessage();
         if (!toDID) {
             delete (requestPresentationMessage as any).to;
@@ -72,7 +69,6 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         if (!agent) {
             throw new Error("No agent found");
         }
-        const uuid = crypto.randomUUID();
         const peerDID = await createPeerDID();
         const requestPresentationMessage = await createRequestPresentationMessage(type, claims);
         await agent.pluto.storeMessage(requestPresentationMessage);
@@ -85,7 +81,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
                 ]
             },
             peerDID.toString(),
-            uuid,
+            requestPresentationMessage.thid,
             [
                 new SDK.Domain.AttachmentDescriptor(
                     {
