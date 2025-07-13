@@ -91,7 +91,6 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
     const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
         if (agent && agentState === SDK.Domain.Startable.State.RUNNING) {
             const credentialMessages = newMessages.filter((message) => message.piuri === SDK.ProtocolType.DidcommIssueCredential);
-            
             await Promise.all(
                 credentialMessages.map(async (message) => {
                     return agent.handle(message);

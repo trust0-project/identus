@@ -35,8 +35,6 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
             throw new Error("Database not connected");
         }
         const allMessages = await db.collections.messages.find({});
-        console.log(`[DatabaseProvider] Found ${allMessages.length} messages in database`);
-        console.log(allMessages);
         return allMessages.map((message) => ({
             message: SDK.Domain.Message.fromJson(message.dataJson),
             read: message.read ?? false

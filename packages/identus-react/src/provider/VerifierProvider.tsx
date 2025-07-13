@@ -71,6 +71,7 @@ export function VerifierProvider({ children }: { children: React.ReactNode }) {
         }
         const peerDID = await createPeerDID();
         const requestPresentationMessage = await createRequestPresentationMessage(type, claims);
+        requestPresentationMessage.direction = SDK.Domain.MessageDirection.SENT;
         await agent.pluto.storeMessage(requestPresentationMessage);
         const oob = new SDK.OutOfBandInvitation(
             {
