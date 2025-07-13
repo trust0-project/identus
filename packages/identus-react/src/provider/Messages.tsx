@@ -85,7 +85,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
                 // Failed to fetch messages
             }
         } 
-    }, [getMessagesDB, dbState, isPickupDeliveryMessage]);
+    }, [getMessagesDB, dbState]);
 
     // Handle new real-time messages
     const handleNewMessages = useCallback(async (newMessages: SDK.Domain.Message[]) => {
@@ -132,7 +132,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             
             return updatedMessages;
         });
-    }, [agent, agentState, loadCredentials, setMessages, isPickupDeliveryMessage]);
+    }, [agent, agentState, loadCredentials]);
 
     // Mark message as read - update both DB and local state
     const readMessage = useCallback(async (message: SDK.Domain.Message) => {
@@ -160,7 +160,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
             await deleteMessageDB(message);
             
             setMessages(prev => {
-                const filtered = prev.filter(item => item.message.uuid !== message.uuid);
+                const filtered = prev.filter(item => item.message.id !== message.id || item.message.uuid !== message.uuid);
                 return filtered;
             });
         } catch (error) {
