@@ -8,7 +8,7 @@
 
 > **createStore**\<`T`\>(`options`): [`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [index.ts:21](https://github.com/trust0-project/identus/blob/9290425ae039f00b8d1277006ffa0040890e375e/packages/identus-store/src/index.ts#L21)
+Defined in: [index.ts:21](https://github.com/trust0-project/identus/blob/fa3a8163c87c7ded4a2066d05b6d5c5f7a01eb0b/packages/identus-store/src/index.ts#L21)
 
 ## Type Parameters
 

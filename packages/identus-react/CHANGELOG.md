@@ -1,3 +1,13 @@
+## 0.0.129 (2025-07-19)
+
+### 🩹 Fixes
+
+- correct url formatting with origin not href Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([fa3a816](https://github.com/trust0-project/identus/commit/fa3a816))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.128 (2025-07-13)
 
 ### 🩹 Fixes
