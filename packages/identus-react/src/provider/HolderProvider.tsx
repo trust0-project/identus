@@ -16,7 +16,7 @@ export function HolderProvider({ children }: { children: React.ReactNode }) {
         try {
             parsedUrl = new URL(url);
         } catch (error) {
-            parsedUrl = new URL(window.location.href);
+            parsedUrl = new URL(window.location.origin);
         }
         const oob = parsedUrl.searchParams.get('oob');
         const selfPeerDID = peerDID ? peerDID : await createPeerDID();

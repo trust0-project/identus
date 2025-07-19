@@ -81,7 +81,7 @@ export function IssuerProvider({ children }: { children: React.ReactNode }) {
             )
         });
         const oob = await agent.runTask(oobTask);
-        return `${window.location.href}?oob=${oob}`;
+        return `${window.location.origin}/?oob=${oob}`;
     }, [agent, createPeerDID]);
 
     const createOOBOffer = useCallback(async <T extends SDK.Domain.CredentialType>(type: T, id: string, claims: { name: string, value: string, type: string }[]) => {
