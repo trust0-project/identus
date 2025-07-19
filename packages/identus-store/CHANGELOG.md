@@ -1,3 +1,13 @@
+## 1.0.19 (2025-07-19)
+
+### 🩹 Fixes
+
+- db provider Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([72bcb28](https://github.com/trust0-project/identus/commit/72bcb28))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.18 (2025-07-19)
 
 ### 🩹 Fixes

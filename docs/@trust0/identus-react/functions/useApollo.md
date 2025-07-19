@@ -8,7 +8,7 @@
 
 > **useApollo**(): [`Apollo`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [packages/identus-react/src/hooks/useApollo.ts:13](https://github.com/trust0-project/identus/blob/064173f119f3161d8d520302e36497b99b3e7685/packages/identus-react/src/hooks/useApollo.ts#L13)
+Defined in: [packages/identus-react/src/hooks/useApollo.ts:13](https://github.com/trust0-project/identus/blob/72bcb283ffdc0ea146e2d47c396e09846586b047/packages/identus-react/src/hooks/useApollo.ts#L13)
 
 Creates and returns a memoized instance of Apollo DID resolver.
 

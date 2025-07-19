@@ -1,3 +1,9 @@
+## 0.0.131 (2025-07-19)
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.19
+
 ## 0.0.130 (2025-07-19)
 
 ### 🩹 Fixes
