@@ -31,6 +31,10 @@ function getDatabase<T extends SchemaTypeRecord>(options: DatabaseOrOptionalSche
         return new RIDB({dbName: options.dbName, schemas: mergedSchemas, migrations: mergedMigrations}) as RIDB<T>;
     }
 
+    if ('dbName' in options) {
+        return new RIDB({dbName: options.dbName, schemas, migrations}) as RIDB<T>;
+    }
+
     throw new Error('Either db or dbName with optional schemas and migrations must be provided');
 }
 
