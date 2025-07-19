@@ -5,40 +5,54 @@ import {
 import SDK from '@hyperledger/identus-sdk';
 import {
     BaseStorage,
-    QueryType,
-    SchemaTypeRecord
+    SchemaTypeRecord,
 } from '@trust0/ridb-core';
 
+import { schemas, migrations } from './db';
 
-type CreateStoreOptions<T extends SchemaTypeRecord> = {
-    db: RIDB<T>,
-} & (
-        {
-            password?: string,
-            storageType?: typeof BaseStorage | StorageType,
-        } | { start: () => Promise<void> }
-    )
-export const createStore = <T extends SchemaTypeRecord>(
-    options: CreateStoreOptions<T>
-): SDK.Pluto.Store => {
-    const { db } = options;
-    
-    const parseName = (collectionName: keyof T): keyof T => {
-        const name =
-            String(collectionName)
-                .replace(/([a-z])([A-Z])/g, '$1-$2')
-                .toLowerCase() as keyof T;
+type WithStart = { start: () => Promise<void> };
+type WithOptions = { password: string, storageType: typeof BaseStorage | StorageType };
+type StartOptions = WithStart | WithOptions;
 
-        if (!db.collections[name]) {
-            throw new Error(`Collection ${String(name)} does not exist`)
+type DatabaseOrOptionalSchemas<T extends SchemaTypeRecord> = { db?: RIDB<T> } | { schemas?: T, migrations?: any };       
+type CreateStoreOptions<T extends SchemaTypeRecord> = DatabaseOrOptionalSchemas<T> & StartOptions;
+
+
+
+function getDatabase<T extends SchemaTypeRecord>(options: DatabaseOrOptionalSchemas<T>): RIDB<T> {
+
+    if ('db' in options && options.db) {
+        return options.db;
+    }
+
+    if ('schemas' in options && 'migrations' in options) {
+        const mergedSchemas = { ...schemas, ...options.schemas };
+        const mergedMigrations = { ...migrations, ...options.migrations };
+        return new RIDB({schemas: mergedSchemas, migrations: mergedMigrations}) as RIDB<T>;
+    }
+
+    return new RIDB({schemas, migrations}) as RIDB<T>;
+}
+
+export const createStore = <T extends SchemaTypeRecord>(options: CreateStoreOptions<T> ):SDK.Pluto.Store => {
+    const db = getDatabase(options);
+    function isCollection(collectionName: string): collectionName is string & keyof typeof db.collections {
+        return collectionName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() in db.collections;
+    }
+
+    const parseName = (collectionName: string) => {
+        if (!isCollection(collectionName)) {
+            throw new Error(`Collection ${String(collectionName)} does not exist`)
         }
-        return name as keyof T;
+        const name = collectionName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() as keyof typeof db.collections;
+        return name;
     }
     return {
-        async query(table: string, query?: QueryType<any>): Promise<any[]> {
+        async query(table: string, query?: any): Promise<any[]> {
             const collectionName = parseName(table);
-            const collection = db.collections[collectionName]!;
-            const ridbQuery = (query as any)?.selector || query || {}
+            const collection = db.collections[collectionName];
+            const ridbQuery = query?.selector || query || {};
+            // @ts-ignore - Suppress complex union type error
             return collection.find(ridbQuery as any) as any
         },
         async insert(table: string, model: SDK.Domain.Pluto.Storable): Promise<void> {
@@ -62,7 +76,13 @@ export const createStore = <T extends SchemaTypeRecord>(
                 if (hasCustomStart) {
                     return options.start()
                 } 
-                const {db, ...startOptions} = options;
+                const startOptions: { password?: string; storageType?: typeof BaseStorage | StorageType } = {};
+                if ('password' in options && typeof options.password === 'string') {
+                    startOptions.password = options.password;
+                }
+                if ('storageType' in options) {
+                    startOptions.storageType = options.storageType;
+                }
                 if (Object.keys(startOptions).length > 0) {
                     return db.start(startOptions)
                 } 
