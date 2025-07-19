@@ -1,3 +1,13 @@
+## 1.0.18 (2025-07-19)
+
+### 🩹 Fixes
+
+- add better init options Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([064173f](https://github.com/trust0-project/identus/commit/064173f))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.17 (2025-07-13)
 
 ### 🩹 Fixes

@@ -1,3 +1,17 @@
+## 0.0.130 (2025-07-19)
+
+### 🩹 Fixes
+
+- add better init options Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([064173f](https://github.com/trust0-project/identus/commit/064173f))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.18
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.129 (2025-07-19)
 
 ### 🩹 Fixes
