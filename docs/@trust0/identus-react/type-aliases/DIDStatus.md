@@ -8,4 +8,4 @@
 
 > **DIDStatus** = `"unpublished"` \| `"published"` \| `"deactivated"`
 
-Defined in: [packages/identus-react/src/provider/Database.tsx:18](https://github.com/trust0-project/identus/blob/72bcb283ffdc0ea146e2d47c396e09846586b047/packages/identus-react/src/provider/Database.tsx#L18)
+Defined in: [packages/identus-react/src/provider/Database.tsx:18](https://github.com/trust0-project/identus/blob/c0b031914d478542c26b3c6451129c2672509b29/packages/identus-react/src/provider/Database.tsx#L18)

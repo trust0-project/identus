@@ -4777,7 +4777,7 @@ __metadata:
   dependencies:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
     "@hyperledger/identus-sdk": "npm:^7.0.0-rc.12"
-    "@trust0/identus-store": "npm:^1.0.19"
+    "@trust0/identus-store": "npm:^1.0.20"
     "@trust0/ridb": "npm:^1.5.31"
     "@trust0/ridb-build": "npm:^0.0.16"
     "@trust0/ridb-core": "npm:^1.7.26"
@@ -4798,7 +4798,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@trust0/identus-store@npm:^1.0.19, @trust0/identus-store@workspace:packages/identus-store":
+"@trust0/identus-store@npm:^1.0.20, @trust0/identus-store@workspace:packages/identus-store":
   version: 0.0.0-use.local
   resolution: "@trust0/identus-store@workspace:packages/identus-store"
   dependencies:

@@ -1,3 +1,13 @@
+## 1.0.20 (2025-07-19)
+
+### 🩹 Fixes
+
+- correct getDatabase method Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([c0b0319](https://github.com/trust0-project/identus/commit/c0b0319))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.19 (2025-07-19)
 
 ### 🩹 Fixes
