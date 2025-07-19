@@ -14,7 +14,7 @@ type WithStart = { start: () => Promise<void> };
 type WithOptions = { password: string, storageType: typeof BaseStorage | StorageType };
 type StartOptions = WithStart | WithOptions;
 
-type DatabaseOrOptionalSchemas<T extends SchemaTypeRecord> = { db?: RIDB<T> } | { schemas?: T, migrations?: any };       
+type DatabaseOrOptionalSchemas<T extends SchemaTypeRecord> = { db?: RIDB<T> } | { dbName: string, schemas?: T, migrations?: any };       
 type CreateStoreOptions<T extends SchemaTypeRecord> = DatabaseOrOptionalSchemas<T> & StartOptions;
 
 
@@ -28,10 +28,10 @@ function getDatabase<T extends SchemaTypeRecord>(options: DatabaseOrOptionalSche
     if ('schemas' in options && 'migrations' in options) {
         const mergedSchemas = { ...schemas, ...options.schemas };
         const mergedMigrations = { ...migrations, ...options.migrations };
-        return new RIDB({schemas: mergedSchemas, migrations: mergedMigrations}) as RIDB<T>;
+        return new RIDB({dbName: options.dbName, schemas: mergedSchemas, migrations: mergedMigrations}) as RIDB<T>;
     }
 
-    return new RIDB({schemas, migrations}) as RIDB<T>;
+    throw new Error('Either db or dbName with optional schemas and migrations must be provided');
 }
 
 export const createStore = <T extends SchemaTypeRecord>(options: CreateStoreOptions<T> ):SDK.Pluto.Store => {
