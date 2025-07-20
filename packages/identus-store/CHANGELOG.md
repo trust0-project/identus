@@ -1,3 +1,13 @@
+## 1.0.21 (2025-07-20)
+
+### 🩹 Fixes
+
+- corporate logos and resources in documentation Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([8a5d7a6](https://github.com/trust0-project/identus/commit/8a5d7a6))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.20 (2025-07-19)
 
 ### 🩹 Fixes

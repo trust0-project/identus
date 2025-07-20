@@ -1,3 +1,17 @@
+## 0.0.133 (2025-07-20)
+
+### 🩹 Fixes
+
+- corporate logos and resources in documentation Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([8a5d7a6](https://github.com/trust0-project/identus/commit/8a5d7a6))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.21
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.132 (2025-07-19)
 
 ### 🧱 Updated Dependencies

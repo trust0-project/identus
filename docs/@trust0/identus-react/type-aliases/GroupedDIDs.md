@@ -8,6 +8,6 @@
 
 > **GroupedDIDs** = `Record`\<`string`, [`DIDAlias`](DIDAlias.md)[]\>
 
-Defined in: [packages/identus-react/src/context/index.ts:139](https://github.com/trust0-project/identus/blob/c0b031914d478542c26b3c6451129c2672509b29/packages/identus-react/src/context/index.ts#L139)
+Defined in: [packages/identus-react/src/context/index.ts:139](https://github.com/trust0-project/identus/blob/8a5d7a6250f940c57f493622b608b924fe79a7f8/packages/identus-react/src/context/index.ts#L139)
 
 Type definition for DIDs grouped by their status or type.

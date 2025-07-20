@@ -4,7 +4,11 @@
 
 [Documentation](../../README.md) / @trust0/identus-react
 
-# ⚛️ Identus React
+<p align="center">
+  <img src="../../_media/identus-react-dark.svg" alt="Identus react logo" style="width:auto;height:50px;" />
+  <br />
+  <br />
+</p>
 
 A comprehensive React library for building Self-Sovereign Identity (SSI) applications with [Hyperledger Identus SDK](https://github.com/hyperledger-identus/sdk-ts). This library provides React components, hooks, and providers for rapid integration of decentralized identity functionality into your React applications.
 

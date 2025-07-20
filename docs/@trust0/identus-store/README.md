@@ -5,10 +5,9 @@
 [Documentation](../../README.md) / @trust0/identus-store
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/trust0-project/ridb@latest/docs/logo.svg" alt="JavaScript Database" />
+  <img src="../../_media/identus-store-dark.svg" alt="Identus store logo" style="width:auto;height:50px;" />
   <br />
   <br />
-  <h3 align="center">A secure light-weight and dependency free database wrapper for the web.</h3>
 </p>
 
 Trust0 is contributing to the [Hyperledger Identus community](https://github.com/hyperledger/identus) open source code by creating RIDB.
