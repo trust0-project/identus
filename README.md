@@ -1,8 +1,3 @@
-<p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/trust0-project/ridb@latest/docs/logo.svg" alt="JavaScript Database" />
-  <br />
-</p>
-
 ## 🌟 Overview
 
 Trust0 Identus provides a comprehensive suite of packages designed to streamline integration with Hyperledger Identus SDK. After years of collaboration with the Identus community, we've identified and solved critical gaps in storage solutions, React integrations, and developer experience.
@@ -15,6 +10,8 @@ Trust0 Identus provides a comprehensive suite of packages designed to streamline
 - **Cross-Platform**: Seamless browser and Node.js compatibility
 
 ### 🏪 Identus Store
+<img src="./resources/identus-store-dark.svg" alt="Identus store logo" style="width:auto;height:50px;" />
+
 [📖 Documentation](https://github.com/trust0-project/identus/tree/main/docs/@trust0/identus-store/README.md)
 Production-ready storage wrapper built on RIDB, specifically designed for Hyperledger Identus SDK.
 
@@ -25,6 +22,7 @@ Production-ready storage wrapper built on RIDB, specifically designed for Hyperl
 
 
 ### ⚛️ Identus React
+<img src="./resources/identus-react-dark.svg" alt="Identus react logo" style="width:auto;height:50px;"/>
 [📖 Documentation](https://github.com/trust0-project/identus/tree/main/docs/@trust0/identus-react/README.md)
 A comprehensive set of React components and hooks for rapid Identus integration.
 
