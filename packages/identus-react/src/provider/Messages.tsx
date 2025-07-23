@@ -1,5 +1,5 @@
 import SDK from "@hyperledger/identus-sdk";
-import type React from "react";
+import React from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { MessagesContext } from "../context";
