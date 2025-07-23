@@ -1,3 +1,14 @@
+## 0.0.134 (2025-07-23)
+
+### 🩹 Fixes
+
+- code bug Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([d52c2d6](https://github.com/trust0-project/identus/commit/d52c2d6))
+- messages listener Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([3a28fd4](https://github.com/trust0-project/identus/commit/3a28fd4))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.133 (2025-07-20)
 
 ### 🩹 Fixes

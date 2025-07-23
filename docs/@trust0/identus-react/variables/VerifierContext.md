@@ -8,7 +8,7 @@
 
 > `const` **VerifierContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:469](https://github.com/trust0-project/identus/blob/8a5d7a6250f940c57f493622b608b924fe79a7f8/packages/identus-react/src/context/index.ts#L469)
+Defined in: [packages/identus-react/src/context/index.ts:469](https://github.com/trust0-project/identus/blob/d52c2d6f1f812ac5d63969b5246f00c579419b5b/packages/identus-react/src/context/index.ts#L469)
 
 React context for credential verification operations.
 
