@@ -1,3 +1,13 @@
+## 0.0.135 (2025-09-06)
+
+### 🩹 Fixes
+
+- allow creating worker DB's through react Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([bd50cf7](https://github.com/trust0-project/identus/commit/bd50cf7))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.134 (2025-07-23)
 
 ### 🩹 Fixes
