@@ -130,10 +130,10 @@ function WrappedAgentProvider({ children }: { children: React.ReactNode }) {
     </AgentContext.Provider>
 }
 
-export function AgentProvider({ children }: { children: React.ReactNode }) {
-    return <RIDBDatabase schemas={schemas} migrations={migrations as any}>
+export function AgentProvider({ children, worker }: { children: React.ReactNode, worker?: boolean }) {
+    return <RIDBDatabase schemas={schemas} migrations={migrations as any} worker={worker ?? false}>
         <DatabaseProvider>
-            <WrappedAgentProvider>
+            <WrappedAgentProvider >
                 {children}
             </WrappedAgentProvider>
         </DatabaseProvider>
