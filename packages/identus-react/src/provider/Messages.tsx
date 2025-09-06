@@ -109,7 +109,23 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 					};
 				});
 
-				setMessages(parsedMessages);
+				setMessages((prevMessages) => {
+					const messageMap = new Map<string, MessageWithReadStatus>();
+					const getKey = (message: SDK.Domain.Message) => message.uuid || message.id;
+
+					parsedMessages.forEach(msg => {
+						messageMap.set(getKey(msg.message), msg);
+					});
+
+					prevMessages.forEach(prevMsg => {
+						const key = getKey(prevMsg.message);
+						if (!messageMap.has(key)) {
+							messageMap.set(key, prevMsg);
+						}
+					});
+
+					return Array.from(messageMap.values());
+				});
 			} catch (error) {
 				// Failed to fetch messages
 			}
@@ -215,7 +231,7 @@ export function MessagesProvider({ children }: { children: React.ReactNode }) {
 				setMessages((prev) => {
 					const filtered = prev.filter(
 						(item) =>
-							item.message.id !== message.id ||
+							item.message.id !== message.id &&
 							item.message.uuid !== message.uuid,
 					);
 					return filtered;
