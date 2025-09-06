@@ -1,3 +1,13 @@
+## 0.0.136 (2025-09-06)
+
+### 🩹 Fixes
+
+- hook improvement Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([f5b4788](https://github.com/trust0-project/identus/commit/f5b4788))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.135 (2025-09-06)
 
 ### 🩹 Fixes
