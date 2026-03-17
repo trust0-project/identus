@@ -1,3 +1,14 @@
+## 1.0.22 (2026-03-17)
+
+### 🩹 Fixes
+
+- checkout token Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([e3276f1](https://github.com/trust0-project/identus/commit/e3276f1))
+- using latest version of the SDK and avoid default imports Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9aac8e4](https://github.com/trust0-project/identus/commit/9aac8e4))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.21 (2025-07-20)
 
 ### 🩹 Fixes

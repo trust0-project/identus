@@ -8,7 +8,7 @@
 
 > `const` **IssuerContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:377](https://github.com/trust0-project/identus/blob/f5b47889e96dca5bb9f8d458aaab7ee1b2f8f868/packages/identus-react/src/context/index.ts#L377)
+Defined in: [packages/identus-react/src/context/index.ts:377](https://github.com/trust0-project/identus/blob/e3276f1735613a6857168657f5416fc6245ea88c/packages/identus-react/src/context/index.ts#L377)
 
 React context for credential issuance operations.
 
@@ -20,7 +20,7 @@ Includes support for out-of-band credential offers and direct credential issuanc
 ```tsx
 import { IssuerContext } from '@trust0/identus-react/context';
 import { useContext } from 'react';
-import SDK from '@hyperledger/identus-sdk';
+import * as SDK from "@hyperledger/identus-sdk";
 
 function CredentialIssuer() {
   const context = useContext(IssuerContext);
@@ -33,7 +33,7 @@ function CredentialIssuer() {
   
   const createDriversLicenseOffer = async () => {
     const offer = await createOOBOffer(
-      SDK.Domain.CredentialType.JWT,
+      Domain.CredentialType.JWT,
       'drivers-license-123',
       {
         name: 'John Doe',

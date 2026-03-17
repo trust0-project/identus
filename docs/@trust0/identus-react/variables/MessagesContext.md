@@ -8,7 +8,7 @@
 
 > `const` **MessagesContext**: `Context`\<`undefined` \| \{ `deleteMessage`: (`message`) => `Promise`\<`void`\>; `load`: () => `Promise`\<`void`\>; `messages`: `object`[]; `readMessage`: (`message`) => `Promise`\<`void`\>; `receivedMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `sentMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; `unreadMessages`: [`Message`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]; \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:637](https://github.com/trust0-project/identus/blob/f5b47889e96dca5bb9f8d458aaab7ee1b2f8f868/packages/identus-react/src/context/index.ts#L637)
+Defined in: [packages/identus-react/src/context/index.ts:637](https://github.com/trust0-project/identus/blob/e3276f1735613a6857168657f5416fc6245ea88c/packages/identus-react/src/context/index.ts#L637)
 
 React context for DIDComm message management.
 
@@ -36,11 +36,11 @@ function MessageInbox() {
     deleteMessage 
   } = context;
   
-  const markAsRead = async (message: SDK.Domain.Message) => {
+  const markAsRead = async (message: Domain.Message) => {
     await readMessage(message);
   };
   
-  const removeMessage = async (message: SDK.Domain.Message) => {
+  const removeMessage = async (message: Domain.Message) => {
     await deleteMessage(message);
   };
   

@@ -8,7 +8,7 @@
 
 > **DatabaseProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/Database.tsx:20](https://github.com/trust0-project/identus/blob/f5b47889e96dca5bb9f8d458aaab7ee1b2f8f868/packages/identus-react/src/provider/Database.tsx#L20)
+Defined in: [packages/identus-react/src/provider/Database.tsx:20](https://github.com/trust0-project/identus/blob/e3276f1735613a6857168657f5416fc6245ea88c/packages/identus-react/src/provider/Database.tsx#L20)
 
 ## Parameters
 

@@ -8,7 +8,7 @@
 
 > `const` **VerifierContext**: `Context`\<`undefined` \| [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`\>
 
-Defined in: [packages/identus-react/src/context/index.ts:469](https://github.com/trust0-project/identus/blob/f5b47889e96dca5bb9f8d458aaab7ee1b2f8f868/packages/identus-react/src/context/index.ts#L469)
+Defined in: [packages/identus-react/src/context/index.ts:469](https://github.com/trust0-project/identus/blob/e3276f1735613a6857168657f5416fc6245ea88c/packages/identus-react/src/context/index.ts#L469)
 
 React context for credential verification operations.
 
@@ -21,7 +21,7 @@ credential presentations.
 ```tsx
 import { VerifierContext } from '@trust0/identus-react/context';
 import { useContext } from 'react';
-import SDK from '@hyperledger/identus-sdk';
+import * as SDK from "@hyperledger/identus-sdk";
 
 function CredentialVerifier() {
   const context = useContext(VerifierContext);
@@ -32,15 +32,15 @@ function CredentialVerifier() {
   
   const { issuePresentationRequest, verifyPresentation } = context;
   
-  const requestAgeVerification = async (holderDID: SDK.Domain.DID) => {
+  const requestAgeVerification = async (holderDID: Domain.DID) => {
     await issuePresentationRequest(
-      SDK.Domain.CredentialType.JWT,
+      Domain.CredentialType.JWT,
       holderDID,
       { age: { min: 21 } }
     );
   };
   
-  const verifyAgePresentation = async (presentation: SDK.Domain.Message) => {
+  const verifyAgePresentation = async (presentation: Domain.Message) => {
     const isValid = await verifyPresentation(presentation);
     console.log('Age verification result:', isValid);
   };
