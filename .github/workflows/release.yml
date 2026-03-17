@@ -32,6 +32,9 @@ jobs:
 
       - name: Configure npm for trusted publishing
         run: |
+          # npm 11.5.1+ required for OIDC trusted publishing (Node 22 ships with npm 10.x)
+          npm install -g npm@latest
+          echo "npm version: $(npm --version)"
           # Remove _authToken that setup-node writes — forces npm to use OIDC
           sed -i'' -e '/_authToken/d' "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
           echo "--- .npmrc contents ---"
