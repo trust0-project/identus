@@ -1,18 +1,13 @@
 /**
  * @packageDocumentation
  *  
- * 
- * 
- * 
- * 
  * @module 
  * @mergeModuleWith <project>
  */
+import { type MigrationPathsForSchema } from "@trust0/ridb-core";
+import { makeCollections } from "@hyperledger/identus-sdk";
 
-import { MigrationPathsForSchema, Property, SchemaFieldType } from "@trust0/ridb-core";
-import * as SDK from "@hyperledger/identus-sdk";
-
-const collections = SDK.makeCollections();
+const collections = makeCollections();
 
 type Collections = {
     [key in keyof typeof collections]: typeof collections[key]
@@ -29,9 +24,9 @@ type CollectionSchemas = {
 
 type CollectionSchema = CollectionSchemas[keyof CollectionSchemas];
 
-function migrateSchema<
+export function migrateSchema<
     T extends CollectionSchema,
-    P extends Record<string, Property>
+    P extends Record<string, import('@trust0/ridb-core').Property>
 >({ properties: schemaProperties, ...schemaWithoutProperties }: T, additionalProperties: P) {
     const schema = {
         ...schemaWithoutProperties,
@@ -52,7 +47,7 @@ function migrateSchema<
     return schema;
 }
 
-function extractSchemas<T extends Record<string, { schema: CollectionSchema }>>(collections: T) {
+export function extractSchemas<T extends Record<string, { schema: CollectionSchema }>>(collections: T) {
     const result = {} as {
         [K in keyof T]: Omit<T[K]['schema'], 'version'> & { version: 0 }
     };
@@ -64,7 +59,7 @@ function extractSchemas<T extends Record<string, { schema: CollectionSchema }>>(
     return result;
 }
 
-function extractMigrations<T extends Record<string, { schema: CollectionSchema, migrationStrategies?: MigrationPathsForSchema<CollectionSchema> }>>(collections: T) {
+export function extractMigrations<T extends Record<string, { schema: CollectionSchema, migrationStrategies?: MigrationPathsForSchema<CollectionSchema> }>>(collections: T) {
     const result = {} as {
         [K in keyof T]: MigrationPathsForSchema<T[K]['schema']>
     };
@@ -76,88 +71,3 @@ function extractMigrations<T extends Record<string, { schema: CollectionSchema, 
     return result;
 }
 
-export const schemas = {
-    ...extractSchemas(collections),
-    credentials: migrateSchema(collections.credentials.schema, {
-        status: {
-            type: SchemaFieldType.string,
-        }
-    }),
-    dids: migrateSchema(collections.dids.schema, {
-        status: {
-            type: SchemaFieldType.string,
-        }
-    }),
-    messages: migrateSchema(collections.messages.schema, {
-        read: {
-            type: SchemaFieldType.boolean,
-            default: false as const,
-            required: true as const
-        },
-    }),
-    settings: {
-        version: 0 as const,
-        primaryKey: 'id',
-        type: SchemaFieldType.object,
-        encrypted: ['value'],
-        properties: {
-            id: {
-                type: SchemaFieldType.string,
-                required: true as const
-            },
-            key: {
-                type: SchemaFieldType.string,
-                required: true as const
-            },
-            value: {
-                type: SchemaFieldType.string,
-                required: true as const
-            }
-        }
-    },
-    issuance: {
-        version: 0 as const,
-        primaryKey: 'id',
-        type: SchemaFieldType.object,
-        encrypted: ['claims'],
-        properties: {
-            id: {
-                type: SchemaFieldType.string,
-                required: true as const
-            },
-            claims: {
-                type: SchemaFieldType.array,
-                items: {
-                    type: SchemaFieldType.object,
-                    properties: {
-                        name: {
-                            type: SchemaFieldType.string,
-                            required: true as const
-                        },
-                        value: {
-                            type: SchemaFieldType.string,
-                            required: true as const
-                        },
-                        type: {
-                            type: SchemaFieldType.string,
-                            required: true as const
-                        },
-                    }
-                }
-            },
-            credentialFormat: {
-                type: SchemaFieldType.string,
-                required: true as const
-            },
-            automaticIssuance: {
-                type: SchemaFieldType.boolean,
-            },
-            issuingDID: {
-                type: SchemaFieldType.string,
-                required: true as const
-            }
-        }
-    },
-}
-
-export const migrations = extractMigrations(collections) as any
