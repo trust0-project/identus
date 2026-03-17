@@ -1,4 +1,4 @@
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 
 
 export type ResolverClass = new (apollo: SDK.Domain.Apollo) => SDK.Domain.DIDResolver;

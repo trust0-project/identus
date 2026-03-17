@@ -2,7 +2,7 @@
 import { base64 } from 'multiformats/bases/base64';
 import React, { useCallback } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 import { IssuerContext } from "../context";
 import { useAgent, useDatabase, useMessages, usePeerDID } from "../hooks";
 

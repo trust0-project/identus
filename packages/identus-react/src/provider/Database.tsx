@@ -1,6 +1,6 @@
 import React, { useMemo } from "react";
 import { useCallback, useState } from "react";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 
 import { DatabaseState, useRIDB } from "@trust0/ridb-react";
 import { RIDB, StartOptions } from "@trust0/ridb";

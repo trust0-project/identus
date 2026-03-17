@@ -6,7 +6,7 @@
  */ 
 
 import { MigrationPathsForSchema, Property, SchemaFieldType } from "@trust0/ridb-core";
-import SDK from '@hyperledger/identus-sdk';
+import * as SDK from "@hyperledger/identus-sdk";
 
 const collections = SDK.makeCollections();
 

@@ -2,7 +2,10 @@ import {
     RIDB,
     StorageType
 } from '@trust0/ridb';
-import SDK from '@hyperledger/identus-sdk';
+import {
+    Domain,
+    Pluto
+} from '@hyperledger/identus-sdk';
 import {
     BaseStorage,
     SchemaTypeRecord,
@@ -38,7 +41,7 @@ function getDatabase<T extends SchemaTypeRecord>(options: DatabaseOrOptionalSche
     throw new Error('Either db or dbName with optional schemas and migrations must be provided');
 }
 
-export const createStore = <T extends SchemaTypeRecord>(options: CreateStoreOptions<T> ):SDK.Pluto.Store => {
+export const createStore = <T extends SchemaTypeRecord>(options: CreateStoreOptions<T> ):Pluto.Store => {
     const db = getDatabase(options);
     function isCollection(collectionName: string): collectionName is string & keyof typeof db.collections {
         return collectionName.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase() in db.collections;
@@ -59,12 +62,12 @@ export const createStore = <T extends SchemaTypeRecord>(options: CreateStoreOpti
             // @ts-ignore - Suppress complex union type error
             return collection.find(ridbQuery as any) as any
         },
-        async insert(table: string, model: SDK.Domain.Pluto.Storable): Promise<void> {
+        async insert(table: string, model: Domain.Pluto.Storable): Promise<void> {
             const collectionName = parseName(table);
             const collection = db.collections[collectionName]!
             await collection.create(model as any)
         },
-        async update(table: string, model: SDK.Domain.Pluto.Storable): Promise<void> {
+        async update(table: string, model: Domain.Pluto.Storable): Promise<void> {
             const collectionName = parseName(table);
             const collection = db.collections[collectionName]!
             await collection.update(model as any)

@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 
 import { CredentialsContext } from "../context";
 import { useDatabase } from "../hooks";

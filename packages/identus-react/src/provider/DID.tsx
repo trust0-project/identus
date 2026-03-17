@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from "react";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 import { PeerDIDContext, PrismDIDContext } from "../context";
 import { useAgent, useDatabase } from "../hooks";
 

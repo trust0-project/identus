@@ -5,7 +5,7 @@
  * @mergeModuleWith <project>
  */ 
 
-import SDK from "@hyperledger/identus-sdk";
+import { Domain, Agent } from "@hyperledger/identus-sdk";
 import { RIDB, StartOptions } from "@trust0/ridb";
 import { Doc } from "@trust0/ridb-core";
 import { createContext } from "react";
@@ -57,10 +57,10 @@ type Request = IssuanceFlow extends infer T ? T extends null ? never : T : never
  */
 export const PrismDIDContext = createContext<{
     /** Current Prism DID instance, null if not yet created */
-    prismDID: SDK.Domain.DID | null;
+    prismDID: Domain.DID | null;
     /** Function to create a new Prism DID with an alias */
-    create: (alias: string) => Promise<SDK.Domain.DID>;
-    isPublished: (did: SDK.Domain.DID) => Promise<boolean>;
+    create: (alias: string) => Promise<Domain.DID>;
+    isPublished: (did: Domain.DID) => Promise<boolean>;
 } | undefined>(undefined);
 
 /**
@@ -106,9 +106,9 @@ export const PrismDIDContext = createContext<{
  */
 export const PeerDIDContext = createContext<{
     /** Current Peer DID instance, null if not yet created */
-    peerDID: SDK.Domain.DID | null;
+    peerDID: Domain.DID | null;
     /** Function to create a new Peer DID */
-    create: () => Promise<SDK.Domain.DID>;
+    create: () => Promise<Domain.DID>;
 } | undefined>(undefined);
 
 /**
@@ -123,13 +123,13 @@ export type DatabaseState = 'disconnected' | 'loading' | 'loaded' | 'error';
  */
 export type DIDAlias = {
     /** The DID instance */
-    did: SDK.Domain.DID;
+    did: Domain.DID;
     /** Optional human-readable alias for the DID */
     alias?: string;
     /** Current status of the DID (e.g., 'active', 'published', 'deactivated') */
     status: string;
     /** Associated private keys for the DID */
-    keys: SDK.Domain.PrivateKey[];
+    keys: Domain.PrivateKey[];
 }
 
 /**
@@ -140,15 +140,15 @@ export type GroupedDIDs = Record<string, DIDAlias[]>;
 
 
 export type AgentContextType = {
-    agent: SDK.Agent | null;
+    agent: Agent | null;
     /** Function to start the agent */
     start: () => Promise<void>;
     /** Function to stop the agent */
     stop: () => Promise<void>;
     /** Current state of the agent
-     * [SDK.Domain.Startable.State](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.Protocols.Startable.md)
+     * [Domain.Startable.State](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules/Domain.Protocols.Startable.md)
      */
-    state: SDK.Domain.Startable.State;
+    state: Domain.Startable.State;
 }
 
 /**
@@ -210,22 +210,22 @@ export const DatabaseContext = createContext<{
     /** Current wallet identifier */
     wallet: string | null;
     /** Pluto storage instance */
-    pluto: SDK.Domain.Pluto;
+    pluto: Domain.Pluto;
     
     /** Function to start/initialize the database */
     start: (options: StartOptions<typeof schemas>) => Promise<void>;
     /** Retrieve all messages with read status */
-    getMessages: () => Promise<{ message: SDK.Domain.Message, read: boolean }[]>;
+    getMessages: () => Promise<{ message: Domain.Message, read: boolean }[]>;
     /** Mark a message as read */
-    readMessage: (message: SDK.Domain.Message) => Promise<void>;
+    readMessage: (message: Domain.Message) => Promise<void>;
     /** Delete a message */
-    deleteMessage: (message: SDK.Domain.Message) => Promise<void>;
+    deleteMessage: (message: Domain.Message) => Promise<void>;
     /** Get all DIDs with extended metadata */
-    getExtendedDIDs: () => Promise<{ did: SDK.Domain.DID, status: string, alias?: string, keys: SDK.Domain.PrivateKey[] }[]>;
+    getExtendedDIDs: () => Promise<{ did: Domain.DID, status: string, alias?: string, keys: Domain.PrivateKey[] }[]>;
     /** Store a DID with associated keys and alias */
-    storeDID: (did: SDK.Domain.DID, keys: SDK.Domain.PrivateKey[], alias: string) => Promise<void>;
+    storeDID: (did: Domain.DID, keys: Domain.PrivateKey[], alias: string) => Promise<void>;
     /** Update the status of a DID */
-    updateDIDStatus: (did: SDK.Domain.DID, status: string) => Promise<void>;
+    updateDIDStatus: (did: Domain.DID, status: string) => Promise<void>;
     /** Get all issuance flows */
     getIssuanceFlows: () => Promise<Doc<typeof schemas["issuance"]>[]>;
     /** Get a specific issuance flow by ID */
@@ -247,25 +247,25 @@ export const DatabaseContext = createContext<{
     /** Load available database features */
     getFeatures: () => Promise<void>;
     /** Get current mediator DID */
-    getMediator: () => Promise<SDK.Domain.DID | null>;
+    getMediator: () => Promise<Domain.DID | null>;
     /** Get wallet seed */
-    getSeed: () => Promise<SDK.Domain.Seed | null>;
+    getSeed: () => Promise<Domain.Seed | null>;
     /** Get wallet identifier */
     getWallet: () => Promise<string | null>;
     /** Get DID resolver URL */
     getResolverUrl: () => Promise<string | null>;
     /** Set mediator DID */
-    setMediator: (mediator: SDK.Domain.DID | null) => Promise<void>;
+    setMediator: (mediator: Domain.DID | null) => Promise<void>;
     /** Set wallet seed */
-    setSeed: (seed: SDK.Domain.Seed) => Promise<SDK.Domain.Seed>;
+    setSeed: (seed: Domain.Seed) => Promise<Domain.Seed>;
     /** Set wallet identifier */
     setWallet: (wallet: string | null) => Promise<void>;
     /** Set DID resolver URL */
     setResolverUrl: (resolverUrl: string | null) => Promise<void>;
     /** Get all credentials */
-    getCredentials: () => Promise<SDK.Domain.Credential[]>;
+    getCredentials: () => Promise<Domain.Credential[]>;
     /** Delete a credential */
-    deleteCredential: (credential: SDK.Domain.Credential) => Promise<void>;
+    deleteCredential: (credential: Domain.Credential) => Promise<void>;
 } | undefined>(undefined);
 
 /**
@@ -315,15 +315,15 @@ export const DatabaseContext = createContext<{
  */
 export const AgentContext = createContext<{
     /** Current Agent instance or null if not initialized */
-    agent: SDK.Agent | null;
+    agent: Agent | null;
     /** Function to start the agent and begin operations */
     start: () => Promise<void>;
     /** Function to stop the agent and cleanup resources */
     stop: () => Promise<void>;
     /** Current agent state (stopped, starting, running, etc.) */
-    state: SDK.Domain.Startable.State;
+    state: Domain.Startable.State;
     /** Function to manually set a new agent instance */
-    setAgent: (agent: SDK.Agent) => void;
+    setAgent: (agent: Agent) => void;
 } | undefined>(undefined);
 
 /**
@@ -336,7 +336,7 @@ export const AgentContext = createContext<{
  * ```tsx
  * import { IssuerContext } from '@trust0/identus-react/context';
  * import { useContext } from 'react';
- * import SDK from '@hyperledger/identus-sdk';
+ * import * as SDK from "@hyperledger/identus-sdk";
  * 
  * function CredentialIssuer() {
  *   const context = useContext(IssuerContext);
@@ -349,7 +349,7 @@ export const AgentContext = createContext<{
  *   
  *   const createDriversLicenseOffer = async () => {
  *     const offer = await createOOBOffer(
- *       SDK.Domain.CredentialType.JWT,
+ *       Domain.CredentialType.JWT,
  *       'drivers-license-123',
  *       {
  *         name: 'John Doe',
@@ -397,7 +397,7 @@ export const IssuerContext = createContext<AgentContextType & {
      * @param claims - Claims to include in the credential
      * @returns Promise resolving to the offer URL/string
      */
-    createOOBOffer<T extends SDK.Domain.CredentialType>(
+    createOOBOffer<T extends Domain.CredentialType>(
         type: T,
         id: string,
         claims: { name: string, value: string, type: string }[]
@@ -411,12 +411,12 @@ export const IssuerContext = createContext<AgentContextType & {
      * @param issuerDID - DID of the issuer
      * @param holderDID - DID of the holder
      */
-    issueCredential<T extends SDK.Domain.CredentialType>(
+    issueCredential<T extends Domain.CredentialType>(
         type: T,
-        message: SDK.Domain.Message,
+        message: Domain.Message,
         claims: { name: string, value: string, type: string }[],
-        issuerDID: SDK.Domain.DID,
-        holderDID: SDK.Domain.DID,
+        issuerDID: Domain.DID,
+        holderDID: Domain.DID,
     ): Promise<void>;
 } | undefined>(undefined);
 
@@ -431,7 +431,7 @@ export const IssuerContext = createContext<AgentContextType & {
  * ```tsx
  * import { VerifierContext } from '@trust0/identus-react/context';
  * import { useContext } from 'react';
- * import SDK from '@hyperledger/identus-sdk';
+ * import * as SDK from "@hyperledger/identus-sdk";
  * 
  * function CredentialVerifier() {
  *   const context = useContext(VerifierContext);
@@ -442,15 +442,15 @@ export const IssuerContext = createContext<AgentContextType & {
  *   
  *   const { issuePresentationRequest, verifyPresentation } = context;
  *   
- *   const requestAgeVerification = async (holderDID: SDK.Domain.DID) => {
+ *   const requestAgeVerification = async (holderDID: Domain.DID) => {
  *     await issuePresentationRequest(
- *       SDK.Domain.CredentialType.JWT,
+ *       Domain.CredentialType.JWT,
  *       holderDID,
  *       { age: { min: 21 } }
  *     );
  *   };
  *   
- *   const verifyAgePresentation = async (presentation: SDK.Domain.Message) => {
+ *   const verifyAgePresentation = async (presentation: Domain.Message) => {
  *     const isValid = await verifyPresentation(presentation);
  *     console.log('Age verification result:', isValid);
  *   };
@@ -467,8 +467,8 @@ export const IssuerContext = createContext<AgentContextType & {
  * 
  */
 export const VerifierContext = createContext<AgentContextType & {
-    issueOOBPresentationRequest: <T extends SDK.Domain.CredentialType>(type: T, claims: SDK.Domain.PresentationClaims<T>) => Promise<string>;
-    getOOBPresentationRequest: (fromPeerDID: SDK.Domain.DID, requestPresentationMessage: SDK.Domain.Message) => string;
+    issueOOBPresentationRequest: <T extends Domain.CredentialType>(type: T, claims: Domain.PresentationClaims<T>) => Promise<string>;
+    getOOBPresentationRequest: (fromPeerDID: Domain.DID, requestPresentationMessage: Domain.Message) => string;
     /**
      * Issue a presentation request to a holder.
      * 
@@ -476,10 +476,10 @@ export const VerifierContext = createContext<AgentContextType & {
      * @param toDID - DID of the holder to request from
      * @param claims - Claims being requested
      */
-    issuePresentationRequest<T extends SDK.Domain.CredentialType>(
-        type: SDK.Domain.CredentialType,
-        toDID: SDK.Domain.DID,
-        claims: SDK.Domain.PresentationClaims<T>
+    issuePresentationRequest<T extends Domain.CredentialType>(
+        type: Domain.CredentialType,
+        toDID: Domain.DID,
+        claims: Domain.PresentationClaims<T>
     ): Promise<void>;
     /**
      * Verify a received presentation.
@@ -488,7 +488,7 @@ export const VerifierContext = createContext<AgentContextType & {
      * @returns Promise resolving to verification result
      */
     verifyPresentation(
-        presentation: SDK.Domain.Message,
+        presentation: Domain.Message,
     ): Promise<boolean>;
 } | undefined>(undefined);
 
@@ -513,7 +513,7 @@ export const VerifierContext = createContext<AgentContextType & {
  *   
  *   const { parseOOBOffer, acceptOOBOffer, handlePresentationRequest } = context;
  *   
- *   const acceptCredentialOffer = async (offerUrl: string, peerDID: SDK.Domain.DID) => {
+ *   const acceptCredentialOffer = async (offerUrl: string, peerDID: Domain.DID) => {
  *     try {
  *       // Parse the offer
  *       const message = await parseOOBOffer(offerUrl, peerDID);
@@ -545,7 +545,7 @@ export const HolderContext = createContext<AgentContextType & {
      * @param url - Credential offer URL or string
      * @returns Promise resolving to parsed message
      */
-    parseOOB(url: string): Promise<SDK.Domain.Message>;
+    parseOOB(url: string): Promise<Domain.Message>;
 
     /**
      * Parse an out-of-band credential offer.
@@ -555,14 +555,14 @@ export const HolderContext = createContext<AgentContextType & {
      */
     parseOOBOffer(
         url: string,
-    ): Promise<SDK.Domain.Message>;
+    ): Promise<Domain.Message>;
     /**
      * Accept an out-of-band credential offer.
      * 
      * @param message - Parsed offer message
      */
     acceptOOBOffer(
-        message: SDK.Domain.Message,
+        message: Domain.Message,
     ): Promise<void>;
 
     /**
@@ -572,8 +572,8 @@ export const HolderContext = createContext<AgentContextType & {
      * @param credential - Credential to present
      */
     handlePresentationRequest(
-        message: SDK.Domain.Message,
-        credential: SDK.Domain.Credential,
+        message: Domain.Message,
+        credential: Domain.Credential,
     ): Promise<void>;
 } | undefined>(undefined);
 
@@ -603,11 +603,11 @@ export const HolderContext = createContext<AgentContextType & {
  *     deleteMessage 
  *   } = context;
  *   
- *   const markAsRead = async (message: SDK.Domain.Message) => {
+ *   const markAsRead = async (message: Domain.Message) => {
  *     await readMessage(message);
  *   };
  *   
- *   const removeMessage = async (message: SDK.Domain.Message) => {
+ *   const removeMessage = async (message: Domain.Message) => {
  *     await deleteMessage(message);
  *   };
  *   
@@ -636,17 +636,17 @@ export const HolderContext = createContext<AgentContextType & {
  */
 export const MessagesContext = createContext<{
     /** Array of all messages with their read status */
-    messages: { message: SDK.Domain.Message, read: boolean }[];
+    messages: { message: Domain.Message, read: boolean }[];
     /** Array of received messages only */
-    receivedMessages: SDK.Domain.Message[];
+    receivedMessages: Domain.Message[];
     /** Array of sent messages only */
-    sentMessages: SDK.Domain.Message[];
+    sentMessages: Domain.Message[];
     /** Array of unread messages only */
-    unreadMessages: SDK.Domain.Message[];
+    unreadMessages: Domain.Message[];
     /** Function to mark a message as read */
-    readMessage: (message: SDK.Domain.Message) => Promise<void>;
+    readMessage: (message: Domain.Message) => Promise<void>;
     /** Function to delete a message */
-    deleteMessage: (message: SDK.Domain.Message) => Promise<void>;
+    deleteMessage: (message: Domain.Message) => Promise<void>;
     /** Function to refresh messages from storage */
     load: () => Promise<void>;
 } | undefined>(undefined);
@@ -672,7 +672,7 @@ export const MessagesContext = createContext<{
  *   
  *   const { credentials, deleteCredential, fetchCredentials } = context;
  *   
- *   const removeCredential = async (credential: SDK.Domain.Credential) => {
+ *   const removeCredential = async (credential: Domain.Credential) => {
  *     if (confirm('Delete this credential?')) {
  *       await deleteCredential(credential);
  *     }
@@ -705,9 +705,9 @@ export const MessagesContext = createContext<{
 export const CredentialsContext = createContext<{
     
     /** Array of stored credentials */
-    credentials: SDK.Domain.Credential[];
+    credentials: Domain.Credential[];
     /** Function to delete a credential */
-    deleteCredential: (credential: SDK.Domain.Credential) => Promise<void>;
+    deleteCredential: (credential: Domain.Credential) => Promise<void>;
     /** Function to refresh credentials from storage */
     load: () => Promise<void>;
 } | undefined>(undefined);
@@ -733,7 +733,7 @@ export const CredentialsContext = createContext<{
  *   
  *   const { connections, deleteConnection } = context;
  *   
- *   const removeConnection = async (connection: SDK.Domain.DIDPair) => {
+ *   const removeConnection = async (connection: Domain.DIDPair) => {
  *     if (confirm('Delete this connection?')) {
  *       await deleteConnection(connection);
  *     }
@@ -761,9 +761,9 @@ export const CredentialsContext = createContext<{
  */
 export const ConnectionsContext = createContext<{
     /** Array of established DID connections */
-    connections: SDK.Domain.DIDPair[];
+    connections: Domain.DIDPair[];
     /** Function to delete a connection */
-    deleteConnection: (connection: SDK.Domain.DIDPair) => Promise<void>;
+    deleteConnection: (connection: Domain.DIDPair) => Promise<void>;
     /** Function to refresh connections from storage */
     load: () => Promise<void>;
 } | undefined>(undefined);

@@ -1,4 +1,4 @@
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 import {  useMemo } from "react";
 
 /**

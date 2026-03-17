@@ -1,7 +1,7 @@
 
 
 import React, { useCallback } from "react";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 
 import { VerifierContext } from "../context";
 import { useAgent, usePeerDID } from "../hooks";

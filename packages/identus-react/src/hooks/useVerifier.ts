@@ -1,4 +1,4 @@
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
 import { useContext } from "react";
 import { VerifierContext } from "../context";
 
