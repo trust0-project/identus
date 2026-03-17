@@ -1,3 +1,13 @@
+## 1.0.28 (2026-03-17)
+
+### 🩹 Fixes
+
+- enable provernance Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([a2423ca](https://github.com/trust0-project/identus/commit/a2423ca))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.27 (2026-03-17)
 
 ### 🩹 Fixes
