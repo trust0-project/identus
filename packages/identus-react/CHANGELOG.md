@@ -1,3 +1,17 @@
+## 0.0.146 (2026-03-17)
+
+### 🩹 Fixes
+
+- npm Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([4748690](https://github.com/trust0-project/identus/commit/4748690))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.31
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.145 (2026-03-17)
 
 ### 🩹 Fixes

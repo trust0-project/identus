@@ -8,7 +8,7 @@
 
 > **DIDAlias** = `object`
 
-Defined in: [packages/identus-react/src/context/index.ts:124](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/context/index.ts#L124)
+Defined in: [packages/identus-react/src/context/index.ts:124](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L124)
 
 Type definition for DID with extended metadata including alias and keys.
 
@@ -18,7 +18,7 @@ Type definition for DID with extended metadata including alias and keys.
 
 > `optional` **alias**: `string`
 
-Defined in: [packages/identus-react/src/context/index.ts:128](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/context/index.ts#L128)
+Defined in: [packages/identus-react/src/context/index.ts:128](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L128)
 
 Optional human-readable alias for the DID
 
@@ -28,7 +28,7 @@ Optional human-readable alias for the DID
 
 > **did**: [`Domain.DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
 
-Defined in: [packages/identus-react/src/context/index.ts:126](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/context/index.ts#L126)
+Defined in: [packages/identus-react/src/context/index.ts:126](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L126)
 
 The DID instance
 
@@ -38,7 +38,7 @@ The DID instance
 
 > **keys**: [`Domain.PrivateKey`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)[]
 
-Defined in: [packages/identus-react/src/context/index.ts:132](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/context/index.ts#L132)
+Defined in: [packages/identus-react/src/context/index.ts:132](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L132)
 
 Associated private keys for the DID
 
@@ -48,6 +48,6 @@ Associated private keys for the DID
 
 > **status**: `string`
 
-Defined in: [packages/identus-react/src/context/index.ts:130](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/context/index.ts#L130)
+Defined in: [packages/identus-react/src/context/index.ts:130](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L130)
 
 Current status of the DID (e.g., 'active', 'published', 'deactivated')
