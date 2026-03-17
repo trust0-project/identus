@@ -1,3 +1,14 @@
+## 1.0.30 (2026-03-17)
+
+### 🩹 Fixes
+
+- provenance Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9f97088](https://github.com/trust0-project/identus/commit/9f97088))
+- test Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([940d88f](https://github.com/trust0-project/identus/commit/940d88f))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.29 (2026-03-17)
 
 ### 🩹 Fixes

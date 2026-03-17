@@ -8,7 +8,7 @@
 
 > **PrismDIDProvider**(`__namedParameters`): `Element`
 
-Defined in: [packages/identus-react/src/provider/DID.tsx:23](https://github.com/trust0-project/identus/blob/af1ab4bdd5f7f0307875bb89685db199453ac4d5/packages/identus-react/src/provider/DID.tsx#L23)
+Defined in: [packages/identus-react/src/provider/DID.tsx:23](https://github.com/trust0-project/identus/blob/9f97088fa0b035600621bdd06a31ee1c4819d839/packages/identus-react/src/provider/DID.tsx#L23)
 
 ## Parameters
 
