@@ -8,7 +8,7 @@
 
 > **useVerifier**(): [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`
 
-Defined in: [packages/identus-react/src/hooks/useVerifier.ts:17](https://github.com/trust0-project/identus/blob/e3276f1735613a6857168657f5416fc6245ea88c/packages/identus-react/src/hooks/useVerifier.ts#L17)
+Defined in: [packages/identus-react/src/hooks/useVerifier.ts:17](https://github.com/trust0-project/identus/blob/7ef341f0b701e9b66b325d3a3a164ae85703b461/packages/identus-react/src/hooks/useVerifier.ts#L17)
 
 Hook for accessing credential verification context and operations.
 

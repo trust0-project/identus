@@ -1,3 +1,13 @@
+## 1.0.23 (2026-03-17)
+
+### 🩹 Fixes
+
+- pipeline Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([7ef341f](https://github.com/trust0-project/identus/commit/7ef341f))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.22 (2026-03-17)
 
 ### 🩹 Fixes

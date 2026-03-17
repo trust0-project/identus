@@ -1,3 +1,17 @@
+## 0.0.138 (2026-03-17)
+
+### 🩹 Fixes
+
+- pipeline Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([7ef341f](https://github.com/trust0-project/identus/commit/7ef341f))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.23
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.137 (2026-03-17)
 
 ### 🩹 Fixes
