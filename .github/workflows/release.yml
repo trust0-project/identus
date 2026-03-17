@@ -28,9 +28,6 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-          registry-url: 'https://registry.npmjs.org/'
-          scope: '@trust0'
-          cache: 'npm'
 
       - name: Enable Corepack and set up Yarn
         run: |
