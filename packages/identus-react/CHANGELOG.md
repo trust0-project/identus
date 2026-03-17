@@ -1,3 +1,17 @@
+## 0.0.142 (2026-03-17)
+
+### 🩹 Fixes
+
+- node 22 Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([7cefe81](https://github.com/trust0-project/identus/commit/7cefe81))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.27
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.141 (2026-03-17)
 
 ### 🩹 Fixes
