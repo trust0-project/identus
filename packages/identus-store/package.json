@@ -25,7 +25,6 @@
   },
   "author": "elribonazo@gmail.com",
   "scripts": {
-    "prepublishOnly": "npm run build",
     "test": "npx vitest --config vitest.config.mjs --run",
     "docs": "npx typedoc",
     "build": "sh build.sh",
