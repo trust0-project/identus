@@ -1,3 +1,21 @@
+# 2.0.0 (2026-03-17)
+
+### 🚀 Features
+
+- ⚠️  creating async storage create fn ([23f8041](https://github.com/trust0-project/identus/commit/23f8041))
+
+### 🩹 Fixes
+
+- push update Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([a905515](https://github.com/trust0-project/identus/commit/a905515))
+
+### ⚠️  Breaking Changes
+
+- ⚠️  creating async storage create fn ([23f8041](https://github.com/trust0-project/identus/commit/23f8041))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.33 (2026-03-17)
 
 ### 🩹 Fixes

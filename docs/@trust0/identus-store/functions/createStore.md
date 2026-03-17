@@ -6,9 +6,9 @@
 
 # Function: createStore()
 
-> **createStore**\<`T`\>(`options`): [`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+> **createStore**\<`T`\>(`options`): `Promise`\<[`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
 
-Defined in: [index.ts:44](https://github.com/trust0-project/identus/blob/02e5e498901935d1508ac47b96ffa5e20d99e951/packages/identus-store/src/index.ts#L44)
+Defined in: [index.ts:142](https://github.com/trust0-project/identus/blob/a9055153b7b08ad39900d9f5ee0efffa8bc04846/packages/identus-store/src/index.ts#L142)
 
 ## Type Parameters
 
@@ -20,8 +20,8 @@ Defined in: [index.ts:44](https://github.com/trust0-project/identus/blob/02e5e49
 
 ### options
 
-`CreateStoreOptions`\<`T`\>
+`DatabaseOrOptionalSchemas`\<`T`\> & `StartOptions`
 
 ## Returns
 
-[`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+`Promise`\<[`Store`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
