@@ -1,3 +1,13 @@
+## 1.0.24 (2026-03-17)
+
+### 🩹 Fixes
+
+- build Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([9693421](https://github.com/trust0-project/identus/commit/9693421))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.23 (2026-03-17)
 
 ### 🩹 Fixes
