@@ -30,6 +30,13 @@ jobs:
           node-version: '22'
           registry-url: 'https://registry.npmjs.org/'
 
+      - name: Configure npm for trusted publishing
+        run: |
+          # Remove _authToken line that setup-node writes — it blocks OIDC fallback
+          sed -i'' -e '/_authToken/d' "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
+          echo "//registry.npmjs.org/:_authToken=" >> "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
+          cat "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
+
       - name: Enable Corepack and set up Yarn
         run: |
           corepack enable
