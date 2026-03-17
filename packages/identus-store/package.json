@@ -32,9 +32,7 @@
   },
   "license": "ISC",
   "peerDependencies": {
-    "@hyperledger/identus-sdk": "^7.0.0",
-    "@trust0/ridb": "^1.5.31",
-    "@trust0/ridb-core": "^1.7.36"
+    "@hyperledger/identus-sdk": "^7.0.0"
   },
   "devDependencies": {
     "@csstools/css-calc": "^2.1.3",
@@ -43,8 +41,6 @@
     "@csstools/css-tokenizer": "^3.0.3",
     "@esbuild-plugins/node-resolve": "^0.2.2",
     "@hyperledger/identus-sdk": "^7.0.0",
-    "@trust0/ridb": "^1.5.41",
-    "@trust0/ridb-core": "^1.7.36",
     "@types/chai": "^4.3.4",
     "@types/chai-as-promised": "^7.1.5",
     "@types/node": "^22.13.1",
@@ -66,6 +62,8 @@
     "vitest": "^1.6.0"
   },
   "dependencies": {
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "@trust0/ridb": "^1.5.31",
+    "@trust0/ridb-core": "^1.7.36"
   }
 }
