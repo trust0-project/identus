@@ -4778,10 +4778,10 @@ __metadata:
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
     "@hyperledger/identus-sdk": "npm:^7.0.0"
     "@trust0/identus-store": "npm:^1.0.31"
-    "@trust0/ridb": "npm:^1.5.31"
+    "@trust0/ridb": "npm:^1.5.41"
     "@trust0/ridb-build": "npm:^0.0.16"
-    "@trust0/ridb-core": "npm:^1.7.26"
-    "@trust0/ridb-react": "npm:^1.4.10"
+    "@trust0/ridb-core": "npm:^1.7.36"
+    "@trust0/ridb-react": "npm:^1.4.20"
     "@types/react": "npm:^18"
     "@types/react-dom": "npm:^18"
     multiformats: "npm:^9.9.0"
@@ -4808,8 +4808,8 @@ __metadata:
     "@csstools/css-tokenizer": "npm:^3.0.3"
     "@esbuild-plugins/node-resolve": "npm:^0.2.2"
     "@hyperledger/identus-sdk": "npm:^7.0.0"
-    "@trust0/ridb": "npm:^1.5.31"
-    "@trust0/ridb-core": "npm:^1.7.26"
+    "@trust0/ridb": "npm:^1.5.41"
+    "@trust0/ridb-core": "npm:^1.7.36"
     "@types/chai": "npm:^4.3.4"
     "@types/chai-as-promised": "npm:^7.1.5"
     "@types/node": "npm:^22.13.1"
@@ -4833,7 +4833,7 @@ __metadata:
   peerDependencies:
     "@hyperledger/identus-sdk": ^7.0.0
     "@trust0/ridb": ^1.5.31
-    "@trust0/ridb-core": ^1.7.26
+    "@trust0/ridb-core": ^1.7.36
   languageName: unknown
   linkType: soft
 
@@ -4851,30 +4851,30 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@trust0/ridb-core@npm:^1.7.26, @trust0/ridb-core@npm:^1.7.27":
-  version: 1.7.27
-  resolution: "@trust0/ridb-core@npm:1.7.27"
-  checksum: 10c0/3d349b414986ca1e069267b2c3bda9712c20c992be28f78bd0595a68b69cac7929e1664cbb291b6a3c210330e53f88cd507b199ff659c3ae0f031f787fa2f53e
+"@trust0/ridb-core@npm:^1.7.36":
+  version: 1.7.36
+  resolution: "@trust0/ridb-core@npm:1.7.36"
+  checksum: 10c0/609684efbd35ebcd71e06ae2ee90f8992e969fe94ccab9346c2796c500fa12bb76dc384fae718e3709e9568bb6efaa97edc093917a4928ed62abc0699d78cf3e
   languageName: node
   linkType: hard
 
-"@trust0/ridb-react@npm:^1.4.10":
-  version: 1.4.11
-  resolution: "@trust0/ridb-react@npm:1.4.11"
+"@trust0/ridb-react@npm:^1.4.20":
+  version: 1.4.20
+  resolution: "@trust0/ridb-react@npm:1.4.20"
   peerDependencies:
-    "@trust0/ridb": ^1
+    "@trust0/ridb": ^1.5.41
     react: ^18
     react-dom: ^18
-  checksum: 10c0/23fc4ed1eeea3cd4a5897ad869f55668fae6f901b365cb90508875d2d2f660752ae1d97e972cfb4b4c13b336ad2b28c38514046f88b79c6a03392659282ab8ea
+  checksum: 10c0/8e17f4b04e27ae7cc85c1bfc7005ab232500cf490baf0e5e4249e09fae75a9c0a779e20eb31a43b8a6e98491d531c3a5ad6a00715ea80a827f2f8924970e8d23
   languageName: node
   linkType: hard
 
-"@trust0/ridb@npm:^1.5.31":
-  version: 1.5.32
-  resolution: "@trust0/ridb@npm:1.5.32"
+"@trust0/ridb@npm:^1.5.41":
+  version: 1.5.41
+  resolution: "@trust0/ridb@npm:1.5.41"
   dependencies:
-    "@trust0/ridb-core": "npm:^1.7.27"
-  checksum: 10c0/81a0797558d67b9c7d0a2dd5fe9b9855ec1272f2e0812bcb5eb80268c8c278ab1cff56174f93c9693bca61db4cb82ffaaee7fed4604e6644b4264cbdbeb70e48
+    "@trust0/ridb-core": "npm:^1.7.36"
+  checksum: 10c0/e857b6589f9b031396bdf68b6ec96e3cca31ea21223202105ecda6a8ced7d272588768fb93eea533ebe8f06833074adba5241df18d438e17bb28e0cb401e1efa
   languageName: node
   linkType: hard
 

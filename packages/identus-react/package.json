@@ -75,9 +75,9 @@
   },
   "dependencies": {
     "@trust0/identus-store": "^1.0.31",
-    "@trust0/ridb": "^1.5.31",
-    "@trust0/ridb-core": "^1.7.26",
-    "@trust0/ridb-react": "^1.4.10",
+    "@trust0/ridb": "^1.5.41",
+    "@trust0/ridb-core": "^1.7.36",
+    "@trust0/ridb-react": "^1.4.20",
     "multiformats": "^9.9.0",
     "react": "^18",
     "react-dom": "^18",
