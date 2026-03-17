@@ -8,7 +8,7 @@
 
 > `const` **PrismDIDContext**: `Context`\<`undefined` \| \{ `create`: (`alias`) => `Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>; `isPublished`: (`did`) => `Promise`\<`boolean`\>; `prismDID`: `null` \| [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:58](https://github.com/trust0-project/identus/blob/4748690e833b2a3bf668125aa7e545763f5a22a3/packages/identus-react/src/context/index.ts#L58)
+Defined in: [packages/identus-react/src/context/index.ts:58](https://github.com/trust0-project/identus/blob/a928a5317d9085380ce0f139f4750a5046aaaced/packages/identus-react/src/context/index.ts#L58)
 
 React context for managing Prism DID operations and state.
 

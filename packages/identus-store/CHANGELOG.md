@@ -1,3 +1,13 @@
+## 1.0.32 (2026-03-17)
+
+### 🩹 Fixes
+
+- package lock Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([a928a53](https://github.com/trust0-project/identus/commit/a928a53))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.31 (2026-03-17)
 
 ### 🩹 Fixes
