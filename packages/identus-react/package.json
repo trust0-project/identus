@@ -56,15 +56,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/trust0-project/identus-react.git"
+    "url": "git+https://github.com/trust0-project/identus.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "elribonazo@gmail.com",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/trust0-project/identus-react/issues"
-  },
-  "homepage": "https://github.com/trust0-project/identus-react#readme",
   "devDependencies": {
     "@esbuild-plugins/node-resolve": "^0.2.2",
     "@hyperledger/identus-sdk": "^7.0.0",

@@ -59,7 +59,6 @@ jobs:
           
       - name: Run Build package
         env:
-          NPM_TOKEN: ${{ env.NPM_TOKEN }}
           GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
           GIT_COMMITTER_EMAIL: ${{ steps.import_gpg.outputs.email }}
           GIT_AUTHOR_NAME: ${{ steps.import_gpg.outputs.name }}

@@ -24,7 +24,7 @@
         "createRelease": "github"
       },
       "github": {
-        "repo": "trust0/identus"
+        "repo": "trust0-project/identus"
       }
     },
     "projects": [
