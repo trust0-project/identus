@@ -28,6 +28,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          registry-url: 'https://registry.npmjs.org/'
 
       - name: Enable Corepack and set up Yarn
         run: |
@@ -54,7 +55,7 @@ jobs:
           git_tag_gpgsign: true
           git_push_gpgsign: false
           
-      - name: Run Build package
+      - name: Build and version
         env:
           GIT_AUTHOR_EMAIL: ${{ steps.import_gpg.outputs.email }}
           GIT_COMMITTER_EMAIL: ${{ steps.import_gpg.outputs.email }}
@@ -62,11 +63,15 @@ jobs:
           GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
         run: |
           yarn
           npm run build
           npx nx release --skip-publish --verbose
+
+      - name: Publish packages
+        env:
+          NPM_CONFIG_PROVENANCE: true
+        run: |
           if [[ $GITHUB_REF == *"refs/heads/develop"* ]]; then
             echo "Publishing with RC tag for develop branch"
             npx nx release publish --tag rc --verbose
@@ -74,5 +79,3 @@ jobs:
             echo "Publishing without RC tag for main branch"
             npx nx release publish --verbose
           fi
-
-      
