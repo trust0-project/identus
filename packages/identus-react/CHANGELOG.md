@@ -1,3 +1,17 @@
+## 0.0.144 (2026-03-17)
+
+### 🩹 Fixes
+
+- provenance Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([af1ab4b](https://github.com/trust0-project/identus/commit/af1ab4b))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.29
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.143 (2026-03-17)
 
 ### 🩹 Fixes
