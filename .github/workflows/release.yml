@@ -32,9 +32,9 @@ jobs:
 
       - name: Configure npm for trusted publishing
         run: |
-          # Remove _authToken line that setup-node writes — it blocks OIDC fallback
+          # Remove _authToken that setup-node writes — forces npm to use OIDC
           sed -i'' -e '/_authToken/d' "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
-          echo "//registry.npmjs.org/:_authToken=" >> "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
+          echo "--- .npmrc contents ---"
           cat "${NPM_CONFIG_USERCONFIG:-$HOME/.npmrc}"
 
       - name: Enable Corepack and set up Yarn
