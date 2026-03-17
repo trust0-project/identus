@@ -8,7 +8,7 @@
 
 > **useAgent**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useAgent.ts:66](https://github.com/trust0-project/identus/blob/a928a5317d9085380ce0f139f4750a5046aaaced/packages/identus-react/src/hooks/useAgent.ts#L66)
+Defined in: [packages/identus-react/src/hooks/useAgent.ts:66](https://github.com/trust0-project/identus/blob/02e5e498901935d1508ac47b96ffa5e20d99e951/packages/identus-react/src/hooks/useAgent.ts#L66)
 
 Hook for accessing the main Identus Agent context and operations.
 
@@ -22,7 +22,7 @@ Agent context object with agent management functionality
 
 ### agent
 
-> **agent**: `null` \| [`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+> **agent**: [`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`
 
 Current Agent instance or null if not initialized
 

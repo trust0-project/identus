@@ -8,7 +8,7 @@
 
 > **useDatabase**(): `object`
 
-Defined in: [packages/identus-react/src/hooks/useDatabase.ts:16](https://github.com/trust0-project/identus/blob/a928a5317d9085380ce0f139f4750a5046aaaced/packages/identus-react/src/hooks/useDatabase.ts#L16)
+Defined in: [packages/identus-react/src/hooks/useDatabase.ts:16](https://github.com/trust0-project/identus/blob/02e5e498901935d1508ac47b96ffa5e20d99e951/packages/identus-react/src/hooks/useDatabase.ts#L16)
 
 Hook for accessing database context and operations.
 
@@ -107,7 +107,7 @@ Delete application setting by key
 
 ### error
 
-> **error**: `null` \| `Error`
+> **error**: `Error` \| `null`
 
 Current error, if any
 
@@ -159,7 +159,7 @@ Get DIDs grouped by status/type
 
 ### getIssuanceFlow()
 
-> **getIssuanceFlow**: (`id`) => `Promise`\<`null` \| `Doc`\<\{ `encrypted`: `string`[]; `primaryKey`: `string`; `properties`: \{ `automaticIssuance`: \{ `type`: `"boolean"`; \}; `claims`: \{ `items`: \{ `properties`: \{ `name`: \{ `required`: ...; `type`: ...; \}; `type`: \{ `required`: ...; `type`: ...; \}; `value`: \{ `required`: ...; `type`: ...; \}; \}; `type`: `"object"`; \}; `type`: `"array"`; \}; `credentialFormat`: \{ `required`: `true`; `type`: `"string"`; \}; `id`: \{ `required`: `true`; `type`: `"string"`; \}; `issuingDID`: \{ `required`: `true`; `type`: `"string"`; \}; \}; `type`: `"object"`; `version`: `0`; \}\>\>
+> **getIssuanceFlow**: (`id`) => `Promise`\<`Doc`\<\{ `encrypted`: `string`[]; `primaryKey`: `string`; `properties`: \{ `automaticIssuance`: \{ `type`: `"boolean"`; \}; `claims`: \{ `items`: \{ `properties`: \{ `name`: \{ `required`: ...; `type`: ...; \}; `type`: \{ `required`: ...; `type`: ...; \}; `value`: \{ `required`: ...; `type`: ...; \}; \}; `type`: `"object"`; \}; `type`: `"array"`; \}; `credentialFormat`: \{ `required`: `true`; `type`: `"string"`; \}; `id`: \{ `required`: `true`; `type`: `"string"`; \}; `issuingDID`: \{ `required`: `true`; `type`: `"string"`; \}; \}; `type`: `"object"`; `version`: `0`; \}\> \| `null`\>
 
 Get a specific issuance flow by ID
 
@@ -171,7 +171,7 @@ Get a specific issuance flow by ID
 
 #### Returns
 
-`Promise`\<`null` \| `Doc`\<\{ `encrypted`: `string`[]; `primaryKey`: `string`; `properties`: \{ `automaticIssuance`: \{ `type`: `"boolean"`; \}; `claims`: \{ `items`: \{ `properties`: \{ `name`: \{ `required`: ...; `type`: ...; \}; `type`: \{ `required`: ...; `type`: ...; \}; `value`: \{ `required`: ...; `type`: ...; \}; \}; `type`: `"object"`; \}; `type`: `"array"`; \}; `credentialFormat`: \{ `required`: `true`; `type`: `"string"`; \}; `id`: \{ `required`: `true`; `type`: `"string"`; \}; `issuingDID`: \{ `required`: `true`; `type`: `"string"`; \}; \}; `type`: `"object"`; `version`: `0`; \}\>\>
+`Promise`\<`Doc`\<\{ `encrypted`: `string`[]; `primaryKey`: `string`; `properties`: \{ `automaticIssuance`: \{ `type`: `"boolean"`; \}; `claims`: \{ `items`: \{ `properties`: \{ `name`: \{ `required`: ...; `type`: ...; \}; `type`: \{ `required`: ...; `type`: ...; \}; `value`: \{ `required`: ...; `type`: ...; \}; \}; `type`: `"object"`; \}; `type`: `"array"`; \}; `credentialFormat`: \{ `required`: `true`; `type`: `"string"`; \}; `id`: \{ `required`: `true`; `type`: `"string"`; \}; `issuingDID`: \{ `required`: `true`; `type`: `"string"`; \}; \}; `type`: `"object"`; `version`: `0`; \}\> \| `null`\>
 
 ### getIssuanceFlows()
 
@@ -185,13 +185,13 @@ Get all issuance flows
 
 ### getMediator()
 
-> **getMediator**: () => `Promise`\<`null` \| [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
+> **getMediator**: () => `Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`\>
 
 Get current mediator DID
 
 #### Returns
 
-`Promise`\<`null` \| [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
+`Promise`\<[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`\>
 
 ### getMessages()
 
@@ -205,27 +205,27 @@ Retrieve all messages with read status
 
 ### getResolverUrl()
 
-> **getResolverUrl**: () => `Promise`\<`null` \| `string`\>
+> **getResolverUrl**: () => `Promise`\<`string` \| `null`\>
 
 Get DID resolver URL
 
 #### Returns
 
-`Promise`\<`null` \| `string`\>
+`Promise`\<`string` \| `null`\>
 
 ### getSeed()
 
-> **getSeed**: () => `Promise`\<`null` \| [`Seed`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
+> **getSeed**: () => `Promise`\<[`Seed`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`\>
 
 Get wallet seed
 
 #### Returns
 
-`Promise`\<`null` \| [`Seed`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)\>
+`Promise`\<[`Seed`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) \| `null`\>
 
 ### getSettingsByKey()
 
-> **getSettingsByKey**: (`key`) => `Promise`\<`null` \| `string`\>
+> **getSettingsByKey**: (`key`) => `Promise`\<`string` \| `null`\>
 
 Get application setting by key
 
@@ -237,17 +237,17 @@ Get application setting by key
 
 #### Returns
 
-`Promise`\<`null` \| `string`\>
+`Promise`\<`string` \| `null`\>
 
 ### getWallet()
 
-> **getWallet**: () => `Promise`\<`null` \| `string`\>
+> **getWallet**: () => `Promise`\<`string` \| `null`\>
 
 Get wallet identifier
 
 #### Returns
 
-`Promise`\<`null` \| `string`\>
+`Promise`\<`string` \| `null`\>
 
 ### pluto
 
@@ -281,7 +281,7 @@ Set mediator DID
 
 ##### mediator
 
-`null` | [`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md)
+[`DID`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md) | `null`
 
 #### Returns
 
@@ -297,7 +297,7 @@ Set DID resolver URL
 
 ##### resolverUrl
 
-`null` | `string`
+`string` | `null`
 
 #### Returns
 
@@ -329,7 +329,7 @@ Set wallet identifier
 
 ##### wallet
 
-`null` | `string`
+`string` | `null`
 
 #### Returns
 
@@ -439,7 +439,7 @@ Update an existing issuance flow
 
 ### wallet
 
-> **wallet**: `null` \| `string`
+> **wallet**: `string` \| `null`
 
 Current wallet identifier
 

@@ -1,3 +1,14 @@
+## 1.0.33 (2026-03-17)
+
+### 🩹 Fixes
+
+- lock and dependencies Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([02e5e49](https://github.com/trust0-project/identus/commit/02e5e49))
+- remove peer dependenciesx Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([692562c](https://github.com/trust0-project/identus/commit/692562c))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.32 (2026-03-17)
 
 ### 🩹 Fixes
