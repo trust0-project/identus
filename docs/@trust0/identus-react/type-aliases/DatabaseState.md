@@ -8,6 +8,6 @@
 
 > **DatabaseState** = `"disconnected"` \| `"loading"` \| `"loaded"` \| `"error"`
 
-Defined in: [packages/identus-react/src/context/index.ts:118](https://github.com/trust0-project/identus/blob/a2423cac2618dfc2f719496c7ef87e55978118e9/packages/identus-react/src/context/index.ts#L118)
+Defined in: [packages/identus-react/src/context/index.ts:118](https://github.com/trust0-project/identus/blob/2c1ca84ac0eb5a885de2338dcaf11dac6716d0c3/packages/identus-react/src/context/index.ts#L118)
 
 Enumeration of possible database connection states.

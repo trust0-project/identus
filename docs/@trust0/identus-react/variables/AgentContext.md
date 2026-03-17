@@ -8,7 +8,7 @@
 
 > `const` **AgentContext**: `Context`\<`undefined` \| \{ `agent`: `null` \| [`Agent`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); `setAgent`: (`agent`) => `void`; `start`: () => `Promise`\<`void`\>; `state`: [`State`](https://github.com/hyperledger-identus/sdk-ts/blob/main/docs/sdk/modules.md); `stop`: () => `Promise`\<`void`\>; \}\>
 
-Defined in: [packages/identus-react/src/context/index.ts:316](https://github.com/trust0-project/identus/blob/a2423cac2618dfc2f719496c7ef87e55978118e9/packages/identus-react/src/context/index.ts#L316)
+Defined in: [packages/identus-react/src/context/index.ts:316](https://github.com/trust0-project/identus/blob/2c1ca84ac0eb5a885de2338dcaf11dac6716d0c3/packages/identus-react/src/context/index.ts#L316)
 
 React context for managing the main Identus Agent operations.
 
