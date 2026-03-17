@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useEffect } from "react";
 import { useCallback, useState } from "react";
 import * as SDK from "@hyperledger/identus-sdk";
 
@@ -25,10 +25,18 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     const [features, setFeatures] = useState<string[]>([]);
     const [currentWallet, setCurrentWallet] = useState<string | null>(null);
 
-    const pluto = useMemo(() => {
-        const store = createStore({ db, start: dbStart });
-        return new SDK.Pluto(store, apollo)
-    }, [apollo, db])
+    const [pluto, setPluto] = useState<SDK.Pluto | null>(null);
+
+    useEffect(() => {
+        if (!db) return;
+        let cancelled = false;
+        createStore({ db, start: dbStart }).then((store) => {
+            if (!cancelled) {
+                setPluto(new SDK.Pluto(store, apollo));
+            }
+        });
+        return () => { cancelled = true; };
+    }, [apollo, db, dbStart]);
 
     const getMessages = useCallback(async () => {
         if (!hasDB(db)) {
@@ -347,7 +355,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
     }, [db, getFeatures, getWallet]);
 
     const getCredentials = useCallback(async () => {
-        if (state === "loaded") {
+        if (state === "loaded" && pluto) {
             const credentials = await pluto.getAllCredentials();
             return credentials ?? [];
         }
@@ -367,7 +375,7 @@ export function DatabaseProvider({ children }: { children: React.ReactNode }) {
         error,
         features,
         wallet: currentWallet,
-        pluto,
+        pluto: pluto!,
         start,
         getCredentials,
         deleteCredential,

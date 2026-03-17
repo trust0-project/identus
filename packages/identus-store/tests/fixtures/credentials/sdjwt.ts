@@ -1,5 +1,6 @@
 
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
+
 
 
 import { list } from "../dids";

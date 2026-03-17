@@ -1,5 +1,6 @@
 import { base64url } from "multiformats/bases/base64";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
+
 
 
 const secpPrivateKey = new SDK.Secp256k1PrivateKey(

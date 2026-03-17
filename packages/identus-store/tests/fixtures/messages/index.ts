@@ -1,5 +1,6 @@
 import { base64 } from "multiformats/bases/base64";
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
+
 // convert raw DIDComm message to domain, handles parsing idiosyncrasies
 const convertDidcomm = (value: any) => new SDK.Domain.Message(
   value.body,

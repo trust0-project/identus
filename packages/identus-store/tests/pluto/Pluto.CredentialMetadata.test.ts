@@ -1,5 +1,6 @@
 import { describe, expect, test, beforeEach } from 'vitest';
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
+
 
 import { createInstance } from '../mocks/pluto';
 
@@ -8,8 +9,7 @@ describe("Pluto", () => {
 
   beforeEach(async () => {
     const apollo = new SDK.Apollo();
-    const pluto = createInstance({ apollo }).pluto;
-    instance = pluto;
+    instance = (await createInstance({ apollo })).pluto;
 
     await instance.start();
   });

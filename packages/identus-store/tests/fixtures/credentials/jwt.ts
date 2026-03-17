@@ -1,4 +1,5 @@
-import SDK from "@hyperledger/identus-sdk";
+import * as SDK from "@hyperledger/identus-sdk";
+
 
 import { list } from "../dids";
 
@@ -31,7 +32,7 @@ export const credentialOfferMessage = new SDK.OfferCredential(
     "comment": null
   } as any,
   [
-    new   SDK.Domain.AttachmentDescriptor({
+    new SDK.Domain.AttachmentDescriptor({
       json: JSON.stringify({
         "options": {
           "challenge": "fedac0c2-3250-4fb1-bfcb-b5e904058e1f",
