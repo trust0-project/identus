@@ -8,7 +8,7 @@
 
 > **useIssuer**(): [`AgentContextType`](../type-aliases/AgentContextType.md) & `object`
 
-Defined in: [packages/identus-react/src/hooks/useIssuer.ts:17](https://github.com/trust0-project/identus/blob/969342189171e0db11c81ea72c556ca8f282f97c/packages/identus-react/src/hooks/useIssuer.ts#L17)
+Defined in: [packages/identus-react/src/hooks/useIssuer.ts:17](https://github.com/trust0-project/identus/blob/a942bd669aab1936b2648e7368fc4fdab8cc17cc/packages/identus-react/src/hooks/useIssuer.ts#L17)
 
 Hook for accessing credential issuance context and operations.
 
