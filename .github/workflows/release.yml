@@ -62,6 +62,7 @@ jobs:
           GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true
         run: |
           yarn
           npm run build
