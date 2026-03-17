@@ -1,3 +1,13 @@
+## 1.0.26 (2026-03-17)
+
+### 🩹 Fixes
+
+- release pipeline node version Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([38cceb4](https://github.com/trust0-project/identus/commit/38cceb4))
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 1.0.25 (2026-03-17)
 
 ### 🩹 Fixes

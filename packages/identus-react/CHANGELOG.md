@@ -1,3 +1,17 @@
+## 0.0.141 (2026-03-17)
+
+### 🩹 Fixes
+
+- release pipeline node version Signed-off-by: Javier Ribó <elribonazo@gmail.com> ([38cceb4](https://github.com/trust0-project/identus/commit/38cceb4))
+
+### 🧱 Updated Dependencies
+
+- Updated @trust0/identus-store to 1.0.26
+
+### ❤️ Thank You
+
+- Javier Ribó
+
 ## 0.0.140 (2026-03-17)
 
 ### 🧱 Updated Dependencies
